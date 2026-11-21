@@ -1,0 +1,1156 @@
+{
+  "generated_for": "test task, synthetic data",
+  "as_of": "2026-11-18",
+  "dialogs": [
+    {
+      "dialog_id": "D001",
+      "player_id": "P1001",
+      "manager": "Алина",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T21:40:00",
+          "text": "Алина, привет. Не могу закинуть, карта не проходит уже раз пятый"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T23:15:00",
+          "text": "Привет! Сегодня для тебя есть бонус 50% на депозит до 500$ 🎁 Успей до полуночи"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T23:20:00",
+          "text": "так я не могу задепать, я же написал"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-18T00:20:00",
+          "text": "Попробуй позже, возможно, это банк. Бонус активен до 23:59"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-18T00:25:00",
+          "text": "понятно"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D002",
+      "player_id": "P1002",
+      "manager": "Tom",
+      "channel": "whatsapp",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T19:10:00",
+          "text": "Hey Tom, my Interac deposit keeps failing. Tried 3 times."
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T19:16:00",
+          "text": "Hi Mark, sorry about that. I can see 3 declined attempts on our side. Can you try Interac with the e-mail option instead of online banking? If it still fails, I'll pass it to payments right away."
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T19:30:00",
+          "text": "Email option worked, thanks!"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T19:33:00",
+          "text": "Great, glad it went through. I've added 20 free spins on Book of Gold as a sorry for the trouble. Good luck tonight!"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T19:35:00",
+          "text": "Appreciate it 👍"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D003",
+      "player_id": "P1003",
+      "manager": "Максим",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T12:20:00",
+          "text": "Слил вчера 3к за вечер. Вообще не везёт"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T13:00:00",
+          "text": "Понимаю, обидно( Давай я тебе дам бонус 100% на следующий депозит, отыграешь всё сегодня же!"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T13:05:00",
+          "text": "да я и так в минусе по уши"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T13:10:00",
+          "text": "Так как раз шанс вернуть! Бонус до 1000$, вейджер х30 💪"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T14:20:00",
+          "text": "ладно, вечером закину"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D004",
+      "player_id": "P1004",
+      "manager": "Emily",
+      "channel": "email",
+      "messages": [
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T10:05:00",
+          "text": "Hi Sarah, I noticed yesterday was a rough session. Just checking in — no offers, just wanted to see how you're doing."
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T13:05:00",
+          "text": "Thanks Emily. Yeah, it was bad. Taking a few days off."
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T13:15:00",
+          "text": "That sounds like a good call. If you'd like, I can set a deposit limit or a short cool-off on your account — just say the word. I'm here whenever you're back."
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T15:05:00",
+          "text": "Maybe set a weekly limit of 1000"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T15:15:00",
+          "text": "Done — a weekly deposit limit of $1,000 is active from today. Take care!"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D005",
+      "player_id": "P1005",
+      "manager": "Ольга",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T23:15:00",
+          "text": "Поздравляю с заносом 12 400$! 🔥"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T23:45:00",
+          "text": "спасибо!) буду выводить"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T23:48:00",
+          "text": "Может, оставишь часть на балансе? Сегодня турнир, с таким банком можно в топ залететь"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T00:15:00",
+          "text": "не, хочу вывести"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T00:17:00",
+          "text": "Ок, но вывод от 10к идёт до 5 рабочих дней, а турнир только сегодня 😉"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T00:25:00",
+          "text": "всё равно вывожу"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D006",
+      "player_id": "P1006",
+      "manager": "Алина",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-13T11:30:00",
+          "text": "Где мои деньги? Вывод 2 800 висит пятый день"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-13T13:30:00",
+          "text": "Здравствуйте! Выводы обрабатываются в порядке очереди, ожидайте, пожалуйста"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-13T13:40:00",
+          "text": "это я слышу уже третий день. Мне что, в чарджбек идти?"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-13T18:10:00",
+          "text": "Передала ваш вопрос. Ожидайте"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-15T11:30:00",
+          "text": "так и не пришли. Больше у вас не играю"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D007",
+      "player_id": "P1007",
+      "manager": "Tom",
+      "channel": "whatsapp",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-13T09:40:00",
+          "text": "Withdrawal of 1,500 still pending since Monday"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-13T09:50:00",
+          "text": "Hi James, checking now. Your withdrawal is waiting for one document — proof of address. Payments sent the request to your email on Tuesday, it may be in spam. Once you upload it, it usually goes out within 24h."
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-13T10:10:00",
+          "text": "Found it, uploaded"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-13T10:15:00",
+          "text": "Thanks! I've flagged it to payments as a priority. I'll message you as soon as it's approved."
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-14T07:20:00",
+          "text": "Approved and sent ✅ Should land today."
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-14T07:40:00",
+          "text": "Got it. Thanks Tom"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D008",
+      "player_id": "P1008",
+      "manager": "Максим",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T15:00:00",
+          "text": "Макс, кинь бонус на деп, а? Чёт не идёт сегодня"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T15:05:00",
+          "text": "Держи релоад 50% до 200$ 💪"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T16:30:00",
+          "text": "ещё один можно? сделал 4 депа по 50, всё слил"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T16:35:00",
+          "text": "Сделаю исключение, ещё 30% до 100$"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T18:20:00",
+          "text": "спасибо, брат"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T22:00:00",
+          "text": "а завтра будет что-нибудь?"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D009",
+      "player_id": "P1009",
+      "manager": "Ольга",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T17:45:00",
+          "text": "Оля, дай кешбэк или фриспины, сегодня всё мимо"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T18:00:00",
+          "text": "Вижу, что последние дни депозиты стали чаще и меньше, и ты просишь бонусы почти каждый день. Давай сегодня без бонусов — честно, это не тот момент. Как ты вообще?"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T18:25:00",
+          "text": "да нормально, просто хочется отбить"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T18:33:00",
+          "text": "Понимаю. Именно поэтому предлагаю паузу на пару дней. Могу поставить лимит на депозит, если хочешь. А в пятницу напишу, обсудим, что тебе интересно."
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T18:55:00",
+          "text": "ладно, давай лимит 300 в день"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T19:00:00",
+          "text": "Поставила лимит 300$ в день. Напишу в пятницу 🙂"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D010",
+      "player_id": "P1010",
+      "manager": "Алина",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-15T22:10:00",
+          "text": "Алина, заблокируйте мне аккаунт, пожалуйста. Я проиграл зарплату, больше не хочу"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-15T22:40:00",
+          "text": "Ох, понимаю( Может, не будем так радикально? Давай я начислю тебе кешбэк 20% за неделю, вернёшь часть"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-15T22:45:00",
+          "text": "нет, мне правда нужно остановиться"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-15T23:10:00",
+          "text": "Хорошо. Самоисключение оформляется через саппорт. Но кешбэк оставлю на балансе, если передумаешь 😉"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D011",
+      "player_id": "P1011",
+      "manager": "Emily",
+      "channel": "whatsapp",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-11T08:20:00",
+          "text": "I think I need to stop for a while. Can you close my account?"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-11T08:28:00",
+          "text": "Of course, Daniel. Thank you for telling me. I can start a self-exclusion right now — you can choose 6 months, 1 year or permanent. Which one would you like?"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-11T08:35:00",
+          "text": "1 year"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-11T08:38:00",
+          "text": "Done. Your account is self-excluded for 1 year from today, and you won't receive any offers from us. If you'd like to talk to someone, Gambling Help Online (gamblinghelponline.org.au) is free and available 24/7. Take care of yourself."
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-11T08:45:00",
+          "text": "Thanks"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D012",
+      "player_id": "P1012",
+      "manager": "Максим",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-14T10:12:00",
+          "text": "Привет, можно поднять лимит на вывод? Хочу вывести 8к одной суммой"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-14T14:12:00",
+          "text": "?"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-14T19:32:00",
+          "text": "Привет! Сорри, был на другой смене. Лимит в сутки 5к, можно двумя частями"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-14T19:42:00",
+          "text": "уже не надо, вывел частями сам"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D013",
+      "player_id": "P1013",
+      "manager": "Ольга",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "manager",
+          "sent_at": "2026-11-13T12:00:00",
+          "text": "Привет! У нас стартовал новый турнир с призовым фондом 50 000$ 🏆 Участвуй!"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-15T12:00:00",
+          "text": "Не пропусти! Только до воскресенья бонус 100% на депозит"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T12:00:00",
+          "text": "Привет! Скучаем 🙂 Заходи, есть подарок"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D014",
+      "player_id": "P1014",
+      "manager": "Tom",
+      "channel": "email",
+      "messages": [
+        {
+          "from": "manager",
+          "sent_at": "2026-11-15T16:30:00",
+          "text": "Hi Chris, it's been a couple of weeks since your last session. I remember you like the live blackjack tables in the evening — we've just opened a new high-limit table from 8pm ET. No pressure, just thought you'd want to know."
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T02:30:00",
+          "text": "Oh nice, I'll check it out this weekend"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T02:35:00",
+          "text": "Awesome. If you'd like a seat reserved or anything else, just ping me."
+        }
+      ]
+    },
+    {
+      "dialog_id": "D015",
+      "player_id": "P1015",
+      "manager": "Алина",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "manager",
+          "sent_at": "2026-11-18T13:10:00",
+          "text": "С прошедшим днём рождения! 🎉 Начислила тебе 100 фриспинов в подарок"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-18T14:00:00",
+          "text": "спасибо) вспомнили через два дня 😅"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-18T14:02:00",
+          "text": "Ой, прости, закрутилась. Хорошего вечера!"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D016",
+      "player_id": "P1016",
+      "manager": "Максим",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-11T14:00:00",
+          "text": "Макс, ты обещал кешбэк за прошлую неделю, где он?"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-11T14:30:00",
+          "text": "Да, завтра начислю 👍"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-13T14:20:00",
+          "text": "так и нет кешбэка"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-15T14:40:00",
+          "text": "алло"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D017",
+      "player_id": "P1017",
+      "manager": "Emily",
+      "channel": "whatsapp",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T20:30:00",
+          "text": "The Mega Fortune Wheel game freezes every time I hit the bonus round. Lost my free spins twice."
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T20:50:00",
+          "text": "Hi Liam, for technical issues please contact our support via live chat, they'll help you."
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T20:55:00",
+          "text": "I did, they told me to contact you 🙄"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T22:00:00",
+          "text": "Sorry about that. Please send a screenshot to support again."
+        }
+      ]
+    },
+    {
+      "dialog_id": "D018",
+      "player_id": "P1018",
+      "manager": "Ольга",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "manager",
+          "sent_at": "2026-11-10T15:00:00",
+          "text": "Привет, Дмитрий! Меня зовут Ольга, я твой персональный менеджер. Ты недавно перешёл в VIP — поздравляю 🙂 Расскажи, во что больше любишь играть и как тебе удобнее связываться?"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-10T17:00:00",
+          "text": "Привет. В основном лайв-рулетка, вечером. Пиши в телеграм"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-10T17:05:00",
+          "text": "Отлично, записала. По VIP: у тебя ускоренные выводы до 24 часов, персональные бонусы под твою игру, и я на связи с 10 до 22. Если что-то с оплатой или выводом — пиши сразу мне."
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-10T17:10:00",
+          "text": "ок, спасибо"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D019",
+      "player_id": "P1019",
+      "manager": "Tom",
+      "channel": "whatsapp",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-15T18:20:00",
+          "text": "What do I actually get as VIP? Another casino offered me 15% weekly cashback"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-15T19:00:00",
+          "text": "We have a lot of great VIP benefits! Our VIP program is the best 😊"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-15T19:05:00",
+          "text": "Such as?"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-15T21:20:00",
+          "text": "Personal manager, special bonuses, faster withdrawals and more"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-15T21:25:00",
+          "text": "So no cashback?"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D020",
+      "player_id": "P1020",
+      "manager": "Алина",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "manager",
+          "sent_at": "2026-11-14T11:00:00",
+          "text": "Привет! Фриспины ждут тебя 🎰"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-14T18:00:00",
+          "text": "Турнир начался! Успей занять место в топе"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-15T11:00:00",
+          "text": "Бонус 75% только сегодня"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T11:00:00",
+          "text": "Ты где пропал?"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T11:00:00",
+          "text": "Последний шанс забрать бонус!"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T11:30:00",
+          "text": "отпишите меня от этого всего, пожалуйста"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D021",
+      "player_id": "P1021",
+      "manager": "Максим",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T16:40:00",
+          "text": "Какой вейджер на этом бонусе и сколько я могу с него вывести?"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T17:00:00",
+          "text": "Вейджер стандартный, там всё норм 👍"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T17:05:00",
+          "text": "стандартный — это сколько? х20, х40?"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T19:10:00",
+          "text": "х35 вроде, точно не помню, глянь в правилах"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D022",
+      "player_id": "P1022",
+      "manager": "Emily",
+      "channel": "whatsapp",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-14T17:00:00",
+          "text": "Honestly, Spinzone gives me way better reloads"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-14T17:15:00",
+          "text": "Thanks for being straight with me, Olivia. What do they offer exactly?"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-14T17:30:00",
+          "text": "50% up to 500 every Friday"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-14T17:40:00",
+          "text": "I can't copy that one-to-one, but looking at your play — mostly Friday and Saturday evenings, around $300 per deposit — I can set a 30% Friday reload up to $300 with x20 wagering, which is lower than theirs. Want me to set it up?"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-14T18:00:00",
+          "text": "x20? ok, deal"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-14T18:02:00",
+          "text": "Done, it'll be in your account every Friday starting this week."
+        }
+      ]
+    },
+    {
+      "dialog_id": "D023",
+      "player_id": "P1023",
+      "manager": "Ольга",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T19:30:00",
+          "text": "Оля, скинь бонус и на аккаунт жены, она тоже у вас играет, мы с одной карты депаем"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T19:50:00",
+          "text": "Конечно! Скинь ID, начислю ей тоже 50%"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T19:55:00",
+          "text": "ID 78234"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T19:58:00",
+          "text": "Готово 🙂"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D024",
+      "player_id": "P1024",
+      "manager": "Максим",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T13:00:00",
+          "text": "почему опять отказ в выводе?? третий раз!"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T13:15:00",
+          "text": "Потому что вы не прошли верификацию, я уже говорил"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T13:20:00",
+          "text": "я отправил все документы!"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T13:25:00",
+          "text": "Значит, не все. Читайте правила внимательнее"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T13:30:00",
+          "text": "ну вы и сервис"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D025",
+      "player_id": "P1025",
+      "manager": "Tom",
+      "channel": "whatsapp",
+      "messages": [
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T10:15:00",
+          "text": "Hi Ryan, I saw a failed deposit last night — did you manage to top up in the end?"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T15:15:00",
+          "text": "Yeah, went through with another card 10 min later"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T15:20:00",
+          "text": "Perfect, glad it worked. Have a good one!"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D026",
+      "player_id": "P1026",
+      "manager": "Алина",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-15T20:00:00",
+          "text": "Алина, можно побыстрее вывод 4200? Нужно до понедельника"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-15T20:12:00",
+          "text": "Привет! Сейчас посмотрю. Документы все на месте, вывод в очереди. Попросила финансистов взять его в приоритет, обычно это до 24 часов. Напишу, как уйдёт"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T14:20:00",
+          "text": "Вывод отправлен ✅"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T15:10:00",
+          "text": "пришло, спасибо!"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D027",
+      "player_id": "P1027",
+      "manager": "Emily",
+      "channel": "email",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T09:00:00",
+          "text": "Hi Emily, is my weekly cashback coming today?"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T09:45:00",
+          "text": "Hi Grace! Yes — your 10% weekly cashback ($120) will be credited at 12:00 AEST today, no wagering as usual."
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T13:00:00",
+          "text": "Got it, thanks"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D028",
+      "player_id": "P1028",
+      "manager": "Ольга",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T14:20:00",
+          "text": "Можно увеличить лимит депозита по карте? Упираюсь в 1000"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T14:38:00",
+          "text": "Привет! Лимит 1000 — это ограничение платёжного метода, не наше. Можно сделать несколько депозитов или пополнять через банковский перевод, там до 5000 за раз. Скинуть инструкцию?"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T14:45:00",
+          "text": "да, скинь"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T14:47:00",
+          "text": "Отправила. Если что-то не получится — пиши"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D029",
+      "player_id": "P1029",
+      "manager": "Максим",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T18:00:00",
+          "text": "Привет, Андрей! Как выходные? Видела, что ты снова на баккаре 🙂"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T18:20:00",
+          "text": "я Сергей вообще-то"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T18:25:00",
+          "text": "Ой, извини, пожалуйста, Сергей! Перепутала"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T19:00:00",
+          "text": "бывает. только вы мне уже второй раз так пишете"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D030",
+      "player_id": "P1030",
+      "manager": "Tom",
+      "channel": "whatsapp",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-13T21:00:00",
+          "text": "My bonus expired before I could use it, I was travelling"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-13T21:25:00",
+          "text": "Sorry about that, Noah. I've reactivated it for another 7 days — same terms. Safe travels!"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-13T21:30:00",
+          "text": "Thanks, that's fair"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D031",
+      "player_id": "P1031",
+      "manager": "Алина",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T12:00:00",
+          "text": "Привет! Мы запустили новый раздел с крэш-играми. Заглянешь, расскажешь, как тебе?"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T17:00:00",
+          "text": "глянул. игры норм, но грузится долго и нет поиска по провайдеру"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T17:05:00",
+          "text": "Спасибо! 🙏"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D032",
+      "player_id": "P1032",
+      "manager": "Emily",
+      "channel": "email",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-15T11:00:00",
+          "text": "Hi Emily, heads up — I'm moving from Manitoba to Toronto next month, will keep playing from there."
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-15T13:00:00",
+          "text": "Hi Ethan, congrats on the move! Nothing changes for you, your account and bonuses stay the same 🙂"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-15T13:10:00",
+          "text": "Great!"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D033",
+      "player_id": "P1033",
+      "manager": "Ольга",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T22:40:00",
+          "text": "Оля, отмени мой вывод 2400 и дай бонус, хочу ещё поиграть"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-17T22:50:00",
+          "text": "Сделала, вывод отменён, деньги на балансе 👍 Бонус 25% начислила"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-17T22:55:00",
+          "text": "топ"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-18T01:40:00",
+          "text": "всё слил. можно ещё бонус?"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D034",
+      "player_id": "P1034",
+      "manager": "Максим",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T21:00:00",
+          "text": "Видел, как вчера Реал сыграл? 😂"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T21:10:00",
+          "text": "Видел, конечно, это было больно 😅 Ты же за них болеешь?"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T21:15:00",
+          "text": "с детства. ладно, пойду рулетку покручу"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T21:17:00",
+          "text": "Удачи! Если что — я на связи"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D035",
+      "player_id": "P1035",
+      "manager": "Tom",
+      "channel": "whatsapp",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-12T14:00:00",
+          "text": "Can you call me? Easier to talk"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-12T14:30:00",
+          "text": "Hi William, unfortunately I can only help by text at the moment. What's up?"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-12T15:00:00",
+          "text": "Never mind, I'll write later"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D036",
+      "player_id": "P1036",
+      "manager": "Алина",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "manager",
+          "sent_at": "2026-11-14T16:00:00",
+          "text": "Привет! Сколько планируешь задепать на выходных? Подберу бонус под сумму 😉"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-15T02:00:00",
+          "text": "Ну что, определился?"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-15T17:00:00",
+          "text": "Бонус ещё в силе!"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D037",
+      "player_id": "P1037",
+      "manager": "Emily",
+      "channel": "email",
+      "messages": [
+        {
+          "from": "manager",
+          "sent_at": "2026-11-18T09:00:00",
+          "text": "Happy birthday, Hannah! 🎂 We've added 50 free spins on Big Bass Bonanza — no wagering, just for fun. Have a great day!"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-18T10:30:00",
+          "text": "Aww thank you, that's sweet!"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D038",
+      "player_id": "P1038",
+      "manager": "Ольга",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-15T18:30:00",
+          "text": "Ваш саппорт мне нахамил, когда я спросил про вывод"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-15T18:40:00",
+          "text": "Мне очень жаль, это недопустимо. Можешь скинуть время переписки или скрин? Передам руководителю поддержки, чтобы разобрались"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-15T18:55:00",
+          "text": "скинул"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-15T19:10:00",
+          "text": "Передала. В качестве извинения начислила кешбэк 10% за неделю. Вывод твой, кстати, уже обработан ✅"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-15T19:25:00",
+          "text": "ок, спасибо, что разобралась"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D039",
+      "player_id": "P1039",
+      "manager": "Максим",
+      "channel": "telegram",
+      "messages": [
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T12:30:00",
+          "text": "Кешбэк считается с чистого проигрыша или со всех ставок?"
+        },
+        {
+          "from": "manager",
+          "sent_at": "2026-11-16T12:38:00",
+          "text": "С чистого проигрыша за неделю: депозиты минус выводы и остаток на балансе, с понедельника по воскресенье. Начисляется в понедельник до 14:00, без вейджера"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-16T12:45:00",
+          "text": "понял, спасибо"
+        }
+      ]
+    },
+    {
+      "dialog_id": "D040",
+      "player_id": "P1040",
+      "manager": "Tom",
+      "channel": "whatsapp",
+      "messages": [
+        {
+          "from": "manager",
+          "sent_at": "2026-11-15T19:00:00",
+          "text": "Hi Benjamin, we've got a great weekend reload for you — 50% up to $500! By the way, your deposit limit can be raised anytime, just let me know 😉"
+        },
+        {
+          "from": "player",
+          "sent_at": "2026-11-15T23:00:00",
+          "text": "I set that limit for a reason"
+        }
+      ]
+    }
+  ]
+}

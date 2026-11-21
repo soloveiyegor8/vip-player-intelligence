@@ -1,0 +1,211 @@
+{
+  "_about": "Ручная разметка 40 диалогов — эталон для проверки LLM-разбора (src/eval.py). must_flags: модель обязана их найти. ok_flags: допустимые дополнительные флаги, не считаются ложными. Любой другой флаг — ложное срабатывание. overall/intent/resolved: список допустимых значений; null — пункт не оцениваем (ситуация неоднозначна). needs_reply: null — не оцениваем.",
+  "dialogs": {
+    "D001": {
+      "note": "Депозит не проходит 5 раз, менеджер шлёт промо и отписку «возможно, банк». Бонус «до 23:59» пишет в 00:20.",
+      "intent": ["deposit_issue"], "resolved": ["no"], "needs_reply": true, "overall": ["poor", "critical"],
+      "must_flags": ["ISSUE_IGNORED", "UNRESOLVED_PAYMENT"],
+      "ok_flags": ["SLOW_RESPONSE", "PRESSURE_TACTICS", "MISLEADING_INFO", "PASSED_THE_BUCK", "VAGUE_ANSWER", "CHURN_THREAT"]
+    },
+    "D002": {
+      "note": "Эталон: увидел отказы, дал рабочий вариант, извинился фриспинами.",
+      "intent": ["deposit_issue"], "resolved": ["yes"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D003": {
+      "note": "Игрок «в минусе по уши», менеджер предлагает бонус, чтобы «отыграть всё сегодня же». Погоня за проигрышем.",
+      "intent": ["other", "complaint", "small_talk", "bonus_request"], "resolved": null, "needs_reply": null, "overall": ["critical"],
+      "must_flags": ["RG_LOSS_CHASING_ENCOURAGED"],
+      "ok_flags": ["RG_RISK_SIGNS_IGNORED", "PRESSURE_TACTICS", "MISLEADING_INFO"]
+    },
+    "D004": {
+      "note": "Эталон RG: check-in без офферов, предложила лимит, поставила.",
+      "intent": ["manager_care_checkin", "limit_or_exclusion_request"], "resolved": ["yes", "not_applicable"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D005": {
+      "note": "Отговаривает от вывода $12 400 турниром, пугает сроком 5 дней (у VIP обещано до 24 ч).",
+      "intent": ["withdrawal_issue", "manager_greeting", "other"], "resolved": null, "needs_reply": null, "overall": ["critical"],
+      "must_flags": ["RG_WITHDRAWAL_DISCOURAGED"],
+      "ok_flags": ["MISLEADING_INFO", "PRESSURE_TACTICS", "UNRESOLVED_PAYMENT"]
+    },
+    "D006": {
+      "note": "Вывод висит 5 дней, отписки, угроза чарджбэка, «больше у вас не играю».",
+      "intent": ["withdrawal_issue", "complaint"], "resolved": ["no"], "needs_reply": true, "overall": ["critical", "poor"],
+      "must_flags": ["UNRESOLVED_PAYMENT", "CHURN_THREAT"],
+      "ok_flags": ["SLOW_RESPONSE", "VAGUE_ANSWER", "ISSUE_IGNORED", "PASSED_THE_BUCK", "PROMISE_NOT_KEPT"]
+    },
+    "D007": {
+      "note": "Эталон: нашёл причину (документ), приоритет, сам сообщил об отправке.",
+      "intent": ["withdrawal_issue"], "resolved": ["yes"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D008": {
+      "note": "46 мелких депозитов, бонус за бонусом, «сделаю исключение». Признаки проблемной игры проигнорированы.",
+      "intent": ["bonus_request"], "resolved": null, "needs_reply": true, "overall": ["critical"],
+      "must_flags": ["RG_RISK_SIGNS_IGNORED"],
+      "ok_flags": ["RG_LOSS_CHASING_ENCOURAGED"]
+    },
+    "D009": {
+      "note": "Эталон RG: заметила паттерн, отказала в бонусе, поставила лимит, договорилась о следующем контакте.",
+      "intent": ["bonus_request"], "resolved": ["yes", "partially", "not_applicable"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D010": {
+      "note": "Просит блокировку после проигрыша зарплаты — отговаривает кешбэком, отправляет в саппорт, оставляет кешбэк «если передумаешь».",
+      "intent": ["limit_or_exclusion_request"], "resolved": ["no", "partially"], "needs_reply": null, "overall": ["critical"],
+      "must_flags": ["RG_SELF_EXCLUSION_DISCOURAGED"],
+      "ok_flags": ["RG_LOSS_CHASING_ENCOURAGED", "PASSED_THE_BUCK", "RG_RISK_SIGNS_IGNORED", "PRESSURE_TACTICS"]
+    },
+    "D011": {
+      "note": "Эталон самоисключения: сразу оформила, без офферов, дала контакты помощи.",
+      "intent": ["limit_or_exclusion_request"], "resolved": ["yes"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D012": {
+      "note": "Ответ через 9 часов, игрок решил сам.",
+      "intent": ["withdrawal_issue", "vip_terms_question", "account_change"], "resolved": null, "needs_reply": false, "overall": ["poor", "ok"],
+      "must_flags": ["SLOW_RESPONSE"], "ok_flags": []
+    },
+    "D013": {
+      "note": "Три шаблонных промо ушедшему крупному игроку (22 000 → 1 500), без ответа.",
+      "intent": ["manager_promo"], "resolved": ["not_applicable"], "needs_reply": false, "overall": ["poor", "ok"],
+      "must_flags": ["GENERIC_OUTREACH"], "ok_flags": ["PRESSURE_TACTICS"]
+    },
+    "D014": {
+      "note": "Хорошая персональная реактивация: помнит любимую игру и время, без давления.",
+      "intent": ["manager_promo", "manager_care_checkin"], "resolved": ["not_applicable", "yes"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D015": {
+      "note": "Поздравление с ДР через два дня.",
+      "intent": ["manager_greeting"], "resolved": ["not_applicable", "yes"], "needs_reply": false, "overall": ["ok", "poor"],
+      "must_flags": ["LATE_GREETING"], "ok_flags": []
+    },
+    "D016": {
+      "note": "Обещанный кешбэк не начислен, игрок пишет дважды — тишина 5 дней.",
+      "intent": ["cashback_question", "complaint"], "resolved": ["no"], "needs_reply": true, "overall": ["poor", "critical"],
+      "must_flags": ["PROMISE_NOT_KEPT"], "ok_flags": ["ISSUE_IGNORED", "SLOW_RESPONSE", "CHURN_THREAT"]
+    },
+    "D017": {
+      "note": "Тех. проблема с потерей фриспинов — перекидывает в саппорт, откуда игрока отправили к нему.",
+      "intent": ["tech_issue"], "resolved": ["no"], "needs_reply": null, "overall": ["poor"],
+      "must_flags": ["PASSED_THE_BUCK"], "ok_flags": ["ISSUE_IGNORED", "SLOW_RESPONSE", "CHURN_THREAT"]
+    },
+    "D018": {
+      "note": "Эталон онбординга VIP: узнала предпочтения, рассказала условия.",
+      "intent": ["manager_onboarding"], "resolved": ["not_applicable", "yes"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D019": {
+      "note": "Сравнивает с конкурентом (15% кешбэк), получает общие слова, ответ через 2 ч.",
+      "intent": ["vip_terms_question", "competitor_comparison"], "resolved": ["no"], "needs_reply": true, "overall": ["poor", "critical"],
+      "must_flags": ["VAGUE_ANSWER", "CHURN_THREAT"], "ok_flags": ["SLOW_RESPONSE"]
+    },
+    "D020": {
+      "note": "Пять промо подряд, игрок просит отписать.",
+      "intent": ["opt_out_request", "manager_promo"], "resolved": ["no"], "needs_reply": true, "overall": ["critical"],
+      "must_flags": ["OPT_OUT_REQUEST"], "ok_flags": ["GENERIC_OUTREACH", "PRESSURE_TACTICS"]
+    },
+    "D021": {
+      "note": "Не знает вейджер: «стандартный», «х35 вроде, глянь в правилах».",
+      "intent": ["bonus_terms_question"], "resolved": ["no", "partially"], "needs_reply": null, "overall": ["poor"],
+      "must_flags": ["VAGUE_ANSWER"], "ok_flags": ["MISLEADING_INFO", "SLOW_RESPONSE"]
+    },
+    "D022": {
+      "note": "Эталон удержания: спросила условия конкурента, сделала персональный оффер под паттерн игры.",
+      "intent": ["competitor_comparison"], "resolved": ["yes"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D023": {
+      "note": "Два аккаунта на одной карте, бонус переведён на ID жены.",
+      "intent": ["bonus_request"], "resolved": null, "needs_reply": false, "overall": ["critical"],
+      "must_flags": ["MULTI_ACCOUNT"], "ok_flags": []
+    },
+    "D024": {
+      "note": "Третий отказ в выводе, грубость «читайте правила внимательнее».",
+      "intent": ["withdrawal_issue", "complaint"], "resolved": ["no"], "needs_reply": true, "overall": ["critical", "poor"],
+      "must_flags": ["RUDE_TONE", "UNRESOLVED_PAYMENT"], "ok_flags": ["CHURN_THREAT", "PASSED_THE_BUCK", "VAGUE_ANSWER", "ISSUE_IGNORED"]
+    },
+    "D025": {
+      "note": "Проактивно спросил о неудачном депозите.",
+      "intent": ["manager_care_checkin", "deposit_issue"], "resolved": ["yes", "not_applicable"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D026": {
+      "note": "Эталон: проверила документы, приоритет у финансистов, сообщила об отправке.",
+      "intent": ["withdrawal_issue"], "resolved": ["yes"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D027": {
+      "note": "Точный ответ: сумма, время, условия.",
+      "intent": ["cashback_question"], "resolved": ["yes"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D028": {
+      "note": "Лимит платёжного метода, предложила банковский перевод. Признаков риска у игрока нет.",
+      "intent": ["deposit_issue", "account_change"], "resolved": ["yes"], "needs_reply": false, "overall": ["good", "excellent", "ok"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D029": {
+      "note": "Перепутал имя (и пол в глаголе) второй раз — у игрока с самыми большими депозитами.",
+      "intent": ["manager_care_checkin", "small_talk"], "resolved": ["not_applicable"], "needs_reply": true, "overall": ["poor", "ok"],
+      "must_flags": ["WRONG_NAME"], "ok_flags": []
+    },
+    "D030": {
+      "note": "Реактивировала истёкший бонус на тех же условиях.",
+      "intent": ["bonus_request", "bonus_terms_question", "complaint"], "resolved": ["yes"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D031": {
+      "note": "Попросил фидбек и получил полезный — «спасибо» и никуда не передал.",
+      "intent": ["manager_feedback_request"], "resolved": null, "needs_reply": null, "overall": ["ok", "poor"],
+      "must_flags": ["FEEDBACK_NOT_ESCALATED"], "ok_flags": []
+    },
+    "D032": {
+      "note": "Переезд Manitoba → Ontario (отдельное регулирование), ответ «ничего не меняется».",
+      "intent": ["account_change"], "resolved": null, "needs_reply": null, "overall": ["critical", "poor"],
+      "must_flags": ["JURISDICTION_CHANGE"], "ok_flags": ["MISLEADING_INFO"]
+    },
+    "D033": {
+      "note": "Отменила вывод ради игры и дала бонус; через 3 часа «всё слил, можно ещё бонус?».",
+      "intent": ["withdrawal_issue", "bonus_request"], "resolved": null, "needs_reply": true, "overall": ["critical"],
+      "must_flags": ["RG_WITHDRAWAL_DISCOURAGED"], "ok_flags": ["RG_RISK_SIGNS_IGNORED", "RG_LOSS_CHASING_ENCOURAGED"]
+    },
+    "D034": {
+      "note": "Нормальный small talk, без давления.",
+      "intent": ["small_talk"], "resolved": ["not_applicable"], "needs_reply": false, "overall": ["ok", "good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D035": {
+      "note": "Просил созвон — отказ без альтернативы, игрок ушёл «напишу позже».",
+      "intent": ["other"], "resolved": ["no"], "needs_reply": null, "overall": ["ok", "poor"],
+      "must_flags": ["FEEDBACK_NOT_ESCALATED"], "ok_flags": ["SLOW_RESPONSE", "ISSUE_IGNORED"]
+    },
+    "D036": {
+      "note": "«Сколько планируешь задепать?», напоминание в 02:00, без ответа игрока.",
+      "intent": ["manager_promo"], "resolved": ["not_applicable"], "needs_reply": false, "overall": ["poor", "critical"],
+      "must_flags": ["PRESSURE_TACTICS"], "ok_flags": ["GENERIC_OUTREACH"]
+    },
+    "D037": {
+      "note": "Поздравление в день рождения, подарок без вейджера.",
+      "intent": ["manager_greeting"], "resolved": ["not_applicable", "yes"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D038": {
+      "note": "Эталон работы с жалобой: эскалация, извинение, проверила вывод.",
+      "intent": ["complaint"], "resolved": ["yes"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D039": {
+      "note": "Точный и полный ответ про расчёт кешбэка.",
+      "intent": ["cashback_question"], "resolved": ["yes"], "needs_reply": false, "overall": ["good", "excellent"],
+      "must_flags": [], "ok_flags": ["GOOD_PRACTICE"]
+    },
+    "D040": {
+      "note": "Предлагает поднять лимит, который игрок поставил сам: «I set that limit for a reason».",
+      "intent": ["manager_promo"], "resolved": ["not_applicable", "no"], "needs_reply": true, "overall": ["critical"],
+      "must_flags": ["RG_LIMIT_INCREASE_PUSHED"], "ok_flags": ["RG_RISK_SIGNS_IGNORED", "PRESSURE_TACTICS"]
+    }
+  }
+}

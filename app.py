@@ -17,17 +17,22 @@ from src.signals import SEVERITY_ORDER, THRESHOLDS, build
 st.set_page_config(page_title="VIP Player Intelligence", page_icon="💎", layout="wide")
 
 
+sources = scoring.available_sources()
+with st.sidebar:
+    source = st.selectbox("Источник LLM-разбора", sources, format_func=lambda s: scoring.SOURCES[s][0]) if sources else None
+
+
 @st.cache_data
-def load_all():
+def load_all(source, mtime):  # mtime — чтобы кэш сбрасывался, когда файл разбора обновился
     sig = build()
-    analyses = scoring.load_analysis()
+    analyses, model = scoring.load_analysis(source)
     queue = scoring.build_queue(sig, analyses)
     dialogs, _ = load_dialogs()
     players = load_players()
-    return sig, analyses, queue, {d["dialog_id"]: d for d in dialogs}, players
+    return sig, analyses, model, queue, {d["dialog_id"]: d for d in dialogs}, players
 
 
-sig, analyses, queue, dialogs, players = load_all()
+sig, analyses, model, queue, dialogs, players = load_all(source, scoring.SOURCES[source][1].stat().st_mtime if source else 0)
 by_id = {r["player_id"]: r for r in queue}
 dm_by_id = {d["dialog_id"]: d for d in sig["dialogs"]}
 managers = sorted({r["manager"] for r in queue})
@@ -53,7 +58,8 @@ def money(x) -> str:
 
 st.title("💎 VIP Player Intelligence")
 st.caption(f"Срез данных: {sig['as_of'][:10]} · игроков: {len(queue)} · диалогов: {len(dialogs)} · "
-           f"LLM-разбор: {len(analyses)} из {len(dialogs)} диалогов")
+           f"LLM-разбор: {len(analyses)} из {len(dialogs)} диалогов"
+           + (f" · источник: {scoring.SOURCES[source][0]} ({model})" if analyses else ""))
 if not analyses:
     st.info("LLM-разбор ещё не запускался, поэтому очередь построена только на сигналах из данных: деньги, "
             "активность, скорость ответов. Нарушения, которые видны только по смыслу переписки (отговаривание "

@@ -4,7 +4,8 @@
 хуже, чем поднять ложную тревогу. Поэтому recall считается отдельно от precision.
 
 Запуск:
-    python -m src.eval              # оценить текущий out/analysis.json
+    python -m src.eval              # оценить все имеющиеся разборы и сравнить их
+    python -m src.eval --source ollama
     python -m src.eval --self-test  # проверить сам eval: разметка против самой себя (должно быть 100%)
 """
 from __future__ import annotations
@@ -13,7 +14,7 @@ import argparse
 import json
 from collections import Counter
 
-from .llm import FLAG_SEVERITY, INTENTS
+from .llm import FLAG_SEVERITY, INTENTS, PROVIDERS
 from .load import OUT_DIR, ROOT, load_dialogs
 
 GOLDEN_PATH = ROOT / "golden.json"
@@ -44,11 +45,15 @@ def load_golden() -> dict[str, dict]:
     return golden
 
 
-def load_predictions() -> dict[str, dict]:
-    path = OUT_DIR / "analysis.json"
+SOURCE_LABEL = {"claude": "Claude API (скрипт)", "manual": "Claude вручную", "ollama": "Ollama (локально)"}
+
+
+def load_predictions(source: str = "claude") -> tuple[dict[str, dict], str]:
+    path = PROVIDERS[source]["out"]
     if not path.exists():
-        return {}
-    return {r["dialog_id"]: r["analysis"] for r in json.loads(path.read_text(encoding="utf-8"))["results"]}
+        return {}, ""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {r["dialog_id"]: r["analysis"] for r in data["results"]}, data.get("model", "")
 
 
 def fake_from_golden(golden: dict[str, dict]) -> dict[str, dict]:
@@ -163,28 +168,55 @@ def to_markdown(report: dict, title: str) -> str:
     return "\n".join(lines) + "\n"
 
 
+def compare_markdown(reports: dict[str, dict]) -> str:
+    keys = list(LABELS)
+    head = "| Метрика | " + " | ".join(SOURCE_LABEL[s] for s in reports) + " |"
+    lines = ["# Сравнение источников разбора", "", head, "|---|" + "---|" * len(reports)]
+    for key in keys:
+        cells = []
+        for r in reports.values():
+            m = r["metrics"][key]
+            if key == "critical_false_alarms":
+                cells.append(f"{m['value']} из {m['den']}")
+            else:
+                cells.append("—" if m["value"] is None else f"{m['value'] * 100:.0f}% ({m['num']}/{m['den']})")
+        lines.append(f"| {LABELS[key]} | " + " | ".join(cells) + " |")
+    return "\n".join(lines) + "\n"
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--self-test", action="store_true", help="оценить разметку против самой себя")
+    ap.add_argument("--source", choices=list(PROVIDERS), help="оценить один источник (по умолчанию все имеющиеся)")
     args = ap.parse_args()
 
     golden = load_golden()
     if args.self_test:
-        preds, title = fake_from_golden(golden), "Самопроверка eval (разметка против самой себя)"
-    else:
-        preds, title = load_predictions(), "Качество LLM-разбора против ручной разметки"
-        if not preds:
-            print(f"golden.json валиден ({len(golden)} диалогов). LLM-разбора ещё нет: "
-                  "запустите python -m src.llm, затем python -m src.eval")
-            return
+        print(to_markdown(evaluate(golden, fake_from_golden(golden)), "Самопроверка eval (разметка против самой себя)"))
+        return
 
-    report = evaluate(golden, preds)
-    md = to_markdown(report, title)
-    print(md)
-    if not args.self_test:
+    reports = {}
+    for source in [args.source] if args.source else list(PROVIDERS):
+        preds, model = load_predictions(source)
+        if not preds:
+            continue
+        report = evaluate(golden, preds)
+        report["model"] = model
+        reports[source] = report
+        md = to_markdown(report, f"Качество разбора: {SOURCE_LABEL[source]} ({model})")
+        print(md)
         OUT_DIR.mkdir(exist_ok=True)
-        (OUT_DIR / "eval.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-        (OUT_DIR / "eval.md").write_text(md, encoding="utf-8")
+        suffix = "" if source == "claude" else f"_{source}"
+        (OUT_DIR / f"eval{suffix}.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+        (OUT_DIR / f"eval{suffix}.md").write_text(md, encoding="utf-8")
+
+    if not reports:
+        print(f"golden.json валиден ({len(golden)} диалогов). Разбора ещё нет: "
+              "запустите python -m src.llm (или --provider ollama / manual), затем python -m src.eval")
+    elif len(reports) > 1:
+        md = compare_markdown(reports)
+        print(md)
+        (OUT_DIR / "eval_compare.md").write_text(md, encoding="utf-8")
 
 
 if __name__ == "__main__":

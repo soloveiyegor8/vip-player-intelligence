@@ -42,13 +42,30 @@ OWNER_LABEL = {"manager": "менеджер", "teamlead": "тимлид", "payme
 DEADLINE_LABEL = {"now": "в течение часа", "today": "сегодня", "this_week": "на этой неделе", "none": "—"}
 
 
-def load_analysis() -> dict[str, dict]:
-    """LLM-разбор по dialog_id, если он уже посчитан."""
-    path = OUT_DIR / "analysis.json"
+# Источники LLM-разбора в порядке предпочтения: настоящий прогон через API, ручной разбор, локальная модель.
+SOURCES = {
+    "claude": ("Claude API", OUT_DIR / "analysis.json"),
+    "manual": ("Claude, вручную в Claude Code", OUT_DIR / "analysis_manual.json"),
+    "ollama": ("Ollama, локальная модель", OUT_DIR / "analysis_ollama.json"),
+}
+
+
+def available_sources() -> list[str]:
+    return [k for k, (_, path) in SOURCES.items() if path.exists()]
+
+
+def load_analysis(source: str | None = None) -> tuple[dict[str, dict], str]:
+    """LLM-разбор по dialog_id и название модели. Без source — первый имеющийся по порядку SOURCES."""
+    if source is None:
+        avail = available_sources()
+        if not avail:
+            return {}, ""
+        source = avail[0]
+    path = SOURCES[source][1]
     if not path.exists():
-        return {}
+        return {}, ""
     data = json.loads(path.read_text(encoding="utf-8"))
-    return {r["dialog_id"]: r["analysis"] for r in data["results"]}
+    return {r["dialog_id"]: r["analysis"] for r in data["results"]}, data.get("model", "")
 
 
 def merge_player(p: dict, analyses: dict[str, dict]) -> dict:

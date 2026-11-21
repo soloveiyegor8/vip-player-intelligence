@@ -1,0 +1,67 @@
+{
+  "coverage": {
+    "evaluated": 40,
+    "total": 40
+  },
+  "metrics": {
+    "critical_flag_recall": {
+      "value": 1.0,
+      "num": 8,
+      "den": 8
+    },
+    "must_flag_recall": {
+      "value": 1.0,
+      "num": 27,
+      "den": 27
+    },
+    "flag_precision": {
+      "value": 0.98,
+      "num": 49,
+      "den": 50
+    },
+    "critical_dialog_recall": {
+      "value": 1.0,
+      "num": 8,
+      "den": 8
+    },
+    "critical_false_alarms": {
+      "value": 0,
+      "den": 25
+    },
+    "overall_accuracy": {
+      "value": 1.0,
+      "num": 40,
+      "den": 40
+    },
+    "intent_accuracy": {
+      "value": 1.0,
+      "num": 40,
+      "den": 40
+    },
+    "resolved_accuracy": {
+      "value": 1.0,
+      "num": 32,
+      "den": 32
+    },
+    "needs_reply_accuracy": {
+      "value": 1.0,
+      "num": 32,
+      "den": 32
+    }
+  },
+  "errors": [
+    {
+      "dialog_id": "D040",
+      "missed": [],
+      "unexpected": [
+        "ISSUE_IGNORED"
+      ],
+      "overall": "critical",
+      "expected_overall": [
+        "critical"
+      ],
+      "note": "Предлагает поднять лимит, который игрок поставил сам: «I set that limit for a reason»."
+    }
+  ],
+  "model": "claude-opus-5-5"
+}

@@ -1,0 +1,1648 @@
+{
+  "provider": "manual",
+  "model": "claude-opus-5-5",
+  "results": [
+    {
+      "dialog_id": "D001",
+      "player_id": "P1001",
+      "manager": "Алина",
+      "analysis": {
+        "player_intent": "deposit_issue",
+        "intent_summary": "Карта не проходит, игрок не может пополнить счёт уже пятый раз.",
+        "resolved": "no",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "ISSUE_IGNORED",
+            "evidence": "Сегодня для тебя есть бонус 50% на депозит до 500$ 🎁 Успей до полуночи",
+            "explanation": "На жалобу о неработающей карте менеджер ответил промо, а не помощью.",
+            "severity": "high"
+          },
+          {
+            "code": "UNRESOLVED_PAYMENT",
+            "evidence": "Попробуй позже, возможно, это банк.",
+            "explanation": "При 7 неудачных депозитах за неделю проблему не передали в платёжный отдел и не предложили другой метод.",
+            "severity": "high"
+          },
+          {
+            "code": "SLOW_RESPONSE",
+            "evidence": "21:40 → 23:15",
+            "explanation": "Первый ответ через 95 минут, к концу игрок сдался: «понятно».",
+            "severity": "medium"
+          }
+        ],
+        "scores": {
+          "responsiveness": 1,
+          "problem_solving": 0,
+          "accuracy": 1,
+          "personalization": 0,
+          "tone": 1,
+          "responsible_gambling": 2
+        },
+        "overall": "poor",
+        "summary": "У игрока 7 неудачных депозитов за неделю. Менеджер дважды ответил промо и «попробуй позже», проблема не решена.",
+        "manager_feedback": "Когда у игрока не проходят деньги, промо только раздражает. Нужно проверить отказы, предложить другой метод оплаты и передать в payments с обратной связью игроку.",
+        "next_action": {
+          "owner": "payments",
+          "action": "Разобрать причину 7 отказов по карте и предложить игроку рабочий метод пополнения",
+          "deadline": "today"
+        },
+        "draft_message": "Привет! Прости, что сразу не разобралась. Вижу несколько отклонённых попыток по карте — передала в платёжный отдел, чтобы выяснили причину. Пока можно попробовать пополнение через другой метод, скинуть инструкцию? Напишу, как будет ответ от финансистов.",
+        "score_total": 5
+      }
+    },
+    {
+      "dialog_id": "D002",
+      "player_id": "P1002",
+      "manager": "Tom",
+      "analysis": {
+        "player_intent": "deposit_issue",
+        "intent_summary": "Депозит через Interac не проходил три раза.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "Can you try Interac with the e-mail option instead of online banking? If it still fails, I'll pass it to payments right away.",
+            "explanation": "Быстро увидел отказы, дал рабочее решение и план Б, а потом извинился фриспинами на любимой игре.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 3,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "excellent",
+        "summary": "Проблема с депозитом решена за 20 минут, игрок доволен.",
+        "manager_feedback": "Образцовая работа: ответ за 6 минут, конкретное решение и персональный жест на любимой игре.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Действий не требуется",
+          "deadline": "none"
+        },
+        "draft_message": "",
+        "score_total": 17
+      }
+    },
+    {
+      "dialog_id": "D003",
+      "player_id": "P1003",
+      "manager": "Максим",
+      "analysis": {
+        "player_intent": "other",
+        "intent_summary": "Игрок жалуется, что проиграл 3 тысячи за вечер и «в минусе по уши».",
+        "resolved": "not_applicable",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "RG_LOSS_CHASING_ENCOURAGED",
+            "evidence": "Давай я тебе дам бонус 100% на следующий депозит, отыграешь всё сегодня же!",
+            "explanation": "На жалобу о проигрыше менеджер предложил бонус, чтобы отыграться.",
+            "severity": "critical"
+          },
+          {
+            "code": "RG_RISK_SIGNS_IGNORED",
+            "evidence": "да я и так в минусе по уши",
+            "explanation": "Игрок прямо говорит о долгах, депозитов в 3,5 раза больше обычного, а менеджер продолжает давать бонус.",
+            "severity": "critical"
+          },
+          {
+            "code": "PRESSURE_TACTICS",
+            "evidence": "Так как раз шанс вернуть!",
+            "explanation": "Давление на депозит после признания в проигрышах.",
+            "severity": "high"
+          }
+        ],
+        "scores": {
+          "responsiveness": 2,
+          "problem_solving": 0,
+          "accuracy": 1,
+          "personalization": 1,
+          "tone": 1,
+          "responsible_gambling": 0
+        },
+        "overall": "critical",
+        "summary": "Грубое нарушение ответственной игры: игроку в долгах предложили бонус «отыграть всё», он собирается внести депозит вечером.",
+        "manager_feedback": "Фразы «отыграешь» и «шанс вернуть» недопустимы. При словах о проигрышах и долгах — никаких офферов: участие, предложение лимита или паузы, контакты помощи.",
+        "next_action": {
+          "owner": "teamlead",
+          "action": "Отозвать бонус, написать игроку без офферов с предложением лимита или паузы, разобрать случай с Максимом",
+          "deadline": "now"
+        },
+        "draft_message": "Привет. Я вчера неправильно предложил бонус — прости, это была плохая идея. Если чувствуешь, что игра выходит из-под контроля, могу прямо сейчас поставить лимит на депозиты или паузу на аккаунт. Просто напиши, как тебе удобнее.",
+        "score_total": 5
+      }
+    },
+    {
+      "dialog_id": "D004",
+      "player_id": "P1004",
+      "manager": "Emily",
+      "analysis": {
+        "player_intent": "manager_care_checkin",
+        "intent_summary": "Менеджер написала после тяжёлой сессии, игрок попросил недельный лимит.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "Just checking in — no offers, just wanted to see how you're doing.",
+            "explanation": "Проактивная забота без офферов, лимит предложен и поставлен самим менеджером.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 3,
+          "tone": 3,
+          "responsible_gambling": 3
+        },
+        "overall": "excellent",
+        "summary": "Образцовый RG-контакт: менеджер заметила тяжёлую сессию, предложила лимит и поставила его.",
+        "manager_feedback": "Это эталон для команды: участие без продаж, конкретное предложение защиты, оформила сама.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Действий не требуется, лимит не повышать",
+          "deadline": "none"
+        },
+        "draft_message": "",
+        "score_total": 18
+      }
+    },
+    {
+      "dialog_id": "D005",
+      "player_id": "P1005",
+      "manager": "Ольга",
+      "analysis": {
+        "player_intent": "withdrawal_issue",
+        "intent_summary": "Игрок выиграл 12 400$ и хочет вывести, менеджер отговаривает.",
+        "resolved": "partially",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "RG_WITHDRAWAL_DISCOURAGED",
+            "evidence": "Может, оставишь часть на балансе? Сегодня турнир",
+            "explanation": "Менеджер отговаривает от вывода выигрыша ради дальнейшей игры.",
+            "severity": "critical"
+          },
+          {
+            "code": "PRESSURE_TACTICS",
+            "evidence": "а турнир только сегодня 😉",
+            "explanation": "Давит срочностью после ясного отказа игрока.",
+            "severity": "high"
+          },
+          {
+            "code": "MISLEADING_INFO",
+            "evidence": "вывод от 10к идёт до 5 рабочих дней",
+            "explanation": "Пугает сроками; VIP-игрокам обещан вывод до 24 часов.",
+            "severity": "high"
+          },
+          {
+            "code": "UNRESOLVED_PAYMENT",
+            "evidence": "pending_withdrawal_usd: 12000",
+            "explanation": "Вывод 12 000$ всё ещё в ожидании, последнее сообщение игрока без ответа 2 дня.",
+            "severity": "high"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 0,
+          "accuracy": 0,
+          "personalization": 1,
+          "tone": 1,
+          "responsible_gambling": 0
+        },
+        "overall": "critical",
+        "summary": "Менеджер дважды отговаривала от вывода 12 000$ и пугала сроками; вывод до сих пор висит.",
+        "manager_feedback": "Вывод выигрыша — право игрока. Поздравить и помочь вывести быстро — это то, что удерживает VIP, а не турнир. Сроки называть только реальные.",
+        "next_action": {
+          "owner": "payments",
+          "action": "Ускорить вывод 12 000$ и подтвердить игроку срок",
+          "deadline": "now"
+        },
+        "draft_message": "Привет! Ещё раз поздравляю с выигрышем 🙂 Проверила твой вывод 12 400$ — попросила финансистов взять его в приоритет. Напишу, как только он уйдёт.",
+        "score_total": 5
+      }
+    },
+    {
+      "dialog_id": "D006",
+      "player_id": "P1006",
+      "manager": "Алина",
+      "analysis": {
+        "player_intent": "withdrawal_issue",
+        "intent_summary": "Вывод 2 800 висит пятый день, игрок грозит чарджбэком и уходом.",
+        "resolved": "no",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "UNRESOLVED_PAYMENT",
+            "evidence": "так и не пришли. Больше у вас не играю",
+            "explanation": "Вывод 2 800$ не выплачен, игрок ждёт уже больше недели.",
+            "severity": "high"
+          },
+          {
+            "code": "CHURN_THREAT",
+            "evidence": "Мне что, в чарджбек идти?",
+            "explanation": "Угроза чарджбэком и прямой уход.",
+            "severity": "high"
+          },
+          {
+            "code": "ISSUE_IGNORED",
+            "evidence": "[2026-11-15 11:30] Игрок: так и не пришли. Больше у вас не играю",
+            "explanation": "Сообщение об уходе без ответа 3,5 дня.",
+            "severity": "high"
+          },
+          {
+            "code": "VAGUE_ANSWER",
+            "evidence": "Выводы обрабатываются в порядке очереди, ожидайте, пожалуйста",
+            "explanation": "Шаблон без причины задержки и срока.",
+            "severity": "medium"
+          },
+          {
+            "code": "PASSED_THE_BUCK",
+            "evidence": "Передала ваш вопрос. Ожидайте",
+            "explanation": "Передала без срока и обратной связи.",
+            "severity": "medium"
+          },
+          {
+            "code": "SLOW_RESPONSE",
+            "evidence": "13:40 → 18:10",
+            "explanation": "Ответы через 2 и 4,5 часа при угрозе чарджбэком.",
+            "severity": "medium"
+          }
+        ],
+        "scores": {
+          "responsiveness": 0,
+          "problem_solving": 0,
+          "accuracy": 1,
+          "personalization": 0,
+          "tone": 1,
+          "responsible_gambling": 2
+        },
+        "overall": "critical",
+        "summary": "Деньги игрока застряли, он грозит чарджбэком и уже объявил об уходе, а менеджер отвечала шаблонами и пропала.",
+        "manager_feedback": "Проблема с выводом — приоритет номер один. Нужно выяснить причину, назвать срок и вернуться самой, а не «ожидайте».",
+        "next_action": {
+          "owner": "payments",
+          "action": "Выяснить причину задержки вывода 2 800$, выплатить и лично извиниться перед игроком",
+          "deadline": "now"
+        },
+        "draft_message": "Здравствуйте! Прошу прощения за задержку и за то, что пропала. Я лично проверила ваш вывод 2 800$ и передала его в приоритет финансовому отделу. Напишу вам сегодня, как только он будет отправлен.",
+        "score_total": 4
+      }
+    },
+    {
+      "dialog_id": "D007",
+      "player_id": "P1007",
+      "manager": "Tom",
+      "analysis": {
+        "player_intent": "withdrawal_issue",
+        "intent_summary": "Вывод 1 500 висит с понедельника.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "Your withdrawal is waiting for one document — proof of address.",
+            "explanation": "Сразу назвал конкретную причину, ускорил и сам сообщил об отправке.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 2,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "excellent",
+        "summary": "Задержка вывода решена за сутки, менеджер вёл игрока до конца.",
+        "manager_feedback": "Отлично: конкретная причина, приоритет в payments и обещанная обратная связь выполнена.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Действий не требуется",
+          "deadline": "none"
+        },
+        "draft_message": "",
+        "score_total": 16
+      }
+    },
+    {
+      "dialog_id": "D008",
+      "player_id": "P1008",
+      "manager": "Максим",
+      "analysis": {
+        "player_intent": "bonus_request",
+        "intent_summary": "Игрок просит бонус за бонусом после серии мелких проигранных депозитов.",
+        "resolved": "yes",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "RG_RISK_SIGNS_IGNORED",
+            "evidence": "Сделаю исключение, ещё 30% до 100$",
+            "explanation": "46 депозитов по 54$ и 18 бонусов за месяц — явная погоня за проигрышем, а менеджер даёт ещё бонус.",
+            "severity": "critical"
+          },
+          {
+            "code": "RG_LOSS_CHASING_ENCOURAGED",
+            "evidence": "сделал 4 депа по 50, всё слил",
+            "explanation": "Бонус выдан сразу после слов о проигрыше.",
+            "severity": "critical"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 0,
+          "accuracy": 2,
+          "personalization": 1,
+          "tone": 2,
+          "responsible_gambling": 0
+        },
+        "overall": "critical",
+        "summary": "Классическая погоня за проигрышем: менеджер выдал два бонуса подряд, игрок уже спрашивает про завтра.",
+        "manager_feedback": "При частых мелких депозитах и просьбах о бонусе после каждого проигрыша бонусы прекращаются. Нужно мягко поговорить и предложить лимит, как это сделала Ольга в похожей ситуации.",
+        "next_action": {
+          "owner": "teamlead",
+          "action": "Остановить бонусы игроку, связаться с ним по ответственной игре, предложить лимит",
+          "deadline": "now"
+        },
+        "draft_message": "Привет. Честно: бонусов сегодня и завтра не будет — вижу, что депозиты стали частыми и маленькими, и мне это не нравится. Как ты? Если хочешь, могу поставить лимит на депозиты или паузу на пару дней.",
+        "score_total": 8
+      }
+    },
+    {
+      "dialog_id": "D009",
+      "player_id": "P1009",
+      "manager": "Ольга",
+      "analysis": {
+        "player_intent": "bonus_request",
+        "intent_summary": "Игрок просит кешбэк или фриспины после неудачного дня, хочет «отбить».",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "Давай сегодня без бонусов — честно, это не тот момент. Как ты вообще?",
+            "explanation": "Распознала погоню за проигрышем, отказала в бонусе и поставила лимит.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 3,
+          "tone": 3,
+          "responsible_gambling": 3
+        },
+        "overall": "excellent",
+        "summary": "Менеджер распознала признаки проблемной игры, вместо бонуса предложила паузу и поставила лимит 300$ в день.",
+        "manager_feedback": "Эталон для команды: прямо назвала паттерн, без осуждения, и оформила лимит сама. Не забыть написать в пятницу, как обещала.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Написать игроку в пятницу, как обещала, без офферов",
+          "deadline": "this_week"
+        },
+        "draft_message": "",
+        "score_total": 18
+      }
+    },
+    {
+      "dialog_id": "D010",
+      "player_id": "P1010",
+      "manager": "Алина",
+      "analysis": {
+        "player_intent": "limit_or_exclusion_request",
+        "intent_summary": "Игрок проиграл зарплату и просит заблокировать аккаунт.",
+        "resolved": "no",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "RG_SELF_EXCLUSION_DISCOURAGED",
+            "evidence": "Может, не будем так радикально?",
+            "explanation": "Отговаривала от самоисключения и не оформила его.",
+            "severity": "critical"
+          },
+          {
+            "code": "RG_LOSS_CHASING_ENCOURAGED",
+            "evidence": "Давай я начислю тебе кешбэк 20% за неделю, вернёшь часть",
+            "explanation": "Предложила кешбэк игроку, который проиграл зарплату.",
+            "severity": "critical"
+          },
+          {
+            "code": "RG_RISK_SIGNS_IGNORED",
+            "evidence": "Но кешбэк оставлю на балансе, если передумаешь 😉",
+            "explanation": "Оставила стимул вернуться игроку, который просит остановить его.",
+            "severity": "critical"
+          },
+          {
+            "code": "PASSED_THE_BUCK",
+            "evidence": "Самоисключение оформляется через саппорт.",
+            "explanation": "Отправила в саппорт вместо того, чтобы оформить самой.",
+            "severity": "medium"
+          }
+        ],
+        "scores": {
+          "responsiveness": 2,
+          "problem_solving": 0,
+          "accuracy": 1,
+          "personalization": 1,
+          "tone": 1,
+          "responsible_gambling": 0
+        },
+        "overall": "critical",
+        "summary": "Игрок просил самоисключение после проигрыша зарплаты, менеджер торговалась кешбэком и не оформила блокировку. Аккаунт до сих пор активен.",
+        "manager_feedback": "Запрос на самоисключение выполняется сразу и самим менеджером, без торга и офферов. Кешбэк «если передумаешь» — прямое нарушение.",
+        "next_action": {
+          "owner": "compliance",
+          "action": "Немедленно оформить самоисключение, снять кешбэк с баланса, разобрать случай с Алиной",
+          "deadline": "now"
+        },
+        "draft_message": "Привет. Прости, что сразу не сделала, как ты просил. Оформила самоисключение — аккаунт заблокирован, никаких предложений от нас больше не будет. Если захочешь поговорить со специалистом, есть бесплатная анонимная помощь при игровой зависимости. Береги себя.",
+        "score_total": 5
+      }
+    },
+    {
+      "dialog_id": "D011",
+      "player_id": "P1011",
+      "manager": "Emily",
+      "analysis": {
+        "player_intent": "limit_or_exclusion_request",
+        "intent_summary": "Игрок просит закрыть аккаунт, чтобы остановиться.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "I can start a self-exclusion right now — you can choose 6 months, 1 year or permanent.",
+            "explanation": "Оформила самоисключение за 3 минуты, без уговоров, дала контакты помощи.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 3,
+          "tone": 3,
+          "responsible_gambling": 3
+        },
+        "overall": "excellent",
+        "summary": "Самоисключение на год оформлено сразу и корректно, с контактами помощи.",
+        "manager_feedback": "Эталон: благодарность, выбор срока, оформление самой и ресурс помощи.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Действий не требуется, контакты с игроком не инициировать",
+          "deadline": "none"
+        },
+        "draft_message": "",
+        "score_total": 18
+      }
+    },
+    {
+      "dialog_id": "D012",
+      "player_id": "P1012",
+      "manager": "Максим",
+      "analysis": {
+        "player_intent": "withdrawal_issue",
+        "intent_summary": "Игрок просил поднять лимит, чтобы вывести 8 тысяч одной суммой.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "SLOW_RESPONSE",
+            "evidence": "уже не надо, вывел частями сам",
+            "explanation": "Ответ через 9 часов, игрок решил вопрос сам.",
+            "severity": "medium"
+          }
+        ],
+        "scores": {
+          "responsiveness": 0,
+          "problem_solving": 1,
+          "accuracy": 3,
+          "personalization": 1,
+          "tone": 2,
+          "responsible_gambling": 2
+        },
+        "overall": "poor",
+        "summary": "Простой вопрос про лимит вывода остался без ответа 9 часов, игрок справился сам.",
+        "manager_feedback": "Если смена закончилась, вопрос VIP-игрока должен быть передан коллеге. Ответ по сути был верный, но слишком поздно.",
+        "next_action": {
+          "owner": "teamlead",
+          "action": "Настроить передачу чатов между сменами",
+          "deadline": "this_week"
+        },
+        "draft_message": "",
+        "score_total": 9
+      }
+    },
+    {
+      "dialog_id": "D013",
+      "player_id": "P1013",
+      "manager": "Ольга",
+      "analysis": {
+        "player_intent": "manager_promo",
+        "intent_summary": "Менеджер шлёт массовые промо игроку, который почти перестал играть.",
+        "resolved": "not_applicable",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GENERIC_OUTREACH",
+            "evidence": "Привет! Скучаем 🙂 Заходи, есть подарок",
+            "explanation": "Три шаблонных промо без ответа игроку, у которого депозиты упали с 22 000$ до 1 500$.",
+            "severity": "low"
+          }
+        ],
+        "scores": {
+          "responsiveness": 2,
+          "problem_solving": 1,
+          "accuracy": 2,
+          "personalization": 0,
+          "tone": 2,
+          "responsible_gambling": 2
+        },
+        "overall": "poor",
+        "summary": "Один из самых ценных игроков уходит (−93% депозитов, 16 дней без входа), а с ним общаются рассылкой.",
+        "manager_feedback": "Уход крупного игрока — повод для личного разговора: спросить, что случилось, без промо в первом сообщении.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Написать игроку лично без промо: узнать причину ухода",
+          "deadline": "today"
+        },
+        "draft_message": "Привет! Давно тебя не видно, и я хотела просто спросить — всё ли в порядке? Если что-то не устроило в сервисе или в выводах, расскажи честно, разберусь лично.",
+        "score_total": 9
+      }
+    },
+    {
+      "dialog_id": "D014",
+      "player_id": "P1014",
+      "manager": "Tom",
+      "analysis": {
+        "player_intent": "manager_care_checkin",
+        "intent_summary": "Менеджер мягко возвращает игрока, который две недели не заходил.",
+        "resolved": "not_applicable",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "I remember you like the live blackjack tables in the evening",
+            "explanation": "Персональное сообщение по интересам игрока, без давления.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 2,
+          "accuracy": 3,
+          "personalization": 3,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "excellent",
+        "summary": "Отличный персональный реактивационный контакт, игрок ответил и собирается вернуться.",
+        "manager_feedback": "Так и надо возвращать игроков: помнить привычки и не давить.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Проверить на выходных, зашёл ли игрок",
+          "deadline": "this_week"
+        },
+        "draft_message": "",
+        "score_total": 16
+      }
+    },
+    {
+      "dialog_id": "D015",
+      "player_id": "P1015",
+      "manager": "Алина",
+      "analysis": {
+        "player_intent": "manager_greeting",
+        "intent_summary": "Поздравление с днём рождения через два дня после даты.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "LATE_GREETING",
+            "evidence": "вспомнили через два дня 😅",
+            "explanation": "Поздравление опоздало на два дня, игрок это заметил.",
+            "severity": "low"
+          }
+        ],
+        "scores": {
+          "responsiveness": 1,
+          "problem_solving": 2,
+          "accuracy": 2,
+          "personalization": 1,
+          "tone": 2,
+          "responsible_gambling": 2
+        },
+        "overall": "ok",
+        "summary": "Поздравление с опозданием и формальное извинение.",
+        "manager_feedback": "Дни рождения нужно ставить в календарь заранее. Извинение «закрутилась» звучит небрежно.",
+        "next_action": {
+          "owner": "teamlead",
+          "action": "Включить напоминания о днях рождения VIP за день до даты",
+          "deadline": "this_week"
+        },
+        "draft_message": "",
+        "score_total": 10
+      }
+    },
+    {
+      "dialog_id": "D016",
+      "player_id": "P1016",
+      "manager": "Максим",
+      "analysis": {
+        "player_intent": "cashback_question",
+        "intent_summary": "Игрок неделю ждёт обещанный кешбэк.",
+        "resolved": "no",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "PROMISE_NOT_KEPT",
+            "evidence": "Да, завтра начислю 👍",
+            "explanation": "Кешбэк обещан на следующий день и не начислен.",
+            "severity": "high"
+          },
+          {
+            "code": "ISSUE_IGNORED",
+            "evidence": "алло",
+            "explanation": "Два напоминания игрока без ответа больше 5 дней.",
+            "severity": "high"
+          }
+        ],
+        "scores": {
+          "responsiveness": 0,
+          "problem_solving": 0,
+          "accuracy": 1,
+          "personalization": 1,
+          "tone": 1,
+          "responsible_gambling": 2
+        },
+        "overall": "poor",
+        "summary": "Обещанный кешбэк не начислен, игрок игнорируется 5 дней; депозиты упали на 68%.",
+        "manager_feedback": "Не давать обещаний, которые не выполняешь. Если что-то задерживается — сообщать игроку самому.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Начислить обещанный кешбэк и извиниться",
+          "deadline": "now"
+        },
+        "draft_message": "Привет! Прости, пожалуйста, — я подвёл тебя с кешбэком. Только что начислил его за прошлую неделю, проверь баланс. Больше такого не повторится.",
+        "score_total": 5
+      }
+    },
+    {
+      "dialog_id": "D017",
+      "player_id": "P1017",
+      "manager": "Emily",
+      "analysis": {
+        "player_intent": "tech_issue",
+        "intent_summary": "Игра зависает на бонусном раунде, игрок дважды потерял фриспины.",
+        "resolved": "no",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "ISSUE_IGNORED",
+            "evidence": "Please send a screenshot to support again.",
+            "explanation": "Потерянные фриспины не компенсированы, проблему не передала сама.",
+            "severity": "high"
+          },
+          {
+            "code": "PASSED_THE_BUCK",
+            "evidence": "for technical issues please contact our support via live chat",
+            "explanation": "Отправила в саппорт, хотя саппорт уже отправил игрока к ней.",
+            "severity": "medium"
+          }
+        ],
+        "scores": {
+          "responsiveness": 1,
+          "problem_solving": 0,
+          "accuracy": 1,
+          "personalization": 1,
+          "tone": 1,
+          "responsible_gambling": 2
+        },
+        "overall": "poor",
+        "summary": "Игрока гоняют между саппортом и менеджером, техническая проблема и потерянные фриспины не решены.",
+        "manager_feedback": "VIP-менеджер — единое окно: забрать проблему себе, передать в саппорт самой и компенсировать потерю.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Самой завести тикет в саппорт по зависанию игры и вернуть потерянные фриспины",
+          "deadline": "today"
+        },
+        "draft_message": "Hi Liam, sorry for the runaround — that shouldn't have happened. I've reported the freezing in Mega Fortune Wheel to our tech team myself and restored the free spins you lost. I'll let you know as soon as it's fixed.",
+        "score_total": 6
+      }
+    },
+    {
+      "dialog_id": "D018",
+      "player_id": "P1018",
+      "manager": "Ольга",
+      "analysis": {
+        "player_intent": "manager_onboarding",
+        "intent_summary": "Знакомство нового VIP-игрока с персональным менеджером.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "Расскажи, во что больше любишь играть и как тебе удобнее связываться?",
+            "explanation": "Хороший онбординг: узнала предпочтения и чётко рассказала условия VIP.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 3,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "excellent",
+        "summary": "Образцовое знакомство с новым VIP: предпочтения, канал связи, конкретные условия.",
+        "manager_feedback": "Хороший шаблон онбординга для команды.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Действий не требуется",
+          "deadline": "none"
+        },
+        "draft_message": "",
+        "score_total": 17
+      }
+    },
+    {
+      "dialog_id": "D019",
+      "player_id": "P1019",
+      "manager": "Tom",
+      "analysis": {
+        "player_intent": "competitor_comparison",
+        "intent_summary": "Игрок спрашивает, что даёт VIP, потому что конкурент предлагает 15% кешбэка.",
+        "resolved": "no",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "CHURN_THREAT",
+            "evidence": "Another casino offered me 15% weekly cashback",
+            "explanation": "Игрок сравнивает с конкурентом и ждёт ответа про кешбэк уже 3 дня.",
+            "severity": "high"
+          },
+          {
+            "code": "VAGUE_ANSWER",
+            "evidence": "We have a lot of great VIP benefits! Our VIP program is the best 😊",
+            "explanation": "Нет ни одного конкретного условия в ответ на прямой вопрос.",
+            "severity": "medium"
+          }
+        ],
+        "scores": {
+          "responsiveness": 1,
+          "problem_solving": 0,
+          "accuracy": 1,
+          "personalization": 0,
+          "tone": 2,
+          "responsible_gambling": 2
+        },
+        "overall": "poor",
+        "summary": "Игрок на грани ухода к конкуренту, менеджер отвечает общими словами, вопрос про кешбэк без ответа.",
+        "manager_feedback": "На сравнение с конкурентом — конкретные цифры и персональное предложение под игру игрока, как это делает Emily.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Ответить про кешбэк и сделать персональное предложение",
+          "deadline": "today"
+        },
+        "draft_message": "Hi! Sorry for the vague answer earlier. Here's what you get as VIP: weekly cashback, withdrawals within 24h and personal bonuses built around your play. Let me check what cashback rate I can set for you — I'll come back today with a concrete number.",
+        "score_total": 6
+      }
+    },
+    {
+      "dialog_id": "D020",
+      "player_id": "P1020",
+      "manager": "Алина",
+      "analysis": {
+        "player_intent": "opt_out_request",
+        "intent_summary": "Игрок просит отписать его от всех рассылок.",
+        "resolved": "no",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "OPT_OUT_REQUEST",
+            "evidence": "отпишите меня от этого всего, пожалуйста",
+            "explanation": "Запрос на отписку не выполнен и без ответа 36 часов.",
+            "severity": "critical"
+          },
+          {
+            "code": "PRESSURE_TACTICS",
+            "evidence": "Последний шанс забрать бонус!",
+            "explanation": "Пять промо за 4 дня с давлением «последний шанс».",
+            "severity": "high"
+          },
+          {
+            "code": "GENERIC_OUTREACH",
+            "evidence": "Фриспины ждут тебя 🎰",
+            "explanation": "Шаблонные сообщения без персонализации.",
+            "severity": "low"
+          }
+        ],
+        "scores": {
+          "responsiveness": 0,
+          "problem_solving": 0,
+          "accuracy": 2,
+          "personalization": 0,
+          "tone": 1,
+          "responsible_gambling": 1
+        },
+        "overall": "critical",
+        "summary": "Игрок попросил прекратить рассылки после серии навязчивых промо; запрос не выполнен.",
+        "manager_feedback": "Запрос на отписку выполняется сразу и подтверждается игроку. Пять промо подряд без ответа — это спам.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Отписать игрока от всех маркетинговых рассылок и подтвердить ему",
+          "deadline": "now"
+        },
+        "draft_message": "Привет! Готово — отписала тебя от всех рассылок и промо. Извини за навязчивость.",
+        "score_total": 4
+      }
+    },
+    {
+      "dialog_id": "D021",
+      "player_id": "P1021",
+      "manager": "Максим",
+      "analysis": {
+        "player_intent": "bonus_terms_question",
+        "intent_summary": "Игрок спрашивает вейджер бонуса и сколько можно вывести.",
+        "resolved": "no",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "MISLEADING_INFO",
+            "evidence": "х35 вроде, точно не помню, глянь в правилах",
+            "explanation": "Назвал цифру наугад — игрок может принять решение по неверным условиям.",
+            "severity": "high"
+          },
+          {
+            "code": "VAGUE_ANSWER",
+            "evidence": "Вейджер стандартный, там всё норм 👍",
+            "explanation": "Не назвал вейджер и не ответил про максимальный вывод.",
+            "severity": "medium"
+          }
+        ],
+        "scores": {
+          "responsiveness": 1,
+          "problem_solving": 0,
+          "accuracy": 0,
+          "personalization": 1,
+          "tone": 1,
+          "responsible_gambling": 2
+        },
+        "overall": "poor",
+        "summary": "На прямой вопрос об условиях бонуса — «стандартный» и «х35 вроде», игрока отправили читать правила.",
+        "manager_feedback": "Условия бонуса менеджер обязан знать или проверить перед ответом. Называть цифры наугад нельзя.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Уточнить вейджер и лимит вывода по бонусу и написать игроку",
+          "deadline": "today"
+        },
+        "draft_message": "Привет! Уточнил точно: по этому бонусу вейджер х[N], максимальный вывод с бонуса — [сумма]. Прости, что сразу не ответил конкретно.",
+        "score_total": 5
+      }
+    },
+    {
+      "dialog_id": "D022",
+      "player_id": "P1022",
+      "manager": "Emily",
+      "analysis": {
+        "player_intent": "competitor_comparison",
+        "intent_summary": "Игрок говорит, что у конкурента релоады лучше.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "looking at your play — mostly Friday and Saturday evenings, around $300 per deposit — I can set a 30% Friday reload up to $300 with x20 wagering",
+            "explanation": "Персональный контроффер под реальную игру, с точными условиями.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 3,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "excellent",
+        "summary": "Угрозу ухода к конкуренту закрыли точным персональным предложением.",
+        "manager_feedback": "Эталон работы с конкурентным сравнением: спросила детали, не скопировала вслепую, дала понятное преимущество.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Действий не требуется",
+          "deadline": "none"
+        },
+        "draft_message": "",
+        "score_total": 17
+      }
+    },
+    {
+      "dialog_id": "D023",
+      "player_id": "P1023",
+      "manager": "Ольга",
+      "analysis": {
+        "player_intent": "bonus_request",
+        "intent_summary": "Игрок просит бонус на аккаунт жены, депозиты с одной карты.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "MULTI_ACCOUNT",
+            "evidence": "она тоже у вас играет, мы с одной карты депаем",
+            "explanation": "Два аккаунта на одну карту — риск мультиаккаунта и бонус-абьюза, а менеджер начислила бонус.",
+            "severity": "critical"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 1,
+          "accuracy": 1,
+          "personalization": 2,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "critical",
+        "summary": "Менеджер начислила бонус второму аккаунту на ту же карту вместо передачи в риск-отдел.",
+        "manager_feedback": "Общая карта у нескольких аккаунтов — всегда передача в риск-отдел, никаких начислений до проверки.",
+        "next_action": {
+          "owner": "compliance",
+          "action": "Проверить аккаунты на одной карте, заморозить начисленный бонус",
+          "deadline": "today"
+        },
+        "draft_message": "",
+        "score_total": 12
+      }
+    },
+    {
+      "dialog_id": "D024",
+      "player_id": "P1024",
+      "manager": "Максим",
+      "analysis": {
+        "player_intent": "withdrawal_issue",
+        "intent_summary": "Третий отказ в выводе из-за верификации, игрок говорит, что отправил все документы.",
+        "resolved": "no",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "RUDE_TONE",
+            "evidence": "Значит, не все. Читайте правила внимательнее",
+            "explanation": "Обвиняет игрока вместо помощи.",
+            "severity": "high"
+          },
+          {
+            "code": "UNRESOLVED_PAYMENT",
+            "evidence": "pending_withdrawal_usd: 1700",
+            "explanation": "Вывод 1 700$ висит, третий отказ подряд.",
+            "severity": "high"
+          },
+          {
+            "code": "VAGUE_ANSWER",
+            "evidence": "Потому что вы не прошли верификацию, я уже говорил",
+            "explanation": "Не сказал, какого документа не хватает.",
+            "severity": "medium"
+          }
+        ],
+        "scores": {
+          "responsiveness": 2,
+          "problem_solving": 0,
+          "accuracy": 1,
+          "personalization": 0,
+          "tone": 0,
+          "responsible_gambling": 2
+        },
+        "overall": "poor",
+        "summary": "Игроку третий раз отказали в выводе, менеджер грубит и не говорит, чего не хватает.",
+        "manager_feedback": "Нужно проверить, какой документ отклонён, и назвать его. Тон «читайте правила» недопустим.",
+        "next_action": {
+          "owner": "payments",
+          "action": "Выяснить, какой документ не прошёл верификацию, и сообщить игроку",
+          "deadline": "today"
+        },
+        "draft_message": "Здравствуйте! Приношу извинения за мой тон. Я проверил вашу верификацию: не принят [документ] по причине [причина]. Пришлите его, пожалуйста, и я лично передам вывод в приоритет.",
+        "score_total": 5
+      }
+    },
+    {
+      "dialog_id": "D025",
+      "player_id": "P1025",
+      "manager": "Tom",
+      "analysis": {
+        "player_intent": "manager_care_checkin",
+        "intent_summary": "Менеджер проактивно уточнил про неудачный депозит.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "I saw a failed deposit last night — did you manage to top up in the end?",
+            "explanation": "Проактивно заметил проблему с оплатой.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 3,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "good",
+        "summary": "Проактивная проверка неудачного депозита, у игрока всё в порядке.",
+        "manager_feedback": "Хорошая проактивность — так ловят проблемы до жалобы.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Действий не требуется",
+          "deadline": "none"
+        },
+        "draft_message": "",
+        "score_total": 17
+      }
+    },
+    {
+      "dialog_id": "D026",
+      "player_id": "P1026",
+      "manager": "Алина",
+      "analysis": {
+        "player_intent": "withdrawal_issue",
+        "intent_summary": "Игрок просит ускорить вывод 4 200 до понедельника.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "Попросила финансистов взять его в приоритет, обычно это до 24 часов. Напишу, как уйдёт",
+            "explanation": "Проверила, ускорила, назвала срок и сама сообщила об отправке.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 2,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "excellent",
+        "summary": "Вывод ускорен и получен игроком вовремя.",
+        "manager_feedback": "Отлично: конкретный срок и обещанная обратная связь.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Действий не требуется",
+          "deadline": "none"
+        },
+        "draft_message": "",
+        "score_total": 16
+      }
+    },
+    {
+      "dialog_id": "D027",
+      "player_id": "P1027",
+      "manager": "Emily",
+      "analysis": {
+        "player_intent": "cashback_question",
+        "intent_summary": "Игрок уточняет, придёт ли сегодня еженедельный кешбэк.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "your 10% weekly cashback ($120) will be credited at 12:00 AEST today, no wagering as usual.",
+            "explanation": "Точный ответ: сумма, время, условия.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 3,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "good",
+        "summary": "Точный ответ про кешбэк, вопрос закрыт.",
+        "manager_feedback": "Хороший пример конкретики.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Действий не требуется",
+          "deadline": "none"
+        },
+        "draft_message": "",
+        "score_total": 17
+      }
+    },
+    {
+      "dialog_id": "D028",
+      "player_id": "P1028",
+      "manager": "Ольга",
+      "analysis": {
+        "player_intent": "deposit_issue",
+        "intent_summary": "Игрок упирается в лимит 1 000 по карте.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "Лимит 1000 — это ограничение платёжного метода, не наше. Можно ... пополнять через банковский перевод, там до 5000 за раз.",
+            "explanation": "Точно объяснила причину и дала альтернативу с инструкцией.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 2,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "good",
+        "summary": "Ограничение платёжного метода объяснено, дана альтернатива.",
+        "manager_feedback": "Точно и быстро. Признаков риска у игрока нет, поэтому помощь с депозитом уместна.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Действий не требуется",
+          "deadline": "none"
+        },
+        "draft_message": "",
+        "score_total": 16
+      }
+    },
+    {
+      "dialog_id": "D029",
+      "player_id": "P1029",
+      "manager": "Максим",
+      "analysis": {
+        "player_intent": "manager_care_checkin",
+        "intent_summary": "Менеджер перепутал имя игрока, уже второй раз.",
+        "resolved": "not_applicable",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "WRONG_NAME",
+            "evidence": "я Сергей вообще-то",
+            "explanation": "Назвал игрока чужим именем, игрок говорит, что это уже второй раз.",
+            "severity": "medium"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 1,
+          "accuracy": 1,
+          "personalization": 0,
+          "tone": 2,
+          "responsible_gambling": 2
+        },
+        "overall": "poor",
+        "summary": "Повторная ошибка в имени у одного из самых ценных игроков (18 500$ за месяц).",
+        "manager_feedback": "Перед сообщением сверяться с карточкой игрока. Повторная ошибка для топ-игрока — серьёзный сигнал; также странно, что Максим пишет в женском роде — похоже на копирование шаблона.",
+        "next_action": {
+          "owner": "teamlead",
+          "action": "Проверить карточку игрока в CRM и откуда берётся неверное имя; извиниться перед игроком",
+          "deadline": "today"
+        },
+        "draft_message": "Сергей, ещё раз извини — это непростительно, тем более второй раз. Поправил твою карточку, больше такого не будет.",
+        "score_total": 9
+      }
+    },
+    {
+      "dialog_id": "D030",
+      "player_id": "P1030",
+      "manager": "Tom",
+      "analysis": {
+        "player_intent": "bonus_request",
+        "intent_summary": "Бонус сгорел, пока игрок был в поездке.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "I've reactivated it for another 7 days — same terms.",
+            "explanation": "Быстро решил вопрос с точными условиями.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 3,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "good",
+        "summary": "Сгоревший бонус реактивирован, игрок доволен.",
+        "manager_feedback": "Хорошее гибкое решение.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Действий не требуется",
+          "deadline": "none"
+        },
+        "draft_message": "",
+        "score_total": 17
+      }
+    },
+    {
+      "dialog_id": "D031",
+      "player_id": "P1031",
+      "manager": "Алина",
+      "analysis": {
+        "player_intent": "manager_feedback_request",
+        "intent_summary": "Менеджер попросила отзыв о крэш-играх, игрок дал конкретный фидбек.",
+        "resolved": "partially",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "FEEDBACK_NOT_ESCALATED",
+            "evidence": "грузится долго и нет поиска по провайдеру",
+            "explanation": "Конкретный продуктовый фидбек не передан дальше, игроку не сказано, что с ним будет.",
+            "severity": "low"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 1,
+          "accuracy": 2,
+          "personalization": 2,
+          "tone": 2,
+          "responsible_gambling": 2
+        },
+        "overall": "ok",
+        "summary": "Игрок дал полезный фидбек, менеджер ответила «спасибо» и не передала его в продукт.",
+        "manager_feedback": "Если просишь фидбек — передай его в продукт и скажи игроку, что передала.",
+        "next_action": {
+          "owner": "product",
+          "action": "Получить фидбек о скорости загрузки и поиске по провайдеру в разделе крэш-игр",
+          "deadline": "this_week"
+        },
+        "draft_message": "",
+        "score_total": 12
+      }
+    },
+    {
+      "dialog_id": "D032",
+      "player_id": "P1032",
+      "manager": "Emily",
+      "analysis": {
+        "player_intent": "account_change",
+        "intent_summary": "Игрок переезжает из Манитобы в Торонто и будет играть оттуда.",
+        "resolved": "no",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "JURISDICTION_CHANGE",
+            "evidence": "I'm moving from Manitoba to Toronto next month",
+            "explanation": "Онтарио регулируется отдельно, нужна проверка комплаенса.",
+            "severity": "high"
+          },
+          {
+            "code": "MISLEADING_INFO",
+            "evidence": "Nothing changes for you, your account and bonuses stay the same 🙂",
+            "explanation": "Пообещала, что ничего не меняется, без проверки.",
+            "severity": "high"
+          }
+        ],
+        "scores": {
+          "responsiveness": 1,
+          "problem_solving": 0,
+          "accuracy": 0,
+          "personalization": 2,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "critical",
+        "summary": "Игрок переезжает в Онтарио с отдельным регулированием, менеджер без проверки сказала, что ничего не меняется.",
+        "manager_feedback": "Смена провинции или страны — всегда вопрос в комплаенс до ответа игроку.",
+        "next_action": {
+          "owner": "compliance",
+          "action": "Проверить, может ли игрок играть из Онтарио, и что меняется для аккаунта",
+          "deadline": "today"
+        },
+        "draft_message": "Hi Ethan, a quick correction to my last message: Ontario has its own gambling regulations, so I've asked our compliance team to check what this means for your account. I'll get back to you with the details before your move.",
+        "score_total": 8
+      }
+    },
+    {
+      "dialog_id": "D033",
+      "player_id": "P1033",
+      "manager": "Ольга",
+      "analysis": {
+        "player_intent": "bonus_request",
+        "intent_summary": "Игрок просит отменить вывод 2 400 и дать бонус, потом снова всё проиграл и просит ещё.",
+        "resolved": "yes",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "RG_WITHDRAWAL_DISCOURAGED",
+            "evidence": "Сделала, вывод отменён, деньги на балансе 👍",
+            "explanation": "Отменила вывод ради дальнейшей игры и добавила бонус.",
+            "severity": "critical"
+          },
+          {
+            "code": "RG_RISK_SIGNS_IGNORED",
+            "evidence": "всё слил. можно ещё бонус?",
+            "explanation": "Ночью после проигрыша игрок просит ещё бонус; депозиты удвоились.",
+            "severity": "critical"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 0,
+          "accuracy": 2,
+          "personalization": 1,
+          "tone": 2,
+          "responsible_gambling": 0
+        },
+        "overall": "critical",
+        "summary": "Менеджер отменила вывод и дала бонус, игрок всё проиграл и просит ещё.",
+        "manager_feedback": "Отмена вывода ради игры — нарушение. На «всё слил, дай ещё» отвечать без бонусов, с предложением лимита или паузы.",
+        "next_action": {
+          "owner": "teamlead",
+          "action": "Не давать бонус, связаться с игроком по ответственной игре, разобрать случай с Ольгой",
+          "deadline": "now"
+        },
+        "draft_message": "Привет. Бонуса не будет — и мне стоило вчера не отменять твой вывод, это моя ошибка. Вижу, что последние дни игра идёт тяжело. Могу поставить лимит на депозиты или паузу на несколько дней — скажи, что тебе подходит.",
+        "score_total": 8
+      }
+    },
+    {
+      "dialog_id": "D034",
+      "player_id": "P1034",
+      "manager": "Максим",
+      "analysis": {
+        "player_intent": "small_talk",
+        "intent_summary": "Разговор о футболе.",
+        "resolved": "not_applicable",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "Ты же за них болеешь?",
+            "explanation": "Живое общение без продаж, укрепляет отношения.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 2,
+          "accuracy": 2,
+          "personalization": 3,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "good",
+        "summary": "Тёплый неформальный контакт с ценным игроком, без промо.",
+        "manager_feedback": "Хорошее поддержание отношений.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Действий не требуется",
+          "deadline": "none"
+        },
+        "draft_message": "",
+        "score_total": 15
+      }
+    },
+    {
+      "dialog_id": "D035",
+      "player_id": "P1035",
+      "manager": "Tom",
+      "analysis": {
+        "player_intent": "other",
+        "intent_summary": "Игрок просит созвониться.",
+        "resolved": "no",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "FEEDBACK_NOT_ESCALATED",
+            "evidence": "unfortunately I can only help by text at the moment",
+            "explanation": "Отказал в звонке и не предложил альтернативу; игрок не вернулся 6 дней.",
+            "severity": "low"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 0,
+          "accuracy": 2,
+          "personalization": 1,
+          "tone": 2,
+          "responsible_gambling": 2
+        },
+        "overall": "poor",
+        "summary": "Игрок хотел обсудить что-то голосом, получил отказ, вопрос так и не прозвучал.",
+        "manager_feedback": "Если звонок невозможен сейчас — предложить время звонка или передать тимлиду. Игрок, который просит позвонить, часто хочет обсудить что-то важное.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Написать игроку и предложить удобное время для звонка",
+          "deadline": "today"
+        },
+        "draft_message": "Hi William, sorry I couldn't call last week. I can set up a call now — what time works for you tomorrow?",
+        "score_total": 10
+      }
+    },
+    {
+      "dialog_id": "D036",
+      "player_id": "P1036",
+      "manager": "Алина",
+      "analysis": {
+        "player_intent": "manager_promo",
+        "intent_summary": "Менеджер выпытывает сумму депозита на выходные.",
+        "resolved": "not_applicable",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "PRESSURE_TACTICS",
+            "evidence": "Сколько планируешь задепать на выходных? Подберу бонус под сумму 😉",
+            "explanation": "Настойчивые вопросы о сумме депозита, одно сообщение в 2 часа ночи.",
+            "severity": "high"
+          }
+        ],
+        "scores": {
+          "responsiveness": 2,
+          "problem_solving": 2,
+          "accuracy": 2,
+          "personalization": 0,
+          "tone": 1,
+          "responsible_gambling": 1
+        },
+        "overall": "poor",
+        "summary": "Три давящих сообщения про депозит без ответа, включая сообщение ночью; депозиты игрока упали вдвое.",
+        "manager_feedback": "Не спрашивать о сумме депозита и не писать ночью. Лучше узнать, почему игрок стал играть меньше.",
+        "next_action": {
+          "owner": "teamlead",
+          "action": "Разобрать с Алиной правила коммуникации: без вопросов о сумме депозита и ночных сообщений",
+          "deadline": "this_week"
+        },
+        "draft_message": "",
+        "score_total": 8
+      }
+    },
+    {
+      "dialog_id": "D037",
+      "player_id": "P1037",
+      "manager": "Emily",
+      "analysis": {
+        "player_intent": "manager_greeting",
+        "intent_summary": "Поздравление с днём рождения.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "We've added 50 free spins on Big Bass Bonanza — no wagering, just for fun.",
+            "explanation": "Поздравление вовремя, подарок на любимой игре без вейджера.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 3,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "excellent",
+        "summary": "Своевременное персональное поздравление.",
+        "manager_feedback": "Эталон поздравления.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Действий не требуется",
+          "deadline": "none"
+        },
+        "draft_message": "",
+        "score_total": 17
+      }
+    },
+    {
+      "dialog_id": "D038",
+      "player_id": "P1038",
+      "manager": "Ольга",
+      "analysis": {
+        "player_intent": "complaint",
+        "intent_summary": "Жалоба на грубость саппорта при вопросе о выводе.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "Мне очень жаль, это недопустимо. Можешь скинуть время переписки или скрин? Передам руководителю поддержки",
+            "explanation": "Признала проблему, эскалировала, извинилась и проверила вывод.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 3,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "excellent",
+        "summary": "Жалоба на саппорт отработана полностью, вывод уже обработан.",
+        "manager_feedback": "Отличная работа с жалобой: эмпатия, эскалация и закрытие исходного вопроса.",
+        "next_action": {
+          "owner": "support",
+          "action": "Разобрать жалобу на грубость сотрудника поддержки",
+          "deadline": "this_week"
+        },
+        "draft_message": "",
+        "score_total": 17
+      }
+    },
+    {
+      "dialog_id": "D039",
+      "player_id": "P1039",
+      "manager": "Максим",
+      "analysis": {
+        "player_intent": "cashback_question",
+        "intent_summary": "Игрок спрашивает, как считается кешбэк.",
+        "resolved": "yes",
+        "needs_reply": false,
+        "flags": [
+          {
+            "code": "GOOD_PRACTICE",
+            "evidence": "С чистого проигрыша за неделю: депозиты минус выводы и остаток на балансе, с понедельника по воскресенье.",
+            "explanation": "Точный ответ с формулой, сроками и условиями.",
+            "severity": "info"
+          }
+        ],
+        "scores": {
+          "responsiveness": 3,
+          "problem_solving": 3,
+          "accuracy": 3,
+          "personalization": 2,
+          "tone": 3,
+          "responsible_gambling": 2
+        },
+        "overall": "excellent",
+        "summary": "Точный исчерпывающий ответ про кешбэк.",
+        "manager_feedback": "Хороший пример конкретики.",
+        "next_action": {
+          "owner": "manager",
+          "action": "Действий не требуется",
+          "deadline": "none"
+        },
+        "draft_message": "",
+        "score_total": 16
+      }
+    },
+    {
+      "dialog_id": "D040",
+      "player_id": "P1040",
+      "manager": "Tom",
+      "analysis": {
+        "player_intent": "manager_promo",
+        "intent_summary": "Промо и предложение поднять лимит игроку, который сам поставил лимит.",
+        "resolved": "not_applicable",
+        "needs_reply": true,
+        "flags": [
+          {
+            "code": "RG_LIMIT_INCREASE_PUSHED",
+            "evidence": "your deposit limit can be raised anytime, just let me know 😉",
+            "explanation": "Предложил поднять лимит, который игрок поставил себе сам.",
+            "severity": "critical"
+          },
+          {
+            "code": "ISSUE_IGNORED",
+            "evidence": "I set that limit for a reason",
+            "explanation": "Реакция игрока без ответа 3 дня.",
+            "severity": "high"
+          }
+        ],
+        "scores": {
+          "responsiveness": 0,
+          "problem_solving": 0,
+          "accuracy": 2,
+          "personalization": 1,
+          "tone": 1,
+          "responsible_gambling": 0
+        },
+        "overall": "critical",
+        "summary": "Игроку с собственным лимитом предложили бонус и повышение лимита; он ответил, что лимит не случайный, — без ответа.",
+        "manager_feedback": "Игрокам с собственным лимитом не предлагать повышение и не слать депозитные бонусы.",
+        "next_action": {
+          "owner": "teamlead",
+          "action": "Извиниться перед игроком, исключить его из депозитных промо",
+          "deadline": "today"
+        },
+        "draft_message": "Hi Benjamin, you're absolutely right, and I'm sorry — I shouldn't have suggested that. Your limit stays exactly as you set it, and I've removed you from deposit promotions.",
+        "score_total": 4
+      }
+    }
+  ]
+}

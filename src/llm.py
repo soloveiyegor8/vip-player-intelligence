@@ -1,4 +1,4 @@
-"""LLM-разбор диалогов через Claude API.
+"""LLM-разбор диалогов: Claude API, локальная модель через Ollama или готовый ручной разбор.
 
 На вход модели: профиль игрока из CRM + сигналы из signals.py + переписка.
 На выходе: JSON строго по схеме ANALYSIS_SCHEMA (structured outputs).
@@ -10,6 +10,10 @@
     python -m src.llm --only D010,D003   # выборочно
     python -m src.llm --force            # игнорировать кэш
     python -m src.llm --dry-run D010     # показать промпт без вызова API
+    python -m src.llm --provider ollama  # бесплатно, локальная модель (OLLAMA_MODEL, по умолчанию gemma3:12b)
+    python -m src.llm --provider manual  # собрать разбор из out/manual/raw.json (сделан вручную в Claude Code)
+
+Каждый провайдер пишет свой файл: out/analysis.json (claude), out/analysis_ollama.json, out/analysis_manual.json.
 """
 from __future__ import annotations
 
@@ -18,6 +22,8 @@ import hashlib
 import json
 import os
 import sys
+import time
+import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -44,8 +50,19 @@ EFFORT = "high"          # разбор с RG-нюансами — нужен в
 MAX_TOKENS = 16000
 WORKERS = 4
 
+OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "gemma3:12b")
+
 PROMPT_PATH = Path(__file__).parent / "prompts" / "system.md"
-CACHE_DIR = OUT_DIR / "llm"
+MANUAL_PATH = OUT_DIR / "manual" / "raw.json"
+
+# Каждый провайдер пишет в свой кэш и свой сводный файл, чтобы результаты можно было сравнить.
+PROVIDERS = {
+    "claude": {"cache": OUT_DIR / "llm", "out": OUT_DIR / "analysis.json"},
+    "ollama": {"cache": OUT_DIR / "llm_ollama", "out": OUT_DIR / "analysis_ollama.json"},
+    "manual": {"cache": None, "out": OUT_DIR / "analysis_manual.json"},
+}
+CACHE_DIR = PROVIDERS["claude"]["cache"]
 
 # Серьёзность флага задаёт код, а не модель: так очередь стабильна и правится в одном месте.
 FLAG_SEVERITY = {
@@ -203,6 +220,53 @@ def call_claude(client: anthropic.Anthropic, system: str, user: str) -> tuple[di
     return analysis, usage
 
 
+def call_ollama(system: str, user: str) -> tuple[dict, dict]:
+    """Локальная модель через Ollama. JSON-схема передаётся в format — Ollama ограничивает вывод грамматикой."""
+    body = {
+        "model": OLLAMA_MODEL,
+        "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
+        "format": ANALYSIS_SCHEMA,
+        "stream": False,
+        "options": {"temperature": 0, "num_ctx": 16384},
+    }
+    req = urllib.request.Request(f"{OLLAMA_URL}/api/chat", data=json.dumps(body).encode(),
+                                 headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=900) as r:
+            resp = json.loads(r.read())
+    except OSError as e:
+        raise AnalysisError(f"Ollama недоступна ({OLLAMA_URL}): {e}") from e
+    try:
+        analysis = json.loads(resp["message"]["content"])
+    except (KeyError, json.JSONDecodeError) as e:
+        raise AnalysisError(f"невалидный JSON от Ollama: {e}") from e
+    usage = {"model": resp.get("model", OLLAMA_MODEL), "input_tokens": resp.get("prompt_eval_count", 0),
+             "output_tokens": resp.get("eval_count", 0), "seconds": round(resp.get("total_duration", 0) / 1e9, 1)}
+    return validate(analysis), usage
+
+
+def validate(a: dict) -> dict:
+    """Проверка ответа по схеме: для моделей и ручного разбора, где схему никто не гарантирует."""
+    problems = []
+    if a.get("player_intent") not in INTENTS:
+        problems.append(f"intent {a.get('player_intent')}")
+    if a.get("overall") not in {"critical", "poor", "ok", "good", "excellent"}:
+        problems.append(f"overall {a.get('overall')}")
+    if a.get("resolved") not in {"yes", "partially", "no", "not_applicable"}:
+        problems.append(f"resolved {a.get('resolved')}")
+    for f in a.get("flags", []):
+        if f.get("code") not in FLAG_SEVERITY:
+            problems.append(f"флаг {f.get('code')}")
+    if set(a.get("scores", {})) != set(SCORE_KEYS):
+        problems.append("scores")
+    missing = set(ANALYSIS_SCHEMA["required"]) - set(a)
+    if missing:
+        problems.append(f"нет полей {sorted(missing)}")
+    if problems:
+        raise AnalysisError("ответ не по схеме: " + ", ".join(problems))
+    return a
+
+
 def postprocess(analysis: dict) -> dict:
     """Добавляем серьёзность флагов и зажимаем оценки в 0–3 — модель может выйти за диапазон."""
     for f in analysis["flags"]:
@@ -215,7 +279,7 @@ def postprocess(analysis: dict) -> dict:
 
 # ─────────────────────────── оркестрация ───────────────────────────
 
-def prepare_inputs() -> tuple[str, list[dict]]:
+def prepare_inputs(model_tag: str = f"{MODEL}|{EFFORT}") -> tuple[str, list[dict]]:
     """Готовит пары (диалог, текст запроса) для всех диалогов."""
     dialogs, as_of = load_dialogs()
     players = load_players()
@@ -228,20 +292,23 @@ def prepare_inputs() -> tuple[str, list[dict]]:
     for d in dialogs:
         player = players.loc[d["player_id"]].to_dict()
         user = build_user_message(d, player, p_sig[d["player_id"]], d_met[d["dialog_id"]], as_of.date().isoformat())
-        key = hashlib.sha256(f"{MODEL}|{EFFORT}|{system}|{user}".encode()).hexdigest()[:16]
+        key = hashlib.sha256(f"{model_tag}|{system}|{user}".encode()).hexdigest()[:16]
         jobs.append({"dialog": d, "user": user, "key": key})
     return system, jobs
 
 
-def analyze_one(client: anthropic.Anthropic, system: str, job: dict, force: bool) -> dict:
+def analyze_one(client, system: str, job: dict, force: bool, provider: str = "claude") -> dict:
     d = job["dialog"]
-    path = CACHE_DIR / f"{d['dialog_id']}.json"
+    path = PROVIDERS[provider]["cache"] / f"{d['dialog_id']}.json"
     if not force and path.exists():
         cached = json.loads(path.read_text(encoding="utf-8"))
         if cached.get("input_key") == job["key"] and "analysis" in cached:
             return {**cached, "from_cache": True}
 
-    analysis, usage = call_claude(client, system, job["user"])
+    if provider == "ollama":
+        analysis, usage = call_ollama(system, job["user"])
+    else:
+        analysis, usage = call_claude(client, system, job["user"])
     record = {
         "dialog_id": d["dialog_id"],
         "player_id": d["player_id"],
@@ -254,16 +321,21 @@ def analyze_one(client: anthropic.Anthropic, system: str, job: dict, force: bool
     return {**record, "from_cache": False}
 
 
-def run(only: list[str] | None = None, force: bool = False) -> list[dict]:
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    system, jobs = prepare_inputs()
+def run(only: list[str] | None = None, force: bool = False, provider: str = "claude") -> list[dict]:
+    cfg = PROVIDERS[provider]
+    cfg["cache"].mkdir(parents=True, exist_ok=True)
+    tag = f"ollama|{OLLAMA_MODEL}" if provider == "ollama" else f"{MODEL}|{EFFORT}"
+    system, jobs = prepare_inputs(tag)
     if only:
         jobs = [j for j in jobs if j["dialog"]["dialog_id"] in only]
-    client = anthropic.Anthropic()
+    client = anthropic.Anthropic() if provider == "claude" else None
+    # Локальная модель на ноутбуке обрабатывает запросы по одному — параллельность только мешает.
+    workers = WORKERS if provider == "claude" else 1
 
     results, errors = [], []
-    with ThreadPoolExecutor(WORKERS) as pool:
-        futures = {pool.submit(analyze_one, client, system, j, force): j["dialog"]["dialog_id"] for j in jobs}
+    started = time.time()
+    with ThreadPoolExecutor(workers) as pool:
+        futures = {pool.submit(analyze_one, client, system, j, force, provider): j["dialog"]["dialog_id"] for j in jobs}
         for fut in as_completed(futures):
             did = futures[fut]
             try:
@@ -271,26 +343,51 @@ def run(only: list[str] | None = None, force: bool = False) -> list[dict]:
                 a = r["analysis"]
                 codes = ",".join(f["code"] for f in a["flags"]) or "—"
                 src = "cache" if r["from_cache"] else f"{r['usage']['output_tokens']} out"
-                print(f"{did}  {a['overall']:<9} {codes}  ({src})")
+                print(f"{did}  {a['overall']:<9} {codes}  ({src})", flush=True)
                 results.append(r)
             except (AnalysisError, anthropic.APIError) as e:
-                print(f"{did}  ERROR {e}", file=sys.stderr)
+                print(f"{did}  ERROR {e}", file=sys.stderr, flush=True)
                 errors.append({"dialog_id": did, "error": str(e)})
 
     # Сводный файл собираем из всего кэша, а не только из текущего прогона.
-    all_records = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(CACHE_DIR.glob("D*.json"))]
-    (OUT_DIR / "analysis.json").write_text(
-        json.dumps({"model": MODEL, "effort": EFFORT, "results": all_records}, ensure_ascii=False, indent=2),
+    all_records = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(cfg["cache"].glob("D*.json"))]
+    model = OLLAMA_MODEL if provider == "ollama" else MODEL
+    cfg["out"].write_text(
+        json.dumps({"provider": provider, "model": model, "effort": EFFORT if provider == "claude" else None,
+                    "results": all_records}, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
     fresh = [r for r in results if not r["from_cache"]]
     if fresh:
         tin = sum(r["usage"]["input_tokens"] for r in fresh)
         tout = sum(r["usage"]["output_tokens"] for r in fresh)
-        tcache = sum(r["usage"]["cache_read_input_tokens"] for r in fresh)
-        print(f"\nновых вызовов: {len(fresh)}, токены in/out/cache-read: {tin}/{tout}/{tcache}")
-    print(f"готово: {len(results)}, ошибок: {len(errors)} → {OUT_DIR / 'analysis.json'}")
+        print(f"\nновых вызовов: {len(fresh)}, токены in/out: {tin}/{tout}, {time.time() - started:.0f} с")
+    print(f"готово: {len(results)}, ошибок: {len(errors)} → {cfg['out']}")
     return results
+
+
+def build_manual() -> None:
+    """Разбор, сделанный вручную в сессии Claude Code по той же рубрике и схеме, — без вызова API."""
+    raw = json.loads(MANUAL_PATH.read_text(encoding="utf-8"))
+    dialogs, _ = load_dialogs()
+    records, errors = [], []
+    for d in dialogs:
+        did = d["dialog_id"]
+        if did not in raw:
+            errors.append(f"{did}: нет разбора")
+            continue
+        try:
+            a = postprocess(validate(raw[did]))
+        except AnalysisError as e:
+            errors.append(f"{did}: {e}")
+            continue
+        records.append({"dialog_id": did, "player_id": d["player_id"], "manager": d["manager"], "analysis": a})
+    if errors:
+        raise SystemExit("ручной разбор некорректен:\n  " + "\n  ".join(errors))
+    PROVIDERS["manual"]["out"].write_text(
+        json.dumps({"provider": "manual", "model": "claude-opus-5-5", "results": records},
+                   ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"готово: {len(records)} → {PROVIDERS['manual']['out']}")
 
 
 def main() -> None:
@@ -298,7 +395,12 @@ def main() -> None:
     ap.add_argument("--only", help="список dialog_id через запятую")
     ap.add_argument("--force", action="store_true", help="игнорировать кэш")
     ap.add_argument("--dry-run", metavar="DIALOG_ID", help="напечатать промпт для диалога и выйти")
+    ap.add_argument("--provider", choices=list(PROVIDERS), default="claude")
     args = ap.parse_args()
+
+    if args.provider == "manual":
+        build_manual()
+        return
 
     if args.dry_run:
         system, jobs = prepare_inputs()
@@ -306,7 +408,7 @@ def main() -> None:
         print(f"── system: {len(system)} символов ({PROMPT_PATH.name})\n── user:\n{job['user']}")
         print(f"\n── schema:\n{json.dumps(ANALYSIS_SCHEMA, ensure_ascii=False)[:600]}…")
         return
-    run(only=args.only.split(",") if args.only else None, force=args.force)
+    run(only=args.only.split(",") if args.only else None, force=args.force, provider=args.provider)
 
 
 if __name__ == "__main__":

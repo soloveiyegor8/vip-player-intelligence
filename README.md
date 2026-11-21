@@ -7,6 +7,8 @@ MVP для тимлида VIP-отдела онлайн-казино. Инстр
 - **Карточка игрока.** Цифры из CRM, сигналы и переписка со временем ответов.
 - **Сводка по менеджерам.** Время ответа, игнор, нарушения, игроки без контакта.
 
+**Демо: https://vip-player-intelligence.streamlit.app**
+
 Для кого инструмент, почему выбраны эти функции и как всё устроено: **[ONE_PAGER.md](ONE_PAGER.md)**.
 
 ## Быстрый старт
@@ -98,6 +100,8 @@ data/players.csv + data/dialogs.json
 
 ## Деплой (Streamlit Community Cloud)
 
-1. Закоммитить `out/analysis.json` после прогона `python -m src.llm`.
+Развёрнуто на https://vip-player-intelligence.streamlit.app и обновляется само при каждом push в `main`.
+
+1. Закоммитить файл разбора (`out/analysis*.json`).
 2. На share.streamlit.io: **Create app** → репозиторий → ветка `main` → файл `app.py`. В **Advanced settings** выбрать Python 3.11.
 3. Ключ API на сервере не нужен: приложение только читает готовый разбор.

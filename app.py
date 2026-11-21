@@ -158,6 +158,11 @@ with tab_player:
                 "personalization": "Персонализация", "tone": "Тон", "responsible_gambling": "Отв. игра"})
             st.dataframe(scores, hide_index=True, use_container_width=True)
             st.markdown(f"**Обратная связь менеджеру.** {md(a['manager_feedback'])}")
+            if a.get("review_flags"):
+                with st.expander(f"⚠️ Флаги на проверку человеком: {len(a['review_flags'])}"):
+                    st.caption("Модель поставила их, но проверка кодом нашла противоречие, поэтому в очередь они не идут.")
+                    for f in a["review_flags"]:
+                        st.markdown(md(f"**{f['code']}** — {f['review_reason']}  \n«{f['evidence']}»"))
             if a["draft_message"]:
                 st.text_area("Черновик сообщения игроку", a["draft_message"], height=140)
         elif r["dialog_ids"]:

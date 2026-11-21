@@ -277,6 +277,60 @@ def postprocess(analysis: dict) -> dict:
     return analysis
 
 
+# ─────────────────────────── проверки кодом ───────────────────────────
+
+# Нарушения, где сами слова менеджера и есть нарушение: цитата должна быть из его сообщения.
+# RG_LOSS_CHASING_ENCOURAGED сюда не входит: слова игрока «всё слил» — законное доказательство контекста.
+MANAGER_ACTION_FLAGS = {"RG_LIMIT_INCREASE_PUSHED", "RG_WITHDRAWAL_DISCOURAGED", "PRESSURE_TACTICS",
+                        "MISLEADING_INFO", "RUDE_TONE"}
+
+
+def _norm(text: str) -> str:
+    text = text.lower().replace("ё", "е")
+    return "".join(ch for ch in text if ch.isalnum() or ch.isspace()).split().__str__()
+
+
+def _speaker_of(evidence: str, dialog: dict) -> str | None:
+    """Чьё сообщение цитирует evidence: 'manager', 'player' или None, если цитаты в переписке нет."""
+    ev = " ".join(_norm(evidence).strip("[]").replace("'", "").replace(",", " ").split())
+    if len(ev) < 8:
+        return None
+    found = set()
+    for m in dialog["messages"]:
+        msg = " ".join(_norm(m["text"]).strip("[]").replace("'", "").replace(",", " ").split())
+        # Модели обрезают и склеивают цитаты, поэтому ищем пересечение по куску в 25 символов.
+        probe = ev[:25] if len(ev) > 25 else ev
+        if probe in msg or msg[:25] in ev:
+            found.add(m["from"])
+    return found.pop() if len(found) == 1 else None
+
+
+def apply_guards(analysis: dict, dialog: dict) -> dict:
+    """Детерминированные проверки поверх ответа модели. Сомнительные флаги не удаляются, а уходят на проверку:
+    1) критичный флаг при итоговой оценке модели не 'critical' — модель противоречит сама себе;
+    2) нарушение менеджера, подтверждённое цитатой игрока, — доказательство не о том."""
+    keep, review = [], list(analysis.get("review_flags", []))
+    for f in analysis["flags"]:
+        reason = None
+        if FLAG_SEVERITY[f["code"]] == "critical" and analysis["overall"] != "critical":
+            reason = f"критичный флаг, но итоговая оценка модели — {analysis['overall']}"
+        elif f["code"] in MANAGER_ACTION_FLAGS and _speaker_of(f["evidence"], dialog) == "player":
+            reason = "нарушение менеджера подтверждено цитатой игрока"
+        if reason:
+            review.append({**f, "review_reason": reason})
+        else:
+            keep.append(f)
+    analysis["flags"], analysis["review_flags"] = keep, review
+    return analysis
+
+
+def assemble(records: list[dict]) -> list[dict]:
+    dialogs = {d["dialog_id"]: d for d in load_dialogs()[0]}
+    for r in records:
+        apply_guards(r["analysis"], dialogs[r["dialog_id"]])
+    return records
+
+
 # ─────────────────────────── оркестрация ───────────────────────────
 
 def prepare_inputs(model_tag: str = f"{MODEL}|{EFFORT}") -> tuple[str, list[dict]]:
@@ -350,7 +404,7 @@ def run(only: list[str] | None = None, force: bool = False, provider: str = "cla
                 errors.append({"dialog_id": did, "error": str(e)})
 
     # Сводный файл собираем из всего кэша, а не только из текущего прогона.
-    all_records = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(cfg["cache"].glob("D*.json"))]
+    all_records = assemble([json.loads(p.read_text(encoding="utf-8")) for p in sorted(cfg["cache"].glob("D*.json"))])
     model = OLLAMA_MODEL if provider == "ollama" else MODEL
     cfg["out"].write_text(
         json.dumps({"provider": provider, "model": model, "effort": EFFORT if provider == "claude" else None,
@@ -385,7 +439,7 @@ def build_manual() -> None:
     if errors:
         raise SystemExit("ручной разбор некорректен:\n  " + "\n  ".join(errors))
     PROVIDERS["manual"]["out"].write_text(
-        json.dumps({"provider": "manual", "model": "claude-opus-5-5", "results": records},
+        json.dumps({"provider": "manual", "model": "claude-opus-5-5", "results": assemble(records)},
                    ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"готово: {len(records)} → {PROVIDERS['manual']['out']}")
 
@@ -396,10 +450,19 @@ def main() -> None:
     ap.add_argument("--force", action="store_true", help="игнорировать кэш")
     ap.add_argument("--dry-run", metavar="DIALOG_ID", help="напечатать промпт для диалога и выйти")
     ap.add_argument("--provider", choices=list(PROVIDERS), default="claude")
+    ap.add_argument("--assemble", action="store_true", help="только пересобрать сводный файл из кэша, без вызовов модели")
     args = ap.parse_args()
 
     if args.provider == "manual":
         build_manual()
+        return
+    if args.assemble:
+        cfg = PROVIDERS[args.provider]
+        recs = assemble([json.loads(p.read_text(encoding="utf-8")) for p in sorted(cfg["cache"].glob("D*.json"))])
+        data = json.loads(cfg["out"].read_text(encoding="utf-8"))
+        data["results"] = recs
+        cfg["out"].write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"пересобрано: {len(recs)} → {cfg['out']}")
         return
 
     if args.dry_run:

@@ -1,0 +1,37 @@
+{
+  "dialog_id": "D011",
+  "player_id": "P1011",
+  "manager": "Emily",
+  "input_key": "4c2e34e53f7fb6fb",
+  "usage": {
+    "model": "gemma3:12b",
+    "input_tokens": 3055,
+    "output_tokens": 298,
+    "seconds": 93.1
+  },
+  "analysis": {
+    "player_intent": "account_change",
+    "intent_summary": "Игрок запросил самоисключение.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [],
+    "scores": {
+      "responsiveness": 3,
+      "problem_solving": 3,
+      "accuracy": 3,
+      "personalization": 2,
+      "tone": 3,
+      "responsible_gambling": 3
+    },
+    "overall": "good",
+    "summary": "Менеджер Emily корректно обработала запрос игрока на самоисключение, предложила варианты срока и предоставила информацию о службе поддержки.  Игрок выразил благодарность.",
+    "manager_feedback": "Менеджер проявила отличную скорость и точность в обработке запроса на самоисключение, предоставив необходимые варианты и информацию о поддержке.  Персонализация могла бы быть выше, но это не критично, учитывая запрос игрока.",
+    "next_action": {
+      "owner": "compliance",
+      "action": "verify self-exclusion in system",
+      "deadline": "today"
+    },
+    "draft_message": "",
+    "score_total": 17
+  }
+}

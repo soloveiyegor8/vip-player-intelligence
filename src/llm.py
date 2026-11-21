@@ -279,6 +279,8 @@ def postprocess(analysis: dict) -> dict:
 
 # ─────────────────────────── проверки кодом ───────────────────────────
 
+COMPLIANCE_FACT_FLAGS = {"OPT_OUT_REQUEST", "MULTI_ACCOUNT"}
+
 # Нарушения, где сами слова менеджера и есть нарушение: цитата должна быть из его сообщения.
 # RG_LOSS_CHASING_ENCOURAGED сюда не входит: слова игрока «всё слил» — законное доказательство контекста.
 MANAGER_ACTION_FLAGS = {"RG_LIMIT_INCREASE_PUSHED", "RG_WITHDRAWAL_DISCOURAGED", "PRESSURE_TACTICS",
@@ -307,12 +309,20 @@ def _speaker_of(evidence: str, dialog: dict) -> str | None:
 
 def apply_guards(analysis: dict, dialog: dict) -> dict:
     """Детерминированные проверки поверх ответа модели. Сомнительные флаги не удаляются, а уходят на проверку:
-    1) критичный флаг при итоговой оценке модели не 'critical' — модель противоречит сама себе;
+    1) RG-флаг при итоговой оценке модели не 'critical' — модель противоречит сама себе;
     2) нарушение менеджера, подтверждённое цитатой игрока, — доказательство не о том."""
-    keep, review = [], list(analysis.get("review_flags", []))
+    # Пересборка должна давать тот же результат, поэтому начинаем с полного набора флагов модели.
+    flags = analysis["flags"] + [{k: v for k, v in f.items() if k != "review_reason"}
+                                 for f in analysis.get("review_flags", [])]
+    analysis["flags"] = sorted(flags, key=lambda f: sig.SEVERITY_ORDER[f["severity"]]) if all("severity" in f for f in flags) else flags
+    keep, review = [], []
+    # Факты комплаенса (игрок попросил отписку, одна карта на несколько аккаунтов) не зависят от общей оценки
+    # модели — наоборот, они сами делают контакт критичным. Сомнению подлежат только RG-суждения.
+    if any(f["code"] in COMPLIANCE_FACT_FLAGS for f in analysis["flags"]):
+        analysis["overall"] = "critical"
     for f in analysis["flags"]:
         reason = None
-        if FLAG_SEVERITY[f["code"]] == "critical" and analysis["overall"] != "critical":
+        if f["code"].startswith("RG_") and analysis["overall"] != "critical":
             reason = f"критичный флаг, но итоговая оценка модели — {analysis['overall']}"
         elif f["code"] in MANAGER_ACTION_FLAGS and _speaker_of(f["evidence"], dialog) == "player":
             reason = "нарушение менеджера подтверждено цитатой игрока"

@@ -1,0 +1,44 @@
+{
+  "dialog_id": "D014",
+  "player_id": "P1014",
+  "manager": "Tom",
+  "input_key": "247b4405b4969588",
+  "usage": {
+    "model": "gemma3:12b",
+    "input_tokens": 2909,
+    "output_tokens": 478,
+    "seconds": 120.7
+  },
+  "analysis": {
+    "player_intent": "small_talk",
+    "intent_summary": "Игрок ответил на приветствие и поблагодарил за информацию о новом столе.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "GENERIC_OUTREACH",
+        "evidence": "Hi Chris, it's been a couple of weeks since your last session. I remember you like the live blackjack tables in the evening — we've just opened a new high-limit table from 8pm ET. No pressure, just thought you'd want to know.",
+        "explanation": "Менеджер отправил промо-сообщение игроку, который не заходил в систему две недели и не делал депозиты, что может указывать на снижение интереса или потенциальную проблему с ответственной игрой.",
+        "severity": "low"
+      }
+    ],
+    "scores": {
+      "responsiveness": 3,
+      "problem_solving": 2,
+      "accuracy": 2,
+      "personalization": 3,
+      "tone": 3,
+      "responsible_gambling": 2
+    },
+    "overall": "ok",
+    "summary": "Менеджер проявил внимание к игроку, напомнив о его предпочтениях и новом столе. Однако, отправка промо-сообщения неактивному игроку, особенно учитывая снижение активности, может быть воспринята как навязчивость и потенциально спровоцировать нежелательное поведение.",
+    "manager_feedback": "Менеджеру следует избегать отправки промо-сообщений неактивным игрокам, особенно если они демонстрируют признаки снижения активности или потенциальные проблемы с ответственной игрой. Лучше предложить помощь или проверить, все ли в порядке.",
+    "next_action": {
+      "owner": "teamlead",
+      "action": "Напомнить команде о важности оценки активности игроков перед отправкой промо-акций.",
+      "deadline": "this_week"
+    },
+    "draft_message": "",
+    "score_total": 15
+  }
+}

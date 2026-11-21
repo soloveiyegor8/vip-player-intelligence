@@ -1,0 +1,37 @@
+{
+  "dialog_id": "D007",
+  "player_id": "P1007",
+  "manager": "Tom",
+  "input_key": "b4e76fca3cd58539",
+  "usage": {
+    "model": "gemma3:12b",
+    "input_tokens": 2998,
+    "output_tokens": 304,
+    "seconds": 101.7
+  },
+  "analysis": {
+    "player_intent": "withdrawal_issue",
+    "intent_summary": "Игрок спрашивает о статусе вывода средств.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [],
+    "scores": {
+      "responsiveness": 3,
+      "problem_solving": 3,
+      "accuracy": 2,
+      "personalization": 2,
+      "tone": 3,
+      "responsible_gambling": 3
+    },
+    "overall": "good",
+    "summary": "Менеджер оперативно отреагировал на запрос игрока о выводе средств, предоставил информацию о необходимости документа и проинформировал о статусе. Вывод был успешно выполнен.",
+    "manager_feedback": "Менеджер быстро отреагировал на запрос игрока и предоставил информацию о статусе вывода. Однако, менеджер не уточнил, какой именно документ требуется, что могло вызвать дополнительные вопросы у игрока. В дальнейшем стоит уточнять детали запроса.",
+    "next_action": {
+      "owner": "teamlead",
+      "action": "review_accuracy_of_payment_information",
+      "deadline": "this_week"
+    },
+    "draft_message": "",
+    "score_total": 16
+  }
+}

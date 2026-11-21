@@ -1,0 +1,44 @@
+{
+  "dialog_id": "D022",
+  "player_id": "P1022",
+  "manager": "Emily",
+  "input_key": "d10941f7d3fbeef0",
+  "usage": {
+    "model": "gemma3:12b",
+    "input_tokens": 3000,
+    "output_tokens": 453,
+    "seconds": 67.5
+  },
+  "analysis": {
+    "player_intent": "complaint",
+    "intent_summary": "Игрок жалуется на более выгодные релоды у конкурента (Spinzone).",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "MISLEADING_INFO",
+        "evidence": "I can't copy that one-to-one, but looking at your play — mostly Friday and Saturday evenings, around $300 per deposit — I can set a 30% Friday reload up to $300 with x20 wagering, which is lower than theirs.",
+        "explanation": "Менеджер не предложил эквивалентную замену, а создал новый бонус, который не является прямой заменой предложения конкурента, что может ввести игрока в заблуждение относительно ценности предложения.",
+        "severity": "high"
+      }
+    ],
+    "scores": {
+      "responsiveness": 3,
+      "problem_solving": 2,
+      "accuracy": 1,
+      "personalization": 3,
+      "tone": 3,
+      "responsible_gambling": 2
+    },
+    "overall": "ok",
+    "summary": "Игрок выразил недовольство предложениями конкурента. Менеджер предложил альтернативный бонус, учитывая историю депозитов игрока. Однако, менеджер не предложил эквивалентную замену, что может ввести игрока в заблуждение.",
+    "manager_feedback": "Менеджеру следует предлагать более точные альтернативы, а не создавать новые бонусы, чтобы избежать недопонимания и сохранить доверие игрока.",
+    "next_action": {
+      "owner": "teamlead",
+      "action": "проверить, как менеджеры предлагают альтернативные бонусы, чтобы убедиться, что они понятны и соответствуют ожиданиям игроков.",
+      "deadline": "this_week"
+    },
+    "draft_message": "",
+    "score_total": 14
+  }
+}

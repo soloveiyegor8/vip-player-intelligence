@@ -1,0 +1,37 @@
+{
+  "dialog_id": "D039",
+  "player_id": "P1039",
+  "manager": "Максим",
+  "input_key": "dccf9ca033d3b6ec",
+  "usage": {
+    "model": "gemma3:12b",
+    "input_tokens": 2885,
+    "output_tokens": 275,
+    "seconds": 50.7
+  },
+  "analysis": {
+    "player_intent": "cashback_question",
+    "intent_summary": "Игрок уточняет условия начисления кешбэка.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [],
+    "scores": {
+      "responsiveness": 1,
+      "problem_solving": 3,
+      "accuracy": 3,
+      "personalization": 2,
+      "tone": 3,
+      "responsible_gambling": 3
+    },
+    "overall": "ok",
+    "summary": "Менеджер правильно ответил на вопрос игрока о кешбэке, предоставив точную информацию. Однако, игрок оставил последнее сообщение без ответа, что снижает оценку responsiveness.",
+    "manager_feedback": "Необходимо следить за последними сообщениями игроков и отвечать на них, даже если это короткое подтверждение.",
+    "next_action": {
+      "owner": "manager",
+      "action": "проверить последние сообщения игроков и ответить на них",
+      "deadline": "now"
+    },
+    "draft_message": "",
+    "score_total": 15
+  }
+}

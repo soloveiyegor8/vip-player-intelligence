@@ -1,0 +1,37 @@
+{
+  "dialog_id": "D018",
+  "player_id": "P1018",
+  "manager": "Ольга",
+  "input_key": "27dc366b5cad711a",
+  "usage": {
+    "model": "gemma3:12b",
+    "input_tokens": 2952,
+    "output_tokens": 327,
+    "seconds": 50.1
+  },
+  "analysis": {
+    "player_intent": "vip_terms_question",
+    "intent_summary": "Игрок уточняет условия VIP статуса.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [],
+    "scores": {
+      "responsiveness": 2,
+      "problem_solving": 3,
+      "accuracy": 3,
+      "personalization": 2,
+      "tone": 3,
+      "responsible_gambling": 3
+    },
+    "overall": "good",
+    "summary": "Менеджер корректно представился, поприветствовал игрока, предоставил информацию о VIP-статусе и предложил свою помощь. Игрок подтвердил получение информации.  Несмотря на то, что игрок не отвечал 8 дней, менеджер проявил инициативу и предоставил необходимую информацию.",
+    "manager_feedback": "Менеджер отлично представился и предоставил информацию о VIP-статусе. Можно было бы добавить немного больше персонализации, например, упомянуть любимую игру игрока.",
+    "next_action": {
+      "owner": "teamlead",
+      "action": "проанализировать, почему игрок не отвечал 8 дней и как это можно предотвратить",
+      "deadline": "this_week"
+    },
+    "draft_message": "",
+    "score_total": 16
+  }
+}

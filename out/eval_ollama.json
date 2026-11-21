@@ -1,0 +1,308 @@
+{
+  "coverage": {
+    "evaluated": 40,
+    "total": 40
+  },
+  "metrics": {
+    "critical_flag_recall": {
+      "value": 0.75,
+      "num": 6,
+      "den": 8
+    },
+    "must_flag_recall": {
+      "value": 0.741,
+      "num": 20,
+      "den": 27
+    },
+    "flag_precision": {
+      "value": 0.773,
+      "num": 34,
+      "den": 44
+    },
+    "critical_dialog_recall": {
+      "value": 0.875,
+      "num": 7,
+      "den": 8
+    },
+    "critical_false_alarms": {
+      "value": 0,
+      "den": 25
+    },
+    "overall_accuracy": {
+      "value": 0.7,
+      "num": 28,
+      "den": 40
+    },
+    "intent_accuracy": {
+      "value": 0.5,
+      "num": 20,
+      "den": 40
+    },
+    "resolved_accuracy": {
+      "value": 0.812,
+      "num": 26,
+      "den": 32
+    },
+    "needs_reply_accuracy": {
+      "value": 0.938,
+      "num": 30,
+      "den": 32
+    }
+  },
+  "errors": [
+    {
+      "dialog_id": "D001",
+      "missed": [
+        "UNRESOLVED_PAYMENT"
+      ],
+      "unexpected": [
+        "RG_LOSS_CHASING_ENCOURAGED"
+      ],
+      "overall": "critical",
+      "expected_overall": [
+        "poor",
+        "critical"
+      ],
+      "note": "Депозит не проходит 5 раз, менеджер шлёт промо и отписку «возможно, банк». Бонус «до 23:59» пишет в 00:20."
+    },
+    {
+      "dialog_id": "D002",
+      "missed": [],
+      "unexpected": [],
+      "overall": "ok",
+      "expected_overall": [
+        "good",
+        "excellent"
+      ],
+      "note": "Эталон: увидел отказы, дал рабочий вариант, извинился фриспинами."
+    },
+    {
+      "dialog_id": "D004",
+      "missed": [],
+      "unexpected": [],
+      "overall": "ok",
+      "expected_overall": [
+        "good",
+        "excellent"
+      ],
+      "note": "Эталон RG: check-in без офферов, предложила лимит, поставила."
+    },
+    {
+      "dialog_id": "D005",
+      "missed": [
+        "RG_WITHDRAWAL_DISCOURAGED"
+      ],
+      "unexpected": [
+        "ISSUE_IGNORED"
+      ],
+      "overall": "poor",
+      "expected_overall": [
+        "critical"
+      ],
+      "note": "Отговаривает от вывода $12 400 турниром, пугает сроком 5 дней (у VIP обещано до 24 ч)."
+    },
+    {
+      "dialog_id": "D009",
+      "missed": [],
+      "unexpected": [],
+      "overall": "ok",
+      "expected_overall": [
+        "good",
+        "excellent"
+      ],
+      "note": "Эталон RG: заметила паттерн, отказала в бонусе, поставила лимит, договорилась о следующем контакте."
+    },
+    {
+      "dialog_id": "D012",
+      "missed": [],
+      "unexpected": [
+        "ISSUE_IGNORED"
+      ],
+      "overall": "poor",
+      "expected_overall": [
+        "poor",
+        "ok"
+      ],
+      "note": "Ответ через 9 часов, игрок решил сам."
+    },
+    {
+      "dialog_id": "D014",
+      "missed": [],
+      "unexpected": [
+        "GENERIC_OUTREACH"
+      ],
+      "overall": "ok",
+      "expected_overall": [
+        "good",
+        "excellent"
+      ],
+      "note": "Хорошая персональная реактивация: помнит любимую игру и время, без давления."
+    },
+    {
+      "dialog_id": "D016",
+      "missed": [
+        "PROMISE_NOT_KEPT"
+      ],
+      "unexpected": [],
+      "overall": "poor",
+      "expected_overall": [
+        "poor",
+        "critical"
+      ],
+      "note": "Обещанный кешбэк не начислен, игрок пишет дважды — тишина 5 дней."
+    },
+    {
+      "dialog_id": "D019",
+      "missed": [
+        "CHURN_THREAT"
+      ],
+      "unexpected": [
+        "ISSUE_IGNORED"
+      ],
+      "overall": "poor",
+      "expected_overall": [
+        "poor",
+        "critical"
+      ],
+      "note": "Сравнивает с конкурентом (15% кешбэк), получает общие слова, ответ через 2 ч."
+    },
+    {
+      "dialog_id": "D022",
+      "missed": [],
+      "unexpected": [
+        "MISLEADING_INFO"
+      ],
+      "overall": "ok",
+      "expected_overall": [
+        "good",
+        "excellent"
+      ],
+      "note": "Эталон удержания: спросила условия конкурента, сделала персональный оффер под паттерн игры."
+    },
+    {
+      "dialog_id": "D025",
+      "missed": [],
+      "unexpected": [],
+      "overall": "ok",
+      "expected_overall": [
+        "good",
+        "excellent"
+      ],
+      "note": "Проактивно спросил о неудачном депозите."
+    },
+    {
+      "dialog_id": "D027",
+      "missed": [],
+      "unexpected": [],
+      "overall": "ok",
+      "expected_overall": [
+        "good",
+        "excellent"
+      ],
+      "note": "Точный ответ: сумма, время, условия."
+    },
+    {
+      "dialog_id": "D028",
+      "missed": [],
+      "unexpected": [
+        "PASSED_THE_BUCK"
+      ],
+      "overall": "poor",
+      "expected_overall": [
+        "good",
+        "excellent",
+        "ok"
+      ],
+      "note": "Лимит платёжного метода, предложила банковский перевод. Признаков риска у игрока нет."
+    },
+    {
+      "dialog_id": "D031",
+      "missed": [
+        "FEEDBACK_NOT_ESCALATED"
+      ],
+      "unexpected": [
+        "GENERIC_OUTREACH"
+      ],
+      "overall": "poor",
+      "expected_overall": [
+        "ok",
+        "poor"
+      ],
+      "note": "Попросил фидбек и получил полезный — «спасибо» и никуда не передал."
+    },
+    {
+      "dialog_id": "D033",
+      "missed": [
+        "RG_WITHDRAWAL_DISCOURAGED"
+      ],
+      "unexpected": [],
+      "overall": "critical",
+      "expected_overall": [
+        "critical"
+      ],
+      "note": "Отменила вывод ради игры и дала бонус; через 3 часа «всё слил, можно ещё бонус?»."
+    },
+    {
+      "dialog_id": "D035",
+      "missed": [
+        "FEEDBACK_NOT_ESCALATED"
+      ],
+      "unexpected": [],
+      "overall": "poor",
+      "expected_overall": [
+        "ok",
+        "poor"
+      ],
+      "note": "Просил созвон — отказ без альтернативы, игрок ушёл «напишу позже»."
+    },
+    {
+      "dialog_id": "D036",
+      "missed": [],
+      "unexpected": [
+        "RG_LOSS_CHASING_ENCOURAGED"
+      ],
+      "overall": "critical",
+      "expected_overall": [
+        "poor",
+        "critical"
+      ],
+      "note": "«Сколько планируешь задепать?», напоминание в 02:00, без ответа игрока."
+    },
+    {
+      "dialog_id": "D037",
+      "missed": [],
+      "unexpected": [],
+      "overall": "ok",
+      "expected_overall": [
+        "good",
+        "excellent"
+      ],
+      "note": "Поздравление в день рождения, подарок без вейджера."
+    },
+    {
+      "dialog_id": "D038",
+      "missed": [],
+      "unexpected": [
+        "PRESSURE_TACTICS"
+      ],
+      "overall": "ok",
+      "expected_overall": [
+        "good",
+        "excellent"
+      ],
+      "note": "Эталон работы с жалобой: эскалация, извинение, проверила вывод."
+    },
+    {
+      "dialog_id": "D039",
+      "missed": [],
+      "unexpected": [],
+      "overall": "ok",
+      "expected_overall": [
+        "good",
+        "excellent"
+      ],
+      "note": "Точный и полный ответ про расчёт кешбэка."
+    }
+  ],
+  "model": "gemma3:12b"
+}

@@ -1,0 +1,44 @@
+{
+  "dialog_id": "D002",
+  "player_id": "P1002",
+  "manager": "Tom",
+  "input_key": "66c69f8420b6af11",
+  "usage": {
+    "model": "gemma3:12b",
+    "input_tokens": 2994,
+    "output_tokens": 431,
+    "seconds": 122.0
+  },
+  "analysis": {
+    "player_intent": "deposit_issue",
+    "intent_summary": "Игрок сообщил о проблемах с депозитом Interac, который несколько раз не проходил.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "RG_LOSS_CHASING_ENCOURAGED",
+        "evidence": "I've added 20 free spins on Book of Gold as a sorry for the trouble. Good luck tonight!",
+        "explanation": "После сообщения о проблеме с депозитом менеджер предложил бонусные вращения, что может быть воспринято как поощрение к игре после неудачи.",
+        "severity": "critical"
+      }
+    ],
+    "scores": {
+      "responsiveness": 2,
+      "problem_solving": 3,
+      "accuracy": 2,
+      "personalization": 2,
+      "tone": 3,
+      "responsible_gambling": 1
+    },
+    "overall": "ok",
+    "summary": "Менеджер быстро отреагировал на проблему с депозитом и предложил решение (использовать email-вариант Interac). Однако, предложение бонуса после решения проблемы с депозитом является нежелательным, учитывая, что игрок испытывал трудности с пополнением счета.  Необходимо избегать поощрения игры после неудачных попыток.",
+    "manager_feedback": "Не предлагайте бонусы игрокам, испытывающим трудности с депозитами. Сосредоточьтесь на решении проблемы и предоставлении поддержки.",
+    "next_action": {
+      "owner": "teamlead",
+      "action": "Обсудить с менеджером Tom нежелательность предложения бонусов после решения проблем с депозитами.",
+      "deadline": "this_week"
+    },
+    "draft_message": "",
+    "score_total": 13
+  }
+}

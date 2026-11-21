@@ -1,0 +1,37 @@
+{
+  "dialog_id": "D034",
+  "player_id": "P1034",
+  "manager": "Максим",
+  "input_key": "38fbb18774b50ad4",
+  "usage": {
+    "model": "gemma3:12b",
+    "input_tokens": 2877,
+    "output_tokens": 283,
+    "seconds": 49.6
+  },
+  "analysis": {
+    "player_intent": "small_talk",
+    "intent_summary": "Игрок начал диалог с непринужденной темой о футболе, затем выразил намерение поиграть в рулетку.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [],
+    "scores": {
+      "responsiveness": 3,
+      "problem_solving": 2,
+      "accuracy": 2,
+      "personalization": 2,
+      "tone": 3,
+      "responsible_gambling": 3
+    },
+    "overall": "good",
+    "summary": "Менеджер поддержал непринужденный разговор и поприветствовал игрока. Контакт завершен корректно, без необходимости дальнейших действий.",
+    "manager_feedback": "Менеджер проявил дружелюбие и готовность к общению, что соответствует ожиданиям от VIP-поддержки.  Не требуется никаких изменений в подходе.",
+    "next_action": {
+      "owner": "teamlead",
+      "action": "none",
+      "deadline": "none"
+    },
+    "draft_message": "",
+    "score_total": 15
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "dialog_id": "D027",
+  "player_id": "P1027",
+  "manager": "Emily",
+  "input_key": "7405895a5a35da39",
+  "usage": {
+    "model": "gemma3:12b",
+    "input_tokens": 2868,
+    "output_tokens": 322,
+    "seconds": 53.0
+  },
+  "analysis": {
+    "player_intent": "cashback_question",
+    "intent_summary": "Игрок спрашивает о еженедельном кэшбэке.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [],
+    "scores": {
+      "responsiveness": 1,
+      "problem_solving": 3,
+      "accuracy": 3,
+      "personalization": 2,
+      "tone": 3,
+      "responsible_gambling": 3
+    },
+    "overall": "ok",
+    "summary": "Менеджер Emily быстро и точно ответила на вопрос игрока о кэшбэке, предоставив информацию о сумме и отсутствии вейджера. Однако, время ответа (45 минут) слишком велико, учитывая статус VIP игрока. Игрок оставил последнее сообщение без ответа, что требует внимания.",
+    "manager_feedback": "Улучшить скорость ответа, особенно для VIP игроков. Проверить, почему игрок оставил последнее сообщение без ответа.",
+    "next_action": {
+      "owner": "teamlead",
+      "action": "Проанализировать причину задержки ответа и предложить решения для улучшения скорости ответа VIP-менеджеров.",
+      "deadline": "this_week"
+    },
+    "draft_message": "",
+    "score_total": 15
+  }
+}

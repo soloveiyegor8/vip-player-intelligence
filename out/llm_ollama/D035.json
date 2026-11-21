@@ -1,0 +1,44 @@
+{
+  "dialog_id": "D035",
+  "player_id": "P1035",
+  "manager": "Tom",
+  "input_key": "364d632d7f7b4f04",
+  "usage": {
+    "model": "gemma3:12b",
+    "input_tokens": 2850,
+    "output_tokens": 533,
+    "seconds": 86.9
+  },
+  "analysis": {
+    "player_intent": "withdrawal_issue",
+    "intent_summary": "Игрок хотел поговорить по телефону, затем перешел к написанию сообщения.",
+    "resolved": "no",
+    "needs_reply": true,
+    "flags": [
+      {
+        "code": "SLOW_RESPONSE",
+        "evidence": "[2026-11-12 14:00] Игрок: Can you call me? Easier to talk\n[2026-11-12 14:30] Менеджер (Tom): Hi William, unfortunately I can only help by text at the moment. What's up?",
+        "explanation": "Задержка в ответе на запрос игрока о телефонном звонке (30 минут) могла привести к тому, что игрок передумал и не написал о своей проблеме.",
+        "severity": "medium"
+      }
+    ],
+    "scores": {
+      "responsiveness": 1,
+      "problem_solving": 0,
+      "accuracy": 2,
+      "personalization": 1,
+      "tone": 2,
+      "responsible_gambling": 3
+    },
+    "overall": "poor",
+    "summary": "Менеджер не смог оперативно ответить на запрос игрока о телефонном звонке, что привело к прерыванию диалога. Игрок, вероятно, хотел обсудить вопрос, связанный с выводом средств, но из-за задержки ответа не смог это сделать.",
+    "manager_feedback": "Менеджер должен быть более оперативным в ответах на запросы игроков, особенно если они касаются срочных вопросов. Необходимо пересмотреть политику по поводу телефонных звонков, чтобы понять, в каких случаях они допустимы.",
+    "next_action": {
+      "owner": "teamlead",
+      "action": "Проанализировать политику ответов на запросы игроков и рассмотреть возможность предоставления менеджерам возможности звонить игрокам в определенных ситуациях.",
+      "deadline": "this_week"
+    },
+    "draft_message": "Hi William, I'm so sorry for the delay in responding to your request for a call. I understand you wanted to discuss something important. Could you please share what you were hoping to talk about? I'm here to help.",
+    "score_total": 9
+  }
+}

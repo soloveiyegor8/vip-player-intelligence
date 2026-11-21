@@ -1,0 +1,44 @@
+{
+  "dialog_id": "D032",
+  "player_id": "P1032",
+  "manager": "Emily",
+  "input_key": "20befe3f152227bd",
+  "usage": {
+    "model": "gemma3:12b",
+    "input_tokens": 2893,
+    "output_tokens": 401,
+    "seconds": 68.1
+  },
+  "analysis": {
+    "player_intent": "account_change",
+    "intent_summary": "Игрок сообщает о переезде и спрашивает, повлияет ли это на его аккаунт.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "JURISDICTION_CHANGE",
+        "evidence": "Игрок: Hi Emily, heads up — I'm moving from Manitoba to Toronto next month, will keep playing from there.",
+        "explanation": "Переезд в другой регион (из Manitoba в Toronto) может повлечь за собой изменения в регулировании, и требуется проверка комплаенса.",
+        "severity": "high"
+      }
+    ],
+    "scores": {
+      "responsiveness": 0,
+      "problem_solving": 2,
+      "accuracy": 1,
+      "personalization": 2,
+      "tone": 3,
+      "responsible_gambling": 3
+    },
+    "overall": "poor",
+    "summary": "Менеджер быстро ответил, но не учел важный аспект изменения юрисдикции. Ответ «Nothing changes for you» может быть неверным и нарушает комплаенс.",
+    "manager_feedback": "Необходимо всегда проверять изменения юрисдикции и сообщать об этом в комплаенс-отдел. Нельзя давать гарантии, которые могут быть неверными.",
+    "next_action": {
+      "owner": "compliance",
+      "action": "Проверить, как переезд игрока из Manitoba в Toronto влияет на его аккаунт и соответствие требованиям комплаенса.",
+      "deadline": "today"
+    },
+    "draft_message": "",
+    "score_total": 11
+  }
+}

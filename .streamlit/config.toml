@@ -1,0 +1,15 @@
+[theme]
+base = "light"
+primaryColor = "#0F766E"
+backgroundColor = "#FAFAF7"
+secondaryBackgroundColor = "#F1F0EB"
+textColor = "#1C1D1F"
+font = "'IBM Plex Sans', system-ui, sans-serif"
+baseRadius = "6px"
+showWidgetBorder = true
+
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false

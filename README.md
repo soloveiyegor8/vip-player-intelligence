@@ -223,7 +223,7 @@ dialogs.json ┘          │
 
 ---
 
-## 8. Как запустить (заполнить по ходу)
+## 8. Как запустить
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python -m src.signals            # детерминированные сигналы → out/signals.json
@@ -238,3 +238,10 @@ export ANTHROPIC_API_KEY=...               # нужен только для пе
 ```
 
 Без ключа API интерфейс работает на сигналах из данных. После `python -m src.llm` в нём появятся смысловые флаги, оценки менеджеров и черновики ответов.
+
+### Деплой (Streamlit Community Cloud)
+1. Закоммитить `out/analysis.json` после прогона `python -m src.llm`: тогда демо показывает LLM-разбор без ключа API.
+2. На share.streamlit.io: **Create app** → репозиторий → ветка `main` → файл `app.py`. В **Advanced settings** выбрать Python 3.11.
+3. Ключ API на сервере не нужен: приложение только читает готовый разбор.
+
+Описание продукта на одну страницу: [ONE_PAGER.md](ONE_PAGER.md).

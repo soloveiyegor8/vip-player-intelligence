@@ -71,7 +71,8 @@ with st.sidebar:
     min_sev = st.select_slider("Минимальный уровень", options=["critical", "high", "medium", "low"], value="medium",
                                format_func=lambda s: SEVERITY_LABEL[s])
 
-tab_queue, tab_player, tab_managers = st.tabs(["🔥 Что горит", "👤 Карточка игрока", "📊 Менеджеры"])
+tab_queue, tab_retention, tab_player, tab_managers = st.tabs(
+    ["🔥 Что горит", "🔄 Риск оттока", "👤 Карточка игрока", "📊 Менеджеры"])
 
 # ─────────────────────────── очередь ───────────────────────────
 
@@ -184,6 +185,32 @@ with tab_player:
                         st.write(md(msg["text"]))
 
 # ─────────────────────────── менеджеры ───────────────────────────
+
+# ─────────────────────────── риск оттока ───────────────────────────
+
+with tab_retention:
+    ret = [x for x in scoring.retention_view(queue) if x["manager"] in sel_managers]
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Игроков под риском", len(ret))
+    c2.metric("Депозиты за 60 дней под риском", money(sum(x["value_60d_usd"] for x in ret)))
+    c3.metric("🛡 Только сервис, без офферов", sum(x["rg_hold"] for x in ret))
+    st.caption("Отсортировано по ценности под риском: депозиты игрока за 60 дней × число причин. "
+               "Сначала деньги и сервис, потом предложения. Игроков с признаками проблемной игры или "
+               "самоограничениями удерживают только сервисом: бонус такому игроку — нарушение, а не удержание.")
+    st.dataframe(pd.DataFrame([{
+        "Игрок": x["player_id"], "Менеджер": x["manager"], "Депозиты 60д": money(x["value_60d_usd"]),
+        "Режим": "🛡 только сервис" if x["rg_hold"] else "💰 можно оффер",
+        "Почему может уйти": "; ".join(x["reasons"]), "Что сделать": x["action"],
+    } for x in ret]), hide_index=True, use_container_width=True)
+
+    st.markdown("#### Образцы удержания для команды")
+    st.caption("Моменты, которые разбор отметил как хорошую практику: их стоит показывать менеджерам.")
+    for bp in scoring.best_practices(analyses, dialogs):
+        if bp["manager"] not in sel_managers:
+            continue
+        with st.expander(md(f"{bp['dialog_id']} · {bp['manager']} · {bp['situation']}")):
+            st.markdown(md(f"«{bp['evidence']}»"))
+            st.caption(md(bp["why"]))
 
 with tab_managers:
     st.caption(f"SLA ответа: {THRESHOLDS['sla_response_min']} мин. Оценки LLM — среднее по шкале 0–3, "

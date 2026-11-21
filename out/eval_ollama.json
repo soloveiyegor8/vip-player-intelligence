@@ -15,9 +15,9 @@
       "den": 27
     },
     "flag_precision": {
-      "value": 0.773,
+      "value": 0.81,
       "num": 34,
-      "den": 44
+      "den": 42
     },
     "critical_dialog_recall": {
       "value": 0.875,
@@ -169,9 +169,7 @@
     {
       "dialog_id": "D022",
       "missed": [],
-      "unexpected": [
-        "MISLEADING_INFO"
-      ],
+      "unexpected": [],
       "overall": "ok",
       "expected_overall": [
         "good",
@@ -282,9 +280,7 @@
     {
       "dialog_id": "D038",
       "missed": [],
-      "unexpected": [
-        "PRESSURE_TACTICS"
-      ],
+      "unexpected": [],
       "overall": "ok",
       "expected_overall": [
         "good",

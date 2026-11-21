@@ -111,6 +111,90 @@ def merge_player(p: dict, analyses: dict[str, dict]) -> dict:
     }
 
 
+# ─────────────────────────── риск оттока ───────────────────────────
+
+# Причины, по которым игрок может уйти: из данных (активность, деньги) и из переписки (сервис).
+RETENTION_REASONS = {
+    "CHURN_THREAT": "грозит уйти или сравнивает с конкурентом",
+    "CHURNED": "перестал депозитить",
+    "DEPOSIT_DROP": "депозиты резко упали",
+    "INACTIVE": "давно не заходил",
+    "NO_CONTACT": "нет контакта с менеджером",
+    "PENDING_WITHDRAWAL": "ждёт вывод",
+    "UNRESOLVED_PAYMENT": "проблема с деньгами не решена",
+    "PAYMENT_FAILURES": "не проходят депозиты",
+    "PROMISE_NOT_KEPT": "менеджер не выполнил обещание",
+    "PLAYER_IGNORED": "игрока игнорируют",
+    "ISSUE_IGNORED": "проблему игрока проигнорировали",
+    "RUDE_TONE": "грубость",
+    "WRONG_NAME": "перепутали имя",
+    "VAGUE_ANSWER": "отписка вместо ответа",
+    "SLOW_RESPONSE": "медленный ответ",
+}
+
+# Состояние игрока, при котором удерживают только сервисом: никаких бонусов и промо.
+# Это признаки риска и самоограничения самого игрока, а не ошибки менеджера (отговаривание от вывода
+# у игрока без признаков риска — нарушение менеджера, но удерживать такого игрока офферами можно).
+RG_HOLD_CODES = {"SELF_EXCLUDED", "LIMIT_SET", "RG_DEPOSIT_PATTERN", "RG_BONUS_DEPENDENCE", "OPT_OUT_REQUEST",
+                 "MULTI_ACCOUNT", "RG_RISK_SIGNS_IGNORED", "RG_LOSS_CHASING_ENCOURAGED",
+                 "RG_SELF_EXCLUSION_DISCOURAGED", "RG_LIMIT_INCREASE_PUSHED"}
+
+# Что делать, по главной причине. Деньги и сервис — раньше любых офферов.
+RETENTION_PLAYBOOK = {
+    "UNRESOLVED_PAYMENT": "Сначала деньги: довести вывод или депозит до конца, назвать срок, извиниться",
+    "PENDING_WITHDRAWAL": "Ускорить вывод и сообщить точный срок — быстрый вывод удерживает лучше бонуса",
+    "PAYMENT_FAILURES": "Помочь с депозитом: другой метод, передать в payments, вернуться с ответом",
+    "PROMISE_NOT_KEPT": "Выполнить обещанное сегодня и извиниться",
+    "PLAYER_IGNORED": "Ответить по существу в течение часа",
+    "ISSUE_IGNORED": "Вернуться к проблеме игрока и решить её",
+    "RUDE_TONE": "Извинение от тимлида и решение исходного вопроса",
+    "CHURN_THREAT": "Конкретные условия и персональное предложение под реальную игру игрока",
+    "CHURNED": "Личный контакт без промо в первом сообщении: узнать, что случилось",
+    "DEPOSIT_DROP": "Узнать причину спада: сервис, выводы, конкурент",
+    "INACTIVE": "Личный check-in с учётом любимой игры",
+    "NO_CONTACT": "Назначить менеджера и сделать первый личный контакт",
+    "WRONG_NAME": "Извиниться и исправить карточку игрока",
+    "VAGUE_ANSWER": "Дать конкретный ответ с цифрами",
+    "SLOW_RESPONSE": "Ответить и договориться о канале и времени связи",
+}
+
+
+def retention_view(queue: list[dict]) -> list[dict]:
+    """Игроки под риском оттока, по сумме под риском: ценность игрока × число причин.
+    Игроки с признаками проблемной игры или самоограничениями удерживаются только сервисом — без офферов."""
+    rows = []
+    for r in queue:
+        reasons = [i for i in r["items"] if i["code"] in RETENTION_REASONS]
+        if not reasons:
+            continue
+        codes = {i["code"] for i in r["items"]}
+        rg_hold = bool(codes & RG_HOLD_CODES)
+        top = min(reasons, key=lambda i: list(RETENTION_PLAYBOOK).index(i["code"])
+                  if i["code"] in RETENTION_PLAYBOOK else 99)
+        action = RETENTION_PLAYBOOK.get(top["code"], "Связаться лично")
+        if rg_hold:
+            action = "Только сервис, без бонусов и промо. " + action
+        rows.append({
+            "player_id": r["player_id"], "manager": r["manager"], "dialog_ids": r["dialog_ids"],
+            "value_60d_usd": r["value_60d_usd"],
+            "reasons": list(dict.fromkeys(RETENTION_REASONS[i["code"]] for i in reasons)),
+            "rg_hold": rg_hold, "action": action,
+            "risk_score": round(r["value_60d_usd"] / 1000 * (1 + 0.5 * (len(reasons) - 1)), 1),
+        })
+    return sorted(rows, key=lambda x: -x["risk_score"])
+
+
+def best_practices(analyses: dict[str, dict], dialogs: dict[str, dict]) -> list[dict]:
+    """Образцы для команды: моменты, которые модель отметила как GOOD_PRACTICE."""
+    out = []
+    for did, a in sorted(analyses.items()):
+        for f in a["flags"]:
+            if f["code"] == "GOOD_PRACTICE":
+                out.append({"dialog_id": did, "manager": dialogs[did]["manager"], "intent": a["player_intent"], "situation": a["intent_summary"],
+                            "evidence": f["evidence"], "why": f["explanation"], "overall": a["overall"]})
+    return out
+
+
 def build_queue(signals_data: dict, analyses: dict[str, dict]) -> list[dict]:
     rows = [merge_player(p, analyses) for p in signals_data["players"]]
     return sorted(rows, key=lambda r: -r["priority"])

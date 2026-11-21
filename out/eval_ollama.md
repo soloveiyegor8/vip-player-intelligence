@@ -6,7 +6,7 @@
 |---|---|
 | Полнота по критичным флагам (RG/комплаенс) | 75% (6/8) |
 | Полнота по всем обязательным флагам | 74% (20/27) |
-| Точность флагов (доля не ложных) | 77% (34/44) |
+| Точность флагов (доля не ложных) | 81% (34/42) |
 | Критичные диалоги помечены critical | 88% (7/8) |
 | Ложные critical на некритичных диалогах | 0 из 25 |
 | Итоговая оценка в допустимом диапазоне | 70% (28/40) |
@@ -27,7 +27,7 @@
 | D014 | — | GENERIC_OUTREACH | ok (good/excellent) |
 | D016 | PROMISE_NOT_KEPT | — | poor (poor/critical) |
 | D019 | CHURN_THREAT | ISSUE_IGNORED | poor (poor/critical) |
-| D022 | — | MISLEADING_INFO | ok (good/excellent) |
+| D022 | — | — | ok (good/excellent) |
 | D025 | — | — | ok (good/excellent) |
 | D027 | — | — | ok (good/excellent) |
 | D028 | — | PASSED_THE_BUCK | poor (good/excellent/ok) |
@@ -36,5 +36,5 @@
 | D035 | FEEDBACK_NOT_ESCALATED | — | poor (ok/poor) |
 | D036 | — | RG_LOSS_CHASING_ENCOURAGED | critical (poor/critical) |
 | D037 | — | — | ok (good/excellent) |
-| D038 | — | PRESSURE_TACTICS | ok (good/excellent) |
+| D038 | — | — | ok (good/excellent) |
 | D039 | — | — | ok (good/excellent) |

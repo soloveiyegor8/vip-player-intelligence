@@ -309,7 +309,8 @@ def _speaker_of(evidence: str, dialog: dict) -> str | None:
 
 def apply_guards(analysis: dict, dialog: dict) -> dict:
     """Детерминированные проверки поверх ответа модели. Сомнительные флаги не удаляются, а уходят на проверку:
-    1) RG-флаг при итоговой оценке модели не 'critical' — модель противоречит сама себе;
+    1) RG-флаг при итоговой оценке модели не 'critical' или высокий флаг при оценке ok/good/excellent —
+       модель противоречит сама себе (так ложные флаги чаще всего и выглядят на образцовых диалогах);
     2) нарушение менеджера, подтверждённое цитатой игрока, — доказательство не о том."""
     # Пересборка должна давать тот же результат, поэтому начинаем с полного набора флагов модели.
     flags = analysis["flags"] + [{k: v for k, v in f.items() if k != "review_reason"}
@@ -324,6 +325,8 @@ def apply_guards(analysis: dict, dialog: dict) -> dict:
         reason = None
         if f["code"].startswith("RG_") and analysis["overall"] != "critical":
             reason = f"критичный флаг, но итоговая оценка модели — {analysis['overall']}"
+        elif FLAG_SEVERITY[f["code"]] == "high" and analysis["overall"] in {"ok", "good", "excellent"}:
+            reason = f"серьёзный флаг, но модель сама оценила контакт как {analysis['overall']}"
         elif f["code"] in MANAGER_ACTION_FLAGS and _speaker_of(f["evidence"], dialog) == "player":
             reason = "нарушение менеджера подтверждено цитатой игрока"
         if reason:

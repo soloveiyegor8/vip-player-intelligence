@@ -1038,14 +1038,7 @@
         "intent_summary": "Игрок жалуется на более выгодные релоды у конкурента (Spinzone).",
         "resolved": "yes",
         "needs_reply": false,
-        "flags": [
-          {
-            "code": "MISLEADING_INFO",
-            "evidence": "I can't copy that one-to-one, but looking at your play — mostly Friday and Saturday evenings, around $300 per deposit — I can set a 30% Friday reload up to $300 with x20 wagering, which is lower than theirs.",
-            "explanation": "Менеджер не предложил эквивалентную замену, а создал новый бонус, который не является прямой заменой предложения конкурента, что может ввести игрока в заблуждение относительно ценности предложения.",
-            "severity": "high"
-          }
-        ],
+        "flags": [],
         "scores": {
           "responsiveness": 3,
           "problem_solving": 2,
@@ -1064,7 +1057,15 @@
         },
         "draft_message": "",
         "score_total": 14,
-        "review_flags": []
+        "review_flags": [
+          {
+            "code": "MISLEADING_INFO",
+            "evidence": "I can't copy that one-to-one, but looking at your play — mostly Friday and Saturday evenings, around $300 per deposit — I can set a 30% Friday reload up to $300 with x20 wagering, which is lower than theirs.",
+            "explanation": "Менеджер не предложил эквивалентную замену, а создал новый бонус, который не является прямой заменой предложения конкурента, что может ввести игрока в заблуждение относительно ценности предложения.",
+            "severity": "high",
+            "review_reason": "серьёзный флаг, но модель сама оценила контакт как ok"
+          }
+        ]
       }
     },
     {
@@ -1740,14 +1741,7 @@
         "intent_summary": "Игрок жалуется на грубое обращение саппорта.",
         "resolved": "yes",
         "needs_reply": false,
-        "flags": [
-          {
-            "code": "PRESSURE_TACTICS",
-            "evidence": "Передала. В качестве извинения начислила кешбэк 10% за неделю.",
-            "explanation": "Менеджер предложил кешбэк в качестве извинения за грубое обращение, что может быть воспринято как попытка удержать игрока и отвлечь от сути проблемы.",
-            "severity": "high"
-          }
-        ],
+        "flags": [],
         "scores": {
           "responsiveness": 2,
           "problem_solving": 3,
@@ -1766,7 +1760,15 @@
         },
         "draft_message": "",
         "score_total": 13,
-        "review_flags": []
+        "review_flags": [
+          {
+            "code": "PRESSURE_TACTICS",
+            "evidence": "Передала. В качестве извинения начислила кешбэк 10% за неделю.",
+            "explanation": "Менеджер предложил кешбэк в качестве извинения за грубое обращение, что может быть воспринято как попытка удержать игрока и отвлечь от сути проблемы.",
+            "severity": "high",
+            "review_reason": "серьёзный флаг, но модель сама оценила контакт как ok"
+          }
+        ]
       }
     },
     {

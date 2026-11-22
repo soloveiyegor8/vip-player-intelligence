@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "347f929fd4466af7",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Great, glad it went through. I've added 20 free spins on Book of Gold as a sorry for the trouble. Good luck tonight!",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Менеджер предлагает бонус в качестве извинения, а не оформляет запрос игрока на самоисключение, паузу или лимит."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер предлагает бонус в качестве извинения, а не оформляет запрос игрока на самоисключение, паузу или лимит."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "7d7595169bc05e27",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Great, glad it went through. I've added 20 free spins on Book of Gold as a sorry for the trouble. Good luck tonight!",
+      "violation": "no",
+      "violation_quote": "",
+      "explanation": "Менеджер предлагает бонус в качестве извинения за неудобства, а не для компенсации проигрыша."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер предлагает бонус в качестве извинения за неудобства, а не для компенсации проигрыша."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "291474807539badf",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "I've added 20 free spins on Book of Gold as a sorry for the trouble.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Менеджер предоставил игроку 20 бесплатных вращений в качестве извинения за возникшие неудобства."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер предоставил игроку 20 бесплатных вращений в качестве извинения за возникшие неудобства."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "820e5f5920e2b519",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Great, glad it went through. I've added 20 free spins on Book of Gold as a sorry for the trouble. Good luck tonight!",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Менеджер предлагает бонусные спины в качестве извинения за неудобства, а не изменение лимитов."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер предлагает бонусные спины в качестве извинения за неудобства, а не изменение лимитов."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "523b55dae919c0e8",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi Mark, sorry about that. I can see 3 declined attempts on our side.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет информации о запросе игрока на вывод средств или попытках менеджера отговорить от него."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет информации о запросе игрока на вывод средств или попытках менеджера отговорить от него."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "f89f68e89cee0d95",
+    "model": {
+      "answer": "no",
+      "quote": "N/A",
+      "explanation": "В переписке нет ни одного запроса игрока о прекращении рассылок, сообщений или контактов."
+    },
+    "confirmed": false,
+    "evidence": "N/A",
+    "why": "",
+    "explanation": "В переписке нет ни одного запроса игрока о прекращении рассылок, сообщений или контактов."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "f1eb867c3ee49017",
+    "model": {
+      "answer": "no",
+      "quote": "Hey Tom, my Interac deposit keeps failing. Tried 3 times.",
+      "explanation": "Игрок сообщает о проблеме с депозитом, но не упоминает несколько аккаунтов или общие финансовые ресурсы."
+    },
+    "confirmed": false,
+    "evidence": "Hey Tom, my Interac deposit keeps failing. Tried 3 times.",
+    "why": "",
+    "explanation": "Игрок сообщает о проблеме с депозитом, но не упоминает несколько аккаунтов или общие финансовые ресурсы."
+  }
+}

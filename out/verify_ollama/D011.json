@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "3708f873731b7e30",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "I think I need to stop for a while. Can you close my account?",
+      "violation": "yes",
+      "violation_quote": "I can start a self-exclusion right now",
+      "explanation": "Игрок сам попросил остановить игру, и менеджер предложил оформить самоисключение."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "в цитате менеджера нет признака нарушения",
+    "explanation": "Игрок сам попросил остановить игру, и менеджер предложил оформить самоисключение."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "4253692ea7641646",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "I think I need to stop for a while.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Игрок выразил желание сделать перерыв и закрыть аккаунт, не упоминая о проигрыше или долгах."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Игрок выразил желание сделать перерыв и закрыть аккаунт, не упоминая о проигрыше или долгах."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "8bf1bf6821034377",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "I think I need to stop for a while.",
+      "violation": "no",
+      "violation_quote": "Done. Your account is self-excluded for 1 year from today, and you won't receive any offers from us.",
+      "explanation": "Менеджер не предлагает бонус, кешбэк или промо, а предлагает самоисключение."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер не предлагает бонус, кешбэк или промо, а предлагает самоисключение."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "70c8302dfc032195",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "I think I need to stop for a while.",
+      "violation": "yes",
+      "violation_quote": "I can start a self-exclusion right now",
+      "explanation": "Менеджер предлагает ограничить доступ игрока к аккаунту, что подразумевает ограничение, а не повышение или снятие лимита."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "в цитате менеджера нет признака нарушения",
+    "explanation": "Менеджер предлагает ограничить доступ игрока к аккаунту, что подразумевает ограничение, а не повышение или снятие лимита."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "7630faefa1a556eb",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "I think I need to stop for a while.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Игрок просит закрыть аккаунт, а не выводить деньги."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Игрок просит закрыть аккаунт, а не выводить деньги."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "72b2d22d3c08e7b8",
+    "model": {
+      "answer": "no",
+      "quote": "you won't receive any offers from us",
+      "explanation": "Менеджер сообщает, что игрок не будет получать предложения, что подразумевает прекращение рассылок, но не прямо просит прекратить все контакты."
+    },
+    "confirmed": false,
+    "evidence": "you won't receive any offers from us",
+    "why": "",
+    "explanation": "Менеджер сообщает, что игрок не будет получать предложения, что подразумевает прекращение рассылок, но не прямо просит прекратить все контакты."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "bbf6133d74a041fa",
+    "model": {
+      "answer": "no",
+      "quote": "I think I need to stop for a while. Can you close my account?",
+      "explanation": "Игрок просит закрыть свой аккаунт, не упоминая другие аккаунты или людей, связанных с ним."
+    },
+    "confirmed": false,
+    "evidence": "I think I need to stop for a while. Can you close my account?",
+    "why": "",
+    "explanation": "Игрок просит закрыть свой аккаунт, не упоминая другие аккаунты или людей, связанных с ним."
+  }
+}

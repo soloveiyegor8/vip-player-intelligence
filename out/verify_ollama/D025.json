@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "7719217c34b4197d",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Perfect, glad it worked. Have a good one!",
+      "violation": "no",
+      "violation_quote": "Perfect, glad it worked. Have a good one!",
+      "explanation": "Менеджер просто констатирует факт успешного пополнения счета и прощается."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер просто констатирует факт успешного пополнения счета и прощается."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "f426a0b0fae26208",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Yeah, went through with another card 10 min later",
+      "violation": "no",
+      "violation_quote": "Perfect, glad it worked. Have a good one!",
+      "explanation": "Игрок просто подтверждает успешное пополнение счета, а менеджер выражает радость от этого факта."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Игрок просто подтверждает успешное пополнение счета, а менеджер выражает радость от этого факта."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "260ca7602cc046a2",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Perfect, glad it worked. Have a good one!",
+      "violation": "no",
+      "violation_quote": "Perfect, glad it worked. Have a good one!",
+      "explanation": "Менеджер просто констатирует факт успешного пополнения счета и желает игроку хорошего дня, не предлагая никаких бонусов или акций."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер просто констатирует факт успешного пополнения счета и желает игроку хорошего дня, не предлагая никаких бонусов или акций."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "7b96cf58ea618e7c",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Perfect, glad it worked.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Менеджер просто рад, что игрок смог пополнить счет."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер просто рад, что игрок смог пополнить счет."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "2b30447f1f6437ce",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Perfect, glad it worked.",
+      "violation": "no",
+      "violation_quote": "Perfect, glad it worked.",
+      "explanation": "Менеджер просто рад, что игрок смог пополнить баланс, и не упоминает вывод средств."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер просто рад, что игрок смог пополнить баланс, и не упоминает вывод средств."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "d31f21eba4d61d49",
+    "model": {
+      "answer": "no",
+      "quote": "Have a good one!",
+      "explanation": "Менеджер прощается с игроком, не получая от него просьб о прекращении контактов."
+    },
+    "confirmed": false,
+    "evidence": "Have a good one!",
+    "why": "",
+    "explanation": "Менеджер прощается с игроком, не получая от него просьб о прекращении контактов."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "93cb0e951129da1d",
+    "model": {
+      "answer": "no",
+      "quote": "Yeah, went through with another card 10 min later",
+      "explanation": "Игрок сообщает об использовании другой карты, но не упоминает об общих аккаунтах или родственниках."
+    },
+    "confirmed": false,
+    "evidence": "Yeah, went through with another card 10 min later",
+    "why": "",
+    "explanation": "Игрок сообщает об использовании другой карты, но не упоминает об общих аккаунтах или родственниках."
+  }
+}

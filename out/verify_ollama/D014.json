@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "c8bdf67d7054a1ae",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "No",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет упоминаний о просьбе игрока заблокировать аккаунт, самоисключиться, сделать паузу или установить лимит."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о просьбе игрока заблокировать аккаунт, самоисключиться, сделать паузу или установить лимит."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "2b3abb51c40ea8e2",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Oh nice, I'll check it out this weekend",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Игрок просто выражает намерение поиграть, не упоминая проигрыш или финансовые трудности."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Игрок просто выражает намерение поиграть, не упоминая проигрыш или финансовые трудности."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "3167e8df2f1ab265",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi Chris, it's been a couple of weeks since your last session. I remember you like the live blackjack tables in the evening — we've just opened a new high-limit table from 8pm ET. No pressure, just thought you'd want to know.",
+      "violation": "no",
+      "violation_quote": "Awesome. If you'd like a seat reserved or anything else, just ping me.",
+      "explanation": "Менеджер предлагает зарезервировать место или что-то еще, не предлагая бонус или промо."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер предлагает зарезервировать место или что-то еще, не предлагая бонус или промо."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "882bdfdd7b0c8a9e",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "If you'd like a seat reserved or anything else, just ping me.",
+      "violation": "no",
+      "violation_quote": "N/A",
+      "explanation": "Менеджер предлагает зарезервировать место, а не предлагает изменить лимиты игрока."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер предлагает зарезервировать место, а не предлагает изменить лимиты игрока."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "fb66da1edffa22fd",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi Chris, it's been a couple of weeks since your last session.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет упоминаний о выводе средств."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о выводе средств."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "8feb1ed43ec414d1",
+    "model": {
+      "answer": "no",
+      "quote": "Oh nice, I'll check it out this weekend",
+      "explanation": "Игрок выражает заинтересованность в предложении менеджера, а не просит прекратить контакты."
+    },
+    "confirmed": false,
+    "evidence": "Oh nice, I'll check it out this weekend",
+    "why": "",
+    "explanation": "Игрок выражает заинтересованность в предложении менеджера, а не просит прекратить контакты."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "4968d35ba5d4678c",
+    "model": {
+      "answer": "no",
+      "quote": "Oh nice, I'll check it out this weekend",
+      "explanation": "Игрок просто выражает заинтересованность в проверке стола на выходных, не упоминая аккаунты или родственников."
+    },
+    "confirmed": false,
+    "evidence": "Oh nice, I'll check it out this weekend",
+    "why": "",
+    "explanation": "Игрок просто выражает заинтересованность в проверке стола на выходных, не упоминая аккаунты или родственников."
+  }
+}

@@ -2,21 +2,21 @@
   "dialog_id": "D026",
   "player_id": "P1026",
   "manager": "Алина",
-  "input_key": "92cf476582aaa920",
+  "input_key": "21f313002d2629c9",
   "usage": {
     "model": "gemma3:12b",
-    "input_tokens": 2919,
-    "output_tokens": 275,
-    "seconds": 45.3
+    "input_tokens": 3421,
+    "output_tokens": 276,
+    "seconds": 107.0
   },
   "analysis": {
-    "player_intent": "cashback_question",
-    "intent_summary": "Игрок спрашивает о сроках вывода средств.",
+    "player_intent": "limit_or_exclusion_request",
+    "intent_summary": "Игрок просит ускорить вывод средств.",
     "resolved": "yes",
     "needs_reply": false,
     "flags": [],
     "scores": {
-      "responsiveness": 1,
+      "responsiveness": 2,
       "problem_solving": 3,
       "accuracy": 3,
       "personalization": 2,
@@ -24,14 +24,14 @@
       "responsible_gambling": 3
     },
     "overall": "good",
-    "summary": "Менеджер оперативно отреагировала на запрос игрока о выводе средств, предоставила информацию о статусе вывода и выполнила запрос.  Несмотря на задержку с ответом, проблема была решена успешно.",
-    "manager_feedback": "Необходимо улучшить скорость ответа на сообщения игроков, особенно учитывая VIP-статус.",
+    "summary": "Менеджер оперативно отреагировала на запрос игрока об ускорении вывода, предоставила информацию о статусе и выполнила запрос. Контакт завершен успешно.",
+    "manager_feedback": "Менеджер продемонстрировала хороший уровень оперативности и профессионализма, предоставив информацию о статусе вывода и выполнив запрос игрока.  Не требуется никаких дополнительных действий.",
     "next_action": {
       "owner": "manager",
-      "action": "улучшить скорость ответа на сообщения игроков",
-      "deadline": "this_week"
+      "action": "none",
+      "deadline": "none"
     },
     "draft_message": "",
-    "score_total": 15
+    "score_total": 16
   }
 }

@@ -337,9 +337,15 @@ def apply_guards(analysis: dict, dialog: dict) -> dict:
     return analysis
 
 
-def assemble(records: list[dict]) -> list[dict]:
+def assemble(records: list[dict], provider: str | None = None) -> list[dict]:
+    """Проверки кодом и, если для провайдера уже был второй проход (src/verify.py), его результаты."""
+    from . import verify  # verify импортирует llm, поэтому импорт внутри функции
     dialogs = {d["dialog_id"]: d for d in load_dialogs()[0]}
+    vdir = verify.CACHE.get(provider) if provider else None
     for r in records:
+        vpath = vdir / f"{r['dialog_id']}.json" if vdir else None
+        if vpath and vpath.exists():
+            verify.merge(r["analysis"], json.loads(vpath.read_text(encoding="utf-8")))
         apply_guards(r["analysis"], dialogs[r["dialog_id"]])
     return records
 
@@ -417,7 +423,8 @@ def run(only: list[str] | None = None, force: bool = False, provider: str = "cla
                 errors.append({"dialog_id": did, "error": str(e)})
 
     # Сводный файл собираем из всего кэша, а не только из текущего прогона.
-    all_records = assemble([json.loads(p.read_text(encoding="utf-8")) for p in sorted(cfg["cache"].glob("D*.json"))])
+    all_records = assemble([json.loads(p.read_text(encoding="utf-8")) for p in sorted(cfg["cache"].glob("D*.json"))],
+                           provider)
     model = OLLAMA_MODEL if provider == "ollama" else MODEL
     cfg["out"].write_text(
         json.dumps({"provider": provider, "model": model, "effort": EFFORT if provider == "claude" else None,
@@ -471,7 +478,8 @@ def main() -> None:
         return
     if args.assemble:
         cfg = PROVIDERS[args.provider]
-        recs = assemble([json.loads(p.read_text(encoding="utf-8")) for p in sorted(cfg["cache"].glob("D*.json"))])
+        recs = assemble([json.loads(p.read_text(encoding="utf-8")) for p in sorted(cfg["cache"].glob("D*.json"))],
+                        args.provider)
         data = json.loads(cfg["out"].read_text(encoding="utf-8"))
         data["results"] = recs
         cfg["out"].write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")

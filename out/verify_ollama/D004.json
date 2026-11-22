@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "728e1b0122a9e2bf",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "If you'd like, I can set a deposit limit or a short cool-off on your account — just say the word.",
+      "violation": "yes",
+      "violation_quote": "Done — a weekly deposit limit of $1,000 is active from today.",
+      "explanation": "Менеджер выполнил просьбу игрока об установке лимита."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "в цитате менеджера нет признака нарушения",
+    "explanation": "Менеджер выполнил просьбу игрока об установке лимита."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "6ba55242e8ebf12e",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Yeah, it was bad.",
+      "violation": "yes",
+      "violation_quote": "If you'd like, I can set a deposit limit or a short cool-off on your account — just say the word.",
+      "explanation": "Менеджер предложил установить лимит депозита, что является мерой предосторожности, а не предложением вернуть проигранное."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет предпосылки со стороны игрока",
+    "explanation": "Менеджер предложил установить лимит депозита, что является мерой предосторожности, а не предложением вернуть проигранное."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "482322c79d3d122c",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Taking a few days off.",
+      "violation": "no",
+      "violation_quote": "If you'd like, I can set a deposit limit or a short cool-off on your account — just say the word.",
+      "explanation": "Менеджер предложил установить лимит депозита или сделать перерыв в игре, а не бонус или кешбэк."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер предложил установить лимит депозита или сделать перерыв в игре, а не бонус или кешбэк."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "7c5fa0b71523a669",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Maybe set a weekly limit of 1000",
+      "violation": "yes",
+      "violation_quote": "If you'd like, I can set a deposit limit or a short cool-off on your account — just say the word.",
+      "explanation": "Менеджер предлагает установить лимит, что подразумевает его наличие."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "в цитате менеджера нет признака нарушения",
+    "explanation": "Менеджер предлагает установить лимит, что подразумевает его наличие."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "7394e7a98ff4bc12",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Done — a weekly deposit limit of $1,000 is active from today.",
+      "violation": "no",
+      "violation_quote": "",
+      "explanation": "Менеджер установил лимит на депозиты, а не на вывод средств."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер установил лимит на депозиты, а не на вывод средств."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "f86cf5ace06cb076",
+    "model": {
+      "answer": "no",
+      "quote": "Maybe set a weekly limit of 1000",
+      "explanation": "Игрок просит установить лимит депозита, а не прекратить контакты."
+    },
+    "confirmed": false,
+    "evidence": "Maybe set a weekly limit of 1000",
+    "why": "",
+    "explanation": "Игрок просит установить лимит депозита, а не прекратить контакты."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "91a2de16a6e2eefe",
+    "model": {
+      "answer": "no",
+      "quote": "N/A",
+      "explanation": "В переписке нет упоминаний об использовании нескольких аккаунтов или общих карт."
+    },
+    "confirmed": false,
+    "evidence": "N/A",
+    "why": "",
+    "explanation": "В переписке нет упоминаний об использовании нескольких аккаунтов или общих карт."
+  }
+}

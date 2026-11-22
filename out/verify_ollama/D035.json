@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "0d6e220f7db5983d",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi William, unfortunately I can only help by text at the moment.",
+      "violation": "no",
+      "violation_quote": "Never mind, I'll write later",
+      "explanation": "Игрок отказался от дальнейшего общения, не делая никаких запросов на блокировку аккаунта или изменение лимитов."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Игрок отказался от дальнейшего общения, не делая никаких запросов на блокировку аккаунта или изменение лимитов."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "ebae365ec58e9ec8",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi William, unfortunately I can only help by text at the moment. What's up?",
+      "violation": "no",
+      "violation_quote": "Never mind, I'll write later",
+      "explanation": "Игрок не упоминает о проигрыше или финансовых трудностях в переписке."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Игрок не упоминает о проигрыше или финансовых трудностях в переписке."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "810c0a0474f257c9",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi William, unfortunately I can only help by text at the moment. What's up?",
+      "violation": "no",
+      "violation_quote": "Never mind, I'll write later",
+      "explanation": "Игрок не пишет о проигрыше, долгах или просьбе бонуса, он просто просит позвонить и позже передумал."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Игрок не пишет о проигрыше, долгах или просьбе бонуса, он просто просит позвонить и позже передумал."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "7554cc54a94ee7e2",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "What's up?",
+      "violation": "no",
+      "violation_quote": "Never mind, I'll write later",
+      "explanation": "Вопрос касается лимитов, а в переписке нет упоминаний о лимитах."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Вопрос касается лимитов, а в переписке нет упоминаний о лимитах."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "979a856a7ad23272",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi William, unfortunately I can only help by text at the moment.",
+      "violation": "no",
+      "violation_quote": "Hi William, unfortunately I can only help by text at the moment.",
+      "explanation": "Менеджер сообщает, что может помочь только в текстовом формате, не давая информации о запросе игрока на вывод средств."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер сообщает, что может помочь только в текстовом формате, не давая информации о запросе игрока на вывод средств."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "1b493e88f61bfb67",
+    "model": {
+      "answer": "no",
+      "quote": "Never mind, I'll write later",
+      "explanation": "Игрок просто сообщает, что отложит написание сообщения, не прося прекратить контакты."
+    },
+    "confirmed": false,
+    "evidence": "Never mind, I'll write later",
+    "why": "",
+    "explanation": "Игрок просто сообщает, что отложит написание сообщения, не прося прекратить контакты."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "f3f64662c9237fa8",
+    "model": {
+      "answer": "no",
+      "quote": "Never mind, I'll write later",
+      "explanation": "В переписке нет упоминаний об аккаунтах, картах или бонусах, связанных с другими людьми."
+    },
+    "confirmed": false,
+    "evidence": "Never mind, I'll write later",
+    "why": "",
+    "explanation": "В переписке нет упоминаний об аккаунтах, картах или бонусах, связанных с другими людьми."
+  }
+}

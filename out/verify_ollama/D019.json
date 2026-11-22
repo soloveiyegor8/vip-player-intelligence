@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "c3038697dea8ce9a",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Personal manager, special bonuses, faster withdrawals and more",
+      "violation": "no",
+      "violation_quote": "We have a lot of great VIP benefits! Our VIP program is the best 😊",
+      "explanation": "Менеджер не предлагает никаких альтернатив, а просто перечисляет преимущества VIP-программы."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер не предлагает никаких альтернатив, а просто перечисляет преимущества VIP-программы."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "d95702c0ba4996f1",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "We have a lot of great VIP benefits! Our VIP program is the best 😊",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет упоминаний о проигрыше или долгах со стороны игрока."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о проигрыше или долгах со стороны игрока."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "fd037ba219fb4b3c",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Our VIP program is the best 😊",
+      "violation": "yes",
+      "violation_quote": "Personal manager, special bonuses, faster withdrawals and more",
+      "explanation": "Менеджер перечислил бонусы, включая «special bonuses», но не уточнил, что это именно кешбэк."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет предпосылки со стороны игрока",
+    "explanation": "Менеджер перечислил бонусы, включая «special bonuses», но не уточнил, что это именно кешбэк."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "316aaf7116c81188",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Personal manager, special bonuses, faster withdrawals and more",
+      "violation": "no",
+      "violation_quote": "We have a lot of great VIP benefits! Our VIP program is the best 😊",
+      "explanation": "Менеджер не предлагает изменить лимиты игрока, а перечисляет преимущества VIP-программы."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер не предлагает изменить лимиты игрока, а перечисляет преимущества VIP-программы."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "5c77a0281cfdf20c",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "faster withdrawals",
+      "violation": "no",
+      "violation_quote": "faster withdrawals",
+      "explanation": "Менеджер упоминает более быстрые выводы как одно из преимуществ VIP-программы."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер упоминает более быстрые выводы как одно из преимуществ VIP-программы."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "8cf5b7fc4071a2ee",
+    "model": {
+      "answer": "no",
+      "quote": "So no cashback?",
+      "explanation": "Игрок задает вопрос о кэшбэке, а не просит прекратить контакты."
+    },
+    "confirmed": false,
+    "evidence": "So no cashback?",
+    "why": "",
+    "explanation": "Игрок задает вопрос о кэшбэке, а не просит прекратить контакты."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "28c3dc467e951167",
+    "model": {
+      "answer": "no",
+      "quote": "What do I actually get as VIP?",
+      "explanation": "Игрок спрашивает о преимуществах VIP-программы, но не упоминает наличие нескольких аккаунтов."
+    },
+    "confirmed": false,
+    "evidence": "What do I actually get as VIP?",
+    "why": "",
+    "explanation": "Игрок спрашивает о преимуществах VIP-программы, но не упоминает наличие нескольких аккаунтов."
+  }
+}

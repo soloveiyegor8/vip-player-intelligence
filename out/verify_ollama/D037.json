@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "ca2d38973d5b1832",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "no",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет упоминаний о просьбе игрока заблокировать аккаунт, самоисключении, паузе или лимите."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о просьбе игрока заблокировать аккаунт, самоисключении, паузе или лимите."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "0edf861f343c5fca",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "no",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет упоминаний о проигрыше или желании отыграться со стороны игрока."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о проигрыше или желании отыграться со стороны игрока."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "38b4daa7b42592c0",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "We've added 50 free spins on Big Bass Bonanza",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Менеджер предоставил игроку бесплатные спины."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер предоставил игроку бесплатные спины."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "34b28e0ad6560122",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "no",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет упоминаний о лимитах, установленных игроком."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о лимитах, установленных игроком."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "1be6dc5d63dff4ac",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Aww thank you, that's sweet!",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Игрок просто благодарит менеджера за подарок, не выражая желания вывести деньги."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Игрок просто благодарит менеджера за подарок, не выражая желания вывести деньги."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "c3a4ebb108106159",
+    "model": {
+      "answer": "no",
+      "quote": "Aww thank you, that's sweet!",
+      "explanation": "Игрок выражает благодарность, а не просит прекратить контакты."
+    },
+    "confirmed": false,
+    "evidence": "Aww thank you, that's sweet!",
+    "why": "",
+    "explanation": "Игрок выражает благодарность, а не просит прекратить контакты."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "58fc21bf2375635d",
+    "model": {
+      "answer": "no",
+      "quote": "Aww thank you, that's sweet!",
+      "explanation": "В сообщении игрока нет упоминаний об использовании нескольких аккаунтов или общих финансовых средств."
+    },
+    "confirmed": false,
+    "evidence": "Aww thank you, that's sweet!",
+    "why": "",
+    "explanation": "В сообщении игрока нет упоминаний об использовании нескольких аккаунтов или общих финансовых средств."
+  }
+}

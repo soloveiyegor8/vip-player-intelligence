@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "cbcf84dbe523d7df",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Sorry about that, Noah. I've reactivated it for another 7 days — same terms. Safe travels!",
+      "violation": "no",
+      "violation_quote": "Sorry about that, Noah. I've reactivated it for another 7 days — same terms. Safe travels!",
+      "explanation": "Менеджер активировал бонус игроку, а не оформил запрос на блокировку аккаунта."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер активировал бонус игроку, а не оформил запрос на блокировку аккаунта."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "8e523eb42871de61",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "\"Sorry about that, Noah. I've reactivated it for another 7 days — same terms. Safe travels!\"",
+      "violation": "no",
+      "violation_quote": "no quote",
+      "explanation": "Менеджер просто восстановил бонус, не предлагая ничего для компенсации проигрыша."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер просто восстановил бонус, не предлагая ничего для компенсации проигрыша."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "fc8ef620a7f76fa0",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Sorry about that, Noah. I've reactivated it for another 7 days — same terms.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Менеджер активировал бонус, а не отказал в нём."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер активировал бонус, а не отказал в нём."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "10671fd7a318c33f",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "I've reactivated it for another 7 days — same terms.",
+      "violation": "no",
+      "violation_quote": "N/A",
+      "explanation": "В переписке нет упоминаний о лимитах, установленных игроком."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о лимитах, установленных игроком."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "e7e995bff1f1468d",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Sorry about that, Noah. I've reactivated it for another 7 days — same terms.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Менеджер не предлагает игроку альтернативы выводу, а просто продлевает срок действия бонуса."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер не предлагает игроку альтернативы выводу, а просто продлевает срок действия бонуса."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "4cb9340e568103d3",
+    "model": {
+      "answer": "no",
+      "quote": "N/A",
+      "explanation": "В переписке нет ни одного запроса от игрока о прекращении рассылок, сообщений или контактов."
+    },
+    "confirmed": false,
+    "evidence": "N/A",
+    "why": "",
+    "explanation": "В переписке нет ни одного запроса от игрока о прекращении рассылок, сообщений или контактов."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "e2300f13e435be67",
+    "model": {
+      "answer": "no",
+      "quote": "My bonus expired before I could use it, I was travelling",
+      "explanation": "Игрок сообщает о просроченном бонусе и объясняет это поездкой, не упоминая другие аккаунты."
+    },
+    "confirmed": false,
+    "evidence": "My bonus expired before I could use it, I was travelling",
+    "why": "",
+    "explanation": "Игрок сообщает о просроченном бонусе и объясняет это поездкой, не упоминая другие аккаунты."
+  }
+}

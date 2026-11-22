@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "ea91b1b88b6012c2",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Approved and sent ✅ Should land today.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет упоминаний о просьбе игрока заблокировать аккаунт или о каких-либо действиях менеджера по оформлению такой просьбы."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о просьбе игрока заблокировать аккаунт или о каких-либо действиях менеджера по оформлению такой просьбы."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "d0766cabd84e8cbd",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Payments sent the request to your email on Tuesday, it may be in spam.",
+      "violation": "no",
+      "violation_quote": "N/A",
+      "explanation": "В переписке нет информации о том, что игрок проиграл деньги или испытывает финансовые трудности."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет информации о том, что игрок проиграл деньги или испытывает финансовые трудности."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "c7cda6f2ad772ea6",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Payments sent the request to your email on Tuesday, it may be in spam.",
+      "violation": "yes",
+      "violation_quote": "Approved and sent ✅ Should land today.",
+      "explanation": "Менеджер подтверждает отправку платежа игроку."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "в цитате менеджера нет признака нарушения",
+    "explanation": "Менеджер подтверждает отправку платежа игроку."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "e286cacf82f228ca",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Your withdrawal is waiting for one document — proof of address.",
+      "violation": "yes",
+      "violation_quote": "I've flagged it to payments as a priority.",
+      "explanation": "Менеджер сообщает, что помечен запрос на выплату как приоритетный."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "в цитате менеджера нет признака нарушения",
+    "explanation": "Менеджер сообщает, что помечен запрос на выплату как приоритетный."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "22ad0a5f7ac93585",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Withdrawal of 1,500 still pending since Monday",
+      "violation": "no",
+      "violation_quote": "I've flagged it to payments as a priority. I'll message you as soon as it's approved.",
+      "explanation": "Менеджер помогает игроку вывести деньги, а не отговаривает от этого."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер помогает игроку вывести деньги, а не отговаривает от этого."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "1efd893683bd3805",
+    "model": {
+      "answer": "no",
+      "quote": "N/A",
+      "explanation": "В переписке нет ни одного сообщения, в котором игрок просил бы прекратить рассылки или контакты."
+    },
+    "confirmed": false,
+    "evidence": "N/A",
+    "why": "",
+    "explanation": "В переписке нет ни одного сообщения, в котором игрок просил бы прекратить рассылки или контакты."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "5035fff7e866609b",
+    "model": {
+      "answer": "no",
+      "quote": "N/A",
+      "explanation": "В переписке нет упоминаний об аккаунтах, общих картах, супругах или родственниках, а также о переводах бонусов между аккаунтами."
+    },
+    "confirmed": false,
+    "evidence": "N/A",
+    "why": "",
+    "explanation": "В переписке нет упоминаний об аккаунтах, общих картах, супругах или родственниках, а также о переводах бонусов между аккаунтами."
+  }
+}

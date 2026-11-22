@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "0a47ef311b6c052e",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Yes — your 10% weekly cashback ($120) will be credited at 12:00 AEST today, no wagering as usual.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет упоминаний о просьбе игрока заблокировать аккаунт, самоисключении, паузе или лимите."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о просьбе игрока заблокировать аккаунт, самоисключении, паузе или лимите."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "b7e64cb6cafb59a2",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Yes — your 10% weekly cashback ($120) will be credited at 12:00 AEST today, no wagering as usual.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет упоминаний о проигрыше или желании игрока отыграться."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о проигрыше или желании игрока отыграться."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "0c9ab59c6a562b9c",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi Grace! Yes — your 10% weekly cashback ($120) will be credited at 12:00 AEST today, no wagering as usual.",
+      "violation": "yes",
+      "violation_quote": "yes",
+      "explanation": "Менеджер подтверждает предоставление кешбэка игроку."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер подтверждает предоставление кешбэка игроку."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "81dc83986d82dc12",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Yes — your 10% weekly cashback ($120) will be credited at 12:00 AEST today, no wagering as usual.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет упоминаний о лимитах, установленных игроком."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о лимитах, установленных игроком."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "96c2fb96ceec2a87",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Yes — your 10% weekly cashback ($120) will be credited at 12:00 AEST today, no wagering as usual.",
+      "violation": "no",
+      "violation_quote": "",
+      "explanation": "В переписке нет информации о запросе игрока на вывод средств."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет информации о запросе игрока на вывод средств."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "4802570800caeb93",
+    "model": {
+      "answer": "no",
+      "quote": "N/A",
+      "explanation": "В переписке нет запроса от игрока о прекращении рассылок или контактов."
+    },
+    "confirmed": false,
+    "evidence": "N/A",
+    "why": "",
+    "explanation": "В переписке нет запроса от игрока о прекращении рассылок или контактов."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "415ad31842db2bf2",
+    "model": {
+      "answer": "no",
+      "quote": "Hi Grace!",
+      "explanation": "Игрок обращается к менеджеру по имени Grace, что указывает на его имя, но не содержит информации о нескольких аккаунтах."
+    },
+    "confirmed": false,
+    "evidence": "Hi Grace!",
+    "why": "",
+    "explanation": "Игрок обращается к менеджеру по имени Grace, что указывает на его имя, но не содержит информации о нескольких аккаунтах."
+  }
+}

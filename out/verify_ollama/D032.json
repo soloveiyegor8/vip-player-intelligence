@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "a3b321cb2a3e31d6",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi Ethan, congrats on the move! Nothing changes for you, your account and bonuses stay the same 🙂",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет просьбы игрока о блокировке аккаунта, самоисключении, паузе или лимите."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет просьбы игрока о блокировке аккаунта, самоисключении, паузе или лимите."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "c18d6564d789e310",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi Ethan, congrats on the move! Nothing changes for you, your account and bonuses stay the same 🙂",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Менеджер просто поздравляет игрока с переездом и подтверждает, что условия его аккаунта не изменятся."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер просто поздравляет игрока с переездом и подтверждает, что условия его аккаунта не изменятся."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "eb6ce9aaf1698db0",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Nothing changes for you, your account and bonuses stay the same 🙂",
+      "violation": "no",
+      "violation_quote": "N/A",
+      "explanation": "Менеджер подтверждает, что бонусы игрока остаются прежними, не предлагая новых."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер подтверждает, что бонусы игрока остаются прежними, не предлагая новых."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "e9b7e4bfc8ca9291",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Nothing changes for you, your account and bonuses stay the same 🙂",
+      "violation": "no",
+      "violation_quote": "Nothing changes for you, your account and bonuses stay the same 🙂",
+      "explanation": "Менеджер подтверждает, что для игрока ничего не меняется, что подразумевает отсутствие изменений в лимитах."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер подтверждает, что для игрока ничего не меняется, что подразумевает отсутствие изменений в лимитах."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "ae438b929c70db3b",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi Ethan, congrats on the move! Nothing changes for you, your account and bonuses stay the same 🙂",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Менеджер подтверждает, что для игрока ничего не изменится, что подразумевает продолжение игры, но не содержит информации о выводе средств."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер подтверждает, что для игрока ничего не изменится, что подразумевает продолжение игры, но не содержит информации о выводе средств."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "5cec34578f5420c8",
+    "model": {
+      "answer": "no",
+      "quote": "Great!",
+      "explanation": "Игрок выражает удовлетворение, а не просит прекратить контакты."
+    },
+    "confirmed": false,
+    "evidence": "Great!",
+    "why": "",
+    "explanation": "Игрок выражает удовлетворение, а не просит прекратить контакты."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "ba2e97c771262e3d",
+    "model": {
+      "answer": "no",
+      "quote": "Hi Ethan, congrats on the move! Nothing changes for you, your account and bonuses stay the same 🙂",
+      "explanation": "В переписке нет упоминаний об использовании нескольких аккаунтов или переводах бонусов между ними."
+    },
+    "confirmed": false,
+    "evidence": "Hi Ethan, congrats on the move! Nothing changes for you, your account and bonuses stay the same 🙂",
+    "why": "",
+    "explanation": "В переписке нет упоминаний об использовании нескольких аккаунтов или переводах бонусов между ними."
+  }
+}

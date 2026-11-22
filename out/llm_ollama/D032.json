@@ -2,12 +2,12 @@
   "dialog_id": "D032",
   "player_id": "P1032",
   "manager": "Emily",
-  "input_key": "20befe3f152227bd",
+  "input_key": "57c2f2f9d7eab6e9",
   "usage": {
     "model": "gemma3:12b",
-    "input_tokens": 2893,
-    "output_tokens": 401,
-    "seconds": 68.1
+    "input_tokens": 3395,
+    "output_tokens": 411,
+    "seconds": 133.1
   },
   "analysis": {
     "player_intent": "account_change",
@@ -18,21 +18,21 @@
       {
         "code": "JURISDICTION_CHANGE",
         "evidence": "Игрок: Hi Emily, heads up — I'm moving from Manitoba to Toronto next month, will keep playing from there.",
-        "explanation": "Переезд в другой регион (из Manitoba в Toronto) может повлечь за собой изменения в регулировании, и требуется проверка комплаенса.",
+        "explanation": "Игрок меняет провинцию проживания, что может повлиять на регулирование, необходимо проверить комплаенс.",
         "severity": "high"
       }
     ],
     "scores": {
       "responsiveness": 0,
       "problem_solving": 2,
-      "accuracy": 1,
-      "personalization": 2,
+      "accuracy": 0,
+      "personalization": 3,
       "tone": 3,
       "responsible_gambling": 3
     },
     "overall": "poor",
-    "summary": "Менеджер быстро ответил, но не учел важный аспект изменения юрисдикции. Ответ «Nothing changes for you» может быть неверным и нарушает комплаенс.",
-    "manager_feedback": "Необходимо всегда проверять изменения юрисдикции и сообщать об этом в комплаенс-отдел. Нельзя давать гарантии, которые могут быть неверными.",
+    "summary": "Менеджер неверно ответил на вопрос игрока о переезде, не проверив, как это повлияет на комплаенс.  Несмотря на вежливый тон и персонализацию, игнорирование вопроса о смене юрисдикции является серьезной ошибкой.",
+    "manager_feedback": "При изменении местоположения игрока необходимо всегда проверять соответствие юрисдикции и комплаенс, а не давать автоматический ответ.",
     "next_action": {
       "owner": "compliance",
       "action": "Проверить, как переезд игрока из Manitoba в Toronto влияет на его аккаунт и соответствие требованиям комплаенса.",

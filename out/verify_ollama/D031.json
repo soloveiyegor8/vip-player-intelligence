@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "ebe90402841120c6",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Спасибо! 🙏",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет просьбы игрока о блокировке аккаунта, самоисключении, паузе или лимите."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет просьбы игрока о блокировке аккаунта, самоисключении, паузе или лимите."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "ddcf8582b2f39a4c",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Спасибо! 🙏",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Менеджер просто выражает благодарность за обратную связь."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер просто выражает благодарность за обратную связь."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "c2e07fd06d37ab57",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Спасибо! 🙏",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Менеджер просто благодарит игрока за обратную связь."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер просто благодарит игрока за обратную связь."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "79f561581fea27af",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "no",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет упоминаний о лимитах, установленных игроком."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о лимитах, установленных игроком."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "5a498ff0ad09ea07",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Привет! Мы запустили новый раздел с крэш-играми. Заглянешь, расскажешь, как тебе?",
+      "violation": "no",
+      "violation_quote": "",
+      "explanation": "В переписке нет упоминаний о выводе средств."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о выводе средств."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "1eae954d62943686",
+    "model": {
+      "answer": "no",
+      "quote": "нет",
+      "explanation": "В переписке нет просьбы игрока прекратить контакты или отписаться от рассылок."
+    },
+    "confirmed": false,
+    "evidence": "нет",
+    "why": "",
+    "explanation": "В переписке нет просьбы игрока прекратить контакты или отписаться от рассылок."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "0c7b4f6593d13051",
+    "model": {
+      "answer": "no",
+      "quote": "игры норм, но грузится долго и нет поиска по провайдеру",
+      "explanation": "В переписке нет упоминаний об использовании нескольких аккаунтов или переводах бонусов."
+    },
+    "confirmed": false,
+    "evidence": "игры норм, но грузится долго и нет поиска по провайдеру",
+    "why": "",
+    "explanation": "В переписке нет упоминаний об использовании нескольких аккаунтов или переводах бонусов."
+  }
+}

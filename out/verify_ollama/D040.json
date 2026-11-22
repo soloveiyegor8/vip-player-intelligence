@@ -1,0 +1,97 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "b1ffaf1d984fb1b3",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "I set that limit for a reason",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Игрок выразил, что установил лимит не случайно, что можно интерпретировать как просьбу сохранить текущие ограничения."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Игрок выразил, что установил лимит не случайно, что можно интерпретировать как просьбу сохранить текущие ограничения."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "45c8e49d67d7395c",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "\"your deposit limit can be raised anytime, just let me know 😉\"",
+      "violation": "yes",
+      "violation_quote": "\"your deposit limit can be raised anytime, just let me know 😉\"",
+      "explanation": "Менеджер предлагает увеличить лимит депозита, что может быть воспринято как поощрение к дальнейшей игре и потенциальным потерям."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет предпосылки со стороны игрока",
+    "explanation": "Менеджер предлагает увеличить лимит депозита, что может быть воспринято как поощрение к дальнейшей игре и потенциальным потерям."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "57ca9d1a61b73f20",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi Benjamin, we've got a great weekend reload for you — 50% up to $500!",
+      "violation": "yes",
+      "violation_quote": "your deposit limit can be raised anytime, just let me know 😉",
+      "explanation": "Менеджер предлагает поднять лимит депозита игроку."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет предпосылки со стороны игрока",
+    "explanation": "Менеджер предлагает поднять лимит депозита игроку."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "164188a308d21491",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "your deposit limit can be raised anytime",
+      "violation": "yes",
+      "violation_quote": "your deposit limit can be raised anytime",
+      "explanation": "Менеджер прямо предлагает повысить лимит игрока."
+    },
+    "confirmed": true,
+    "evidence": "your deposit limit can be raised anytime",
+    "context": "данные CRM: LIMIT_SET",
+    "why": "данные CRM и ответ менеджера",
+    "explanation": "Менеджер прямо предлагает повысить лимит игрока."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "d6cd97955ed30931",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "I set that limit for a reason",
+      "violation": "yes",
+      "violation_quote": "your deposit limit can be raised anytime, just let me know 😉",
+      "explanation": "Менеджер предлагает увеличить лимит депозита, что может побудить игрока к дальнейшей игре, несмотря на установленный им ранее лимит."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "в цитате менеджера нет признака нарушения",
+    "explanation": "Менеджер предлагает увеличить лимит депозита, что может побудить игрока к дальнейшей игре, несмотря на установленный им ранее лимит."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "176e659f3085b65e",
+    "model": {
+      "answer": "no",
+      "quote": "I set that limit for a reason",
+      "explanation": "Игрок выражает недовольство установленным лимитом, но не просит прекратить контакты."
+    },
+    "confirmed": false,
+    "evidence": "I set that limit for a reason",
+    "why": "",
+    "explanation": "Игрок выражает недовольство установленным лимитом, но не просит прекратить контакты."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "b044346dcb03f846",
+    "model": {
+      "answer": "no",
+      "quote": "I set that limit for a reason",
+      "explanation": "Игрок просто указывает, что у него были причины установить лимит, не уточняя, связаны ли они с другими аккаунтами."
+    },
+    "confirmed": false,
+    "evidence": "I set that limit for a reason",
+    "why": "",
+    "explanation": "Игрок просто указывает, что у него были причины установить лимит, не уточняя, связаны ли они с другими аккаунтами."
+  }
+}

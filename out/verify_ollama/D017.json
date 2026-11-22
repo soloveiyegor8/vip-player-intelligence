@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "96dd1c6c6c5b64ee",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi Liam, for technical issues please contact our support via live chat, they'll help you.",
+      "violation": "no",
+      "violation_quote": "Sorry about that. Please send a screenshot to support again.",
+      "explanation": "Менеджер перенаправляет игрока в службу поддержки, не оформляя запрос самостоятельно."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер перенаправляет игрока в службу поддержки, не оформляя запрос самостоятельно."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "baa8b1e599247ce1",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Lost my free spins twice.",
+      "violation": "yes",
+      "violation_quote": "Lost my free spins twice.",
+      "explanation": "Игрок сообщает о потере бесплатных вращений, что подразумевает финансовые потери."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Игрок сообщает о потере бесплатных вращений, что подразумевает финансовые потери."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "8a23ee650f63f420",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi Liam, for technical issues please contact our support via live chat, they'll help you.",
+      "violation": "no",
+      "violation_quote": "Sorry about that. Please send a screenshot to support again.",
+      "explanation": "Менеджер перенаправил игрока в службу поддержки и не предложил никаких бонусов или компенсаций."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер перенаправил игрока в службу поддержки и не предложил никаких бонусов или компенсаций."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "d5b34dd824d62944",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi Liam, for technical issues please contact our support via live chat, they'll help you.",
+      "violation": "no",
+      "violation_quote": "Sorry about that. Please send a screenshot to support again.",
+      "explanation": "Менеджер предлагает игроку обратиться в службу поддержки, не касаясь темы лимитов."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер предлагает игроку обратиться в службу поддержки, не касаясь темы лимитов."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "81f54f35a7e524c7",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Hi Liam, for technical issues please contact our support via live chat, they'll help you.",
+      "violation": "no",
+      "violation_quote": "",
+      "explanation": "Менеджер перенаправляет игрока в службу поддержки, не касаясь вопроса вывода средств."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер перенаправляет игрока в службу поддержки, не касаясь вопроса вывода средств."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "f69dbc2d262091dc",
+    "model": {
+      "answer": "no",
+      "quote": "Sorry about that. Please send a screenshot to support again.",
+      "explanation": "Игрок не просил прекратить контакты, менеджер просит его отправить скриншот в поддержку."
+    },
+    "confirmed": false,
+    "evidence": "Sorry about that. Please send a screenshot to support again.",
+    "why": "",
+    "explanation": "Игрок не просил прекратить контакты, менеджер просит его отправить скриншот в поддержку."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "cb4f74b62173ebc4",
+    "model": {
+      "answer": "no",
+      "quote": "N/A",
+      "explanation": "В переписке нет упоминаний об использовании нескольких аккаунтов или общих финансовых средств."
+    },
+    "confirmed": false,
+    "evidence": "N/A",
+    "why": "",
+    "explanation": "В переписке нет упоминаний об использовании нескольких аккаунтов или общих финансовых средств."
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "dd56fa958ff24cea",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Ой, прости, закрутилась. Хорошего вечера!",
+      "violation": "no",
+      "violation_quote": "Ой, прости, закрутилась. Хорошего вечера!",
+      "explanation": "Менеджер извиняется за задержку с поздравлением, а не реагирует на просьбу игрока."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер извиняется за задержку с поздравлением, а не реагирует на просьбу игрока."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "4d61e711d2feff9f",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Ой, прости, закрутилась.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет упоминаний о проигрыше или желании игрока отыграться."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о проигрыше или желании игрока отыграться."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "91ae5178fc5d8cc4",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Начислила тебе 100 фриспинов в подарок",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Менеджер начислила игроку фриспины в подарок."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер начислила игроку фриспины в подарок."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "9c64ced43247c1db",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Ой, прости, закрутилась.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет упоминаний о лимитах, установленных игроком."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о лимитах, установленных игроком."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "ba0ab82404f8a575",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "С прошедшим днём рождения! 🎉 Начислила тебе 100 фриспинов в подарок",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "В переписке нет упоминаний о выводе средств."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет упоминаний о выводе средств."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "d13c5b08c5a688bf",
+    "model": {
+      "answer": "no",
+      "quote": "нет",
+      "explanation": "В переписке нет запроса от игрока о прекращении рассылок или контактов."
+    },
+    "confirmed": false,
+    "evidence": "нет",
+    "why": "",
+    "explanation": "В переписке нет запроса от игрока о прекращении рассылок или контактов."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "4090c8c54d669778",
+    "model": {
+      "answer": "no",
+      "quote": "спасибо) вспомнили через два дня 😅",
+      "explanation": "Игрок просто комментирует задержку поздравления, не упоминая аккаунты или переводы."
+    },
+    "confirmed": false,
+    "evidence": "спасибо) вспомнили через два дня 😅",
+    "why": "",
+    "explanation": "Игрок просто комментирует задержку поздравления, не упоминая аккаунты или переводы."
+  }
+}

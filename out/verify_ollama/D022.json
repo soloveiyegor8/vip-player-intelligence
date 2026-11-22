@@ -1,0 +1,96 @@
+{
+  "RG_SELF_EXCLUSION_DISCOURAGED": {
+    "key": "8c50cfe1e285387a",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Done, it'll be in your account every Friday starting this week.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Менеджер выполнил просьбу игрока, предложив бонус, а не оформив самоисключение или лимит."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер выполнил просьбу игрока, предложив бонус, а не оформив самоисключение или лимит."
+  },
+  "RG_LOSS_CHASING_ENCOURAGED": {
+    "key": "a47161b4ab59733a",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Honestly, Spinzone gives me way better reloads",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Игрок выражает недовольство условиями релоада в онлайн-казино, а не жалуется на проигрыш."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Игрок выражает недовольство условиями релоада в онлайн-казино, а не жалуется на проигрыш."
+  },
+  "RG_RISK_SIGNS_IGNORED": {
+    "key": "c668dd49c84fa4e4",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "I can't copy that one-to-one, but looking at your play — mostly Friday and Saturday evenings, around $300 per deposit — I can set a 30% Friday reload up to $300 with x20 wagering, which is lower than theirs.",
+      "violation": "no",
+      "violation_quote": "no",
+      "explanation": "Менеджер предлагает бонус в виде перезагрузки депозита, а не кешбэк или промо."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер предлагает бонус в виде перезагрузки депозита, а не кешбэк или промо."
+  },
+  "RG_LIMIT_INCREASE_PUSHED": {
+    "key": "1428f39a6bb93187",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "I can't copy that one-to-one, but looking at your play — mostly Friday and Saturday evenings, around $300 per deposit — I can set a 30% Friday reload up to $300 with x20 wagering, which is lower than theirs.",
+      "violation": "no",
+      "violation_quote": "N/A",
+      "explanation": "Менеджер предлагает установить новый лимит в $300, основываясь на предыдущих депозитах игрока."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "Менеджер предлагает установить новый лимит в $300, основываясь на предыдущих депозитах игрока."
+  },
+  "RG_WITHDRAWAL_DISCOURAGED": {
+    "key": "0cdc50e79c97be64",
+    "model": {
+      "premise": "yes",
+      "premise_quote": "Done, it'll be in your account every Friday starting this week.",
+      "violation": "no",
+      "violation_quote": "",
+      "explanation": "В переписке нет информации о выводе средств."
+    },
+    "confirmed": false,
+    "evidence": "",
+    "why": "нет подтверждённой цитаты менеджера",
+    "explanation": "В переписке нет информации о выводе средств."
+  },
+  "OPT_OUT_REQUEST": {
+    "key": "bc7f3d0c0a2afe29",
+    "model": {
+      "answer": "no",
+      "quote": "N/A",
+      "explanation": "В переписке нет упоминаний о просьбе игрока прекратить коммуникацию."
+    },
+    "confirmed": false,
+    "evidence": "N/A",
+    "why": "",
+    "explanation": "В переписке нет упоминаний о просьбе игрока прекратить коммуникацию."
+  },
+  "MULTI_ACCOUNT": {
+    "key": "65156c8f26bd97b4",
+    "model": {
+      "answer": "no",
+      "quote": "N/A",
+      "explanation": "В переписке нет упоминаний об использовании нескольких аккаунтов или общих финансовых средств."
+    },
+    "confirmed": false,
+    "evidence": "N/A",
+    "why": "",
+    "explanation": "В переписке нет упоминаний об использовании нескольких аккаунтов или общих финансовых средств."
+  }
+}

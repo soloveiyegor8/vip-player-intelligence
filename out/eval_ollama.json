@@ -5,8 +5,8 @@
   },
   "metrics": {
     "critical_flag_recall": {
-      "value": 0.75,
-      "num": 6,
+      "value": 1.0,
+      "num": 8,
       "den": 8
     },
     "must_flag_recall": {
@@ -15,13 +15,13 @@
       "den": 27
     },
     "flag_precision": {
-      "value": 0.81,
-      "num": 34,
-      "den": 42
+      "value": 0.8,
+      "num": 32,
+      "den": 40
     },
     "critical_dialog_recall": {
-      "value": 0.875,
-      "num": 7,
+      "value": 1.0,
+      "num": 8,
       "den": 8
     },
     "critical_false_alarms": {
@@ -29,13 +29,13 @@
       "den": 25
     },
     "overall_accuracy": {
-      "value": 0.7,
-      "num": 28,
+      "value": 0.8,
+      "num": 32,
       "den": 40
     },
     "intent_accuracy": {
-      "value": 0.5,
-      "num": 20,
+      "value": 0.525,
+      "num": 21,
       "den": 40
     },
     "resolved_accuracy": {
@@ -55,10 +55,8 @@
       "missed": [
         "UNRESOLVED_PAYMENT"
       ],
-      "unexpected": [
-        "RG_LOSS_CHASING_ENCOURAGED"
-      ],
-      "overall": "critical",
+      "unexpected": [],
+      "overall": "poor",
       "expected_overall": [
         "poor",
         "critical"
@@ -77,53 +75,16 @@
       "note": "Эталон: увидел отказы, дал рабочий вариант, извинился фриспинами."
     },
     {
-      "dialog_id": "D004",
-      "missed": [],
-      "unexpected": [],
-      "overall": "ok",
-      "expected_overall": [
-        "good",
-        "excellent"
-      ],
-      "note": "Эталон RG: check-in без офферов, предложила лимит, поставила."
-    },
-    {
       "dialog_id": "D005",
-      "missed": [
-        "RG_WITHDRAWAL_DISCOURAGED"
-      ],
+      "missed": [],
       "unexpected": [
         "ISSUE_IGNORED"
       ],
-      "overall": "poor",
+      "overall": "critical",
       "expected_overall": [
         "critical"
       ],
       "note": "Отговаривает от вывода $12 400 турниром, пугает сроком 5 дней (у VIP обещано до 24 ч)."
-    },
-    {
-      "dialog_id": "D009",
-      "missed": [],
-      "unexpected": [],
-      "overall": "ok",
-      "expected_overall": [
-        "good",
-        "excellent"
-      ],
-      "note": "Эталон RG: заметила паттерн, отказала в бонусе, поставила лимит, договорилась о следующем контакте."
-    },
-    {
-      "dialog_id": "D012",
-      "missed": [],
-      "unexpected": [
-        "ISSUE_IGNORED"
-      ],
-      "overall": "poor",
-      "expected_overall": [
-        "poor",
-        "ok"
-      ],
-      "note": "Ответ через 9 часов, игрок решил сам."
     },
     {
       "dialog_id": "D014",
@@ -156,9 +117,7 @@
       "missed": [
         "CHURN_THREAT"
       ],
-      "unexpected": [
-        "ISSUE_IGNORED"
-      ],
+      "unexpected": [],
       "overall": "poor",
       "expected_overall": [
         "poor",
@@ -169,13 +128,30 @@
     {
       "dialog_id": "D022",
       "missed": [],
-      "unexpected": [],
+      "unexpected": [
+        "GENERIC_OUTREACH"
+      ],
       "overall": "ok",
       "expected_overall": [
         "good",
         "excellent"
       ],
       "note": "Эталон удержания: спросила условия конкурента, сделала персональный оффер под паттерн игры."
+    },
+    {
+      "dialog_id": "D024",
+      "missed": [
+        "RUDE_TONE"
+      ],
+      "unexpected": [
+        "PRESSURE_TACTICS"
+      ],
+      "overall": "poor",
+      "expected_overall": [
+        "critical",
+        "poor"
+      ],
+      "note": "Третий отказ в выводе, грубость «читайте правила внимательнее»."
     },
     {
       "dialog_id": "D025",
@@ -214,6 +190,19 @@
       "note": "Лимит платёжного метода, предложила банковский перевод. Признаков риска у игрока нет."
     },
     {
+      "dialog_id": "D029",
+      "missed": [],
+      "unexpected": [
+        "CHURN_THREAT"
+      ],
+      "overall": "poor",
+      "expected_overall": [
+        "poor",
+        "ok"
+      ],
+      "note": "Перепутал имя (и пол в глаголе) второй раз — у игрока с самыми большими депозитами."
+    },
+    {
       "dialog_id": "D031",
       "missed": [
         "FEEDBACK_NOT_ESCALATED"
@@ -229,23 +218,13 @@
       "note": "Попросил фидбек и получил полезный — «спасибо» и никуда не передал."
     },
     {
-      "dialog_id": "D033",
-      "missed": [
-        "RG_WITHDRAWAL_DISCOURAGED"
-      ],
-      "unexpected": [],
-      "overall": "critical",
-      "expected_overall": [
-        "critical"
-      ],
-      "note": "Отменила вывод ради игры и дала бонус; через 3 часа «всё слил, можно ещё бонус?»."
-    },
-    {
       "dialog_id": "D035",
       "missed": [
         "FEEDBACK_NOT_ESCALATED"
       ],
-      "unexpected": [],
+      "unexpected": [
+        "PRESSURE_TACTICS"
+      ],
       "overall": "poor",
       "expected_overall": [
         "ok",
@@ -255,11 +234,11 @@
     },
     {
       "dialog_id": "D036",
-      "missed": [],
-      "unexpected": [
-        "RG_LOSS_CHASING_ENCOURAGED"
+      "missed": [
+        "PRESSURE_TACTICS"
       ],
-      "overall": "critical",
+      "unexpected": [],
+      "overall": "poor",
       "expected_overall": [
         "poor",
         "critical"
@@ -287,17 +266,6 @@
         "excellent"
       ],
       "note": "Эталон работы с жалобой: эскалация, извинение, проверила вывод."
-    },
-    {
-      "dialog_id": "D039",
-      "missed": [],
-      "unexpected": [],
-      "overall": "ok",
-      "expected_overall": [
-        "good",
-        "excellent"
-      ],
-      "note": "Точный и полный ответ про расчёт кешбэка."
     }
   ],
   "model": "gemma3:12b"

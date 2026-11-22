@@ -26,5 +26,7 @@ echo "4/4 Второй проход-проверка критичных нару
 $PY -m src.verify --provider claude
 $PY -m src.eval > /dev/null
 cat out/eval_compare.md
+$PY -m src.export
 echo
-echo "Подробно по диалогам: out/eval.md. В интерфейсе источник «Claude API» выбран по умолчанию."
+echo "Подробно по диалогам: out/eval.md. Сайт (docs/) и Streamlit показывают «Claude API» по умолчанию."
+echo "Чтобы обновить опубликованный сайт: git add -A && git commit -m 'Прогон Claude API' && git push"

@@ -1,6 +1,6 @@
 # VIP Player Intelligence — описание на одну страницу
 
-Демо: https://vip-player-intelligence.streamlit.app · код: https://github.com/soloveiyegor8/vip-player-intelligence
+Демо: https://soloveiyegor8.github.io/vip-player-intelligence/ · код: https://github.com/soloveiyegor8/vip-player-intelligence
 
 ## Для кого
 **Тимлид или руководитель VIP-отдела.** Второй пользователь — сам менеджер: он видит свою очередь и получает готовый черновик ответа.

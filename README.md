@@ -8,7 +8,8 @@ MVP для тимлида VIP-отдела онлайн-казино. Инстр
 - **Карточка игрока.** Цифры из CRM, сигналы и переписка со временем ответов.
 - **Сводка по менеджерам.** Время ответа, игнор, нарушения, игроки без контакта.
 
-**Демо: https://vip-player-intelligence.streamlit.app**
+**Демо: https://soloveiyegor8.github.io/vip-player-intelligence/** — основной интерфейс (статическая страница).
+Запасной интерфейс на Streamlit: https://vip-player-intelligence.streamlit.app
 
 Для кого инструмент, почему выбраны эти функции и как всё устроено: **[ONE_PAGER.md](ONE_PAGER.md)**.
 
@@ -24,7 +25,13 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/streamlit run app.py
 ```
 
-Интерфейс откроется на http://localhost:8501. Ключ API для этого не нужен: готовый LLM-разбор лежит в репозитории, источник выбирается в боковой панели. Если разбора нет, очередь строится только на сигналах из данных.
+Основной интерфейс — статическая страница в `docs/` (HTML, CSS и JS без сборки), данные для неё собирает `python -m src.export` в `docs/data.json`:
+
+```bash
+.venv/bin/python -m src.export && .venv/bin/python -m http.server 8600 --directory docs
+```
+
+Откроется на http://localhost:8600. Streamlit-интерфейс (`streamlit run app.py`) — на http://localhost:8501. Ключ API для этого не нужен: готовый LLM-разбор лежит в репозитории, источник выбирается в боковой панели. Если разбора нет, очередь строится только на сигналах из данных.
 
 ### Источники LLM-разбора
 
@@ -59,7 +66,9 @@ data/players.csv + data/dialogs.json
   → src/signals.py   сигналы, посчитанные кодом: время ответа, тренды депозитов, отток, RG-паттерны, неудачные платежи, ДР
   → src/llm.py       Claude (claude-opus-5-5): разбор переписки строго по JSON-схеме; рубрика — src/prompts/system.md
   → src/scoring.py   объединение и приоритет: серьёзность × количество сигналов × ценность игрока
-  → app.py           Streamlit-интерфейс
+  → src/verify.py    второй проход: проверка критичных нарушений «игрок → менеджер», решение принимает код
+  → src/export.py    всё для интерфейса в docs/data.json
+  → docs/            веб-интерфейс (GitHub Pages); app.py — запасной на Streamlit
 ```
 
 **LLM отвечает за смысл, код — за цифры.** Время, суммы и тренды считаются детерминированно. Серьёзность флага назначает код, а не модель, поэтому очередь стабильна. Пороги лежат в `THRESHOLDS` (`src/signals.py`), серьёзность флагов — в `FLAG_SEVERITY` (`src/llm.py`), рубрика — в `src/prompts/system.md`.
@@ -106,13 +115,16 @@ data/players.csv + data/dialogs.json
 ## Структура
 
 ```
-├── app.py                 интерфейс (Streamlit)
+├── docs/                  веб-интерфейс: index.html, app.js, styles.css, data.json
+├── app.py                 запасной интерфейс (Streamlit)
 ├── src/
 │   ├── load.py            загрузка данных
 │   ├── signals.py         детерминированные сигналы
 │   ├── llm.py             LLM-разбор, схема, кэш
 │   ├── prompts/system.md  рубрика и правила оценки
-│   ├── scoring.py         очередь приоритетов
+│   ├── verify.py          второй проход-проверка критичных нарушений
+│   ├── scoring.py         очередь приоритетов, риск оттока
+│   ├── export.py          выгрузка для веб-интерфейса
 │   └── eval.py            метрики против ручной разметки
 ├── golden.json            ручная разметка 40 диалогов
 ├── data/                  синтетические данные из задания

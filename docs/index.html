@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VIP Intelligence</title>
+  <meta name="description" content="Консоль тимлида VIP-отдела: очередь проблем, риск оттока, разбор переписок менеджеров.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-inner">
+      <a class="logo" href="#/queue"><span class="logo-mark">VI</span>VIP Intelligence</a>
+      <span class="bar-sep"></span>
+      <span class="bar-meta" id="asof"></span>
+      <div class="bar-right">
+        <label class="bar-label" for="source">Разбор</label>
+        <select id="source" class="bar-select"></select>
+        <span class="avatar" title="Тимлид VIP-отдела">ТЛ</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <div class="tabs-inner">
+      <a href="#/queue" data-view="queue">Очередь</a>
+      <a href="#/retention" data-view="retention">Риск оттока</a>
+      <a href="#/team" data-view="team">Команда</a>
+      <a href="#/quality" data-view="quality">Качество разбора</a>
+    </div>
+  </nav>
+
+  <main id="app" class="page"><div class="loading">Загрузка данных…</div></main>
+
+  <footer class="foot">
+    <div class="foot-inner">
+      <span id="gen"></span>
+      <a href="https://github.com/soloveiyegor8/vip-player-intelligence">Исходный код</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

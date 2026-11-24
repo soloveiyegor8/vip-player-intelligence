@@ -1,0 +1,51 @@
+{
+  "dialog_id": "D022",
+  "player_id": "P1022",
+  "manager": "Emily",
+  "input_key": "a6e877e7afbe618a",
+  "usage": {
+    "model": "claude-opus-5-5",
+    "input_tokens": 731,
+    "output_tokens": 1708,
+    "cache_read_input_tokens": 7312,
+    "cache_creation_input_tokens": 0
+  },
+  "analysis": {
+    "player_intent": "competitor_comparison",
+    "intent_summary": "Игрок сравнивает KOALA с конкурентом Spinzone, у которого reload выгоднее (50% до 500 каждую пятницу), и намекает на уход.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "CHURN_THREAT",
+        "evidence": "Honestly, Spinzone gives me way better reloads",
+        "explanation": "Игрок прямо сравнивает с конкурентом, это риск оттока.",
+        "severity": "high"
+      },
+      {
+        "code": "GOOD_PRACTICE",
+        "evidence": "looking at your play — mostly Friday and Saturday evenings, around $300 per deposit — I can set a 30% Friday reload up to $300 with x20 wagering",
+        "explanation": "Менеджер удержал игрока персональным оффером под его реальный паттерн игры, без давления и без слепого копирования условий конкурента.",
+        "severity": "info"
+      }
+    ],
+    "scores": {
+      "responsiveness": 3,
+      "problem_solving": 3,
+      "accuracy": 2,
+      "personalization": 3,
+      "tone": 3,
+      "responsible_gambling": 2
+    },
+    "overall": "good",
+    "summary": "Игрок пригрозил уходом к Spinzone из-за reload-бонусов. Emily за 2–15 минут уточнила оффер конкурента и предложила персональный пятничный reload 30% до $300 с x20 под реальную игру. Признаков риска нет: депозиты стабильны, есть выводы. Игрок согласился.",
+    "manager_feedback": "Хорошо: спокойно уточнила условия конкурента, не стала копировать оффер, а собрала свой на основе данных об игре (дни, средний депозит) и назвала конкретный вейджер. Улучшить: фраза «x20 wagering, which is lower than theirs» — вейджер Spinzone игрок не называл, сравнение не подтверждено. Не утверждай того, чего не знаешь, лучше спроси. Ещё «starting this week» двусмысленно: диалог шёл в субботу 14.11, и ближайшая пятница уже прошла. Указывай точную дату первого начисления (20.11) и срок действия оффера.",
+    "next_action": {
+      "owner": "manager",
+      "action": "Проверить, что reload 30% до $300 с x20 настроен в аккаунте P1022 и сработает в пятницу 20.11; подтвердить игроку точную дату и условия.",
+      "deadline": "this_week"
+    },
+    "draft_message": "Hi Olivia! Quick follow-up: your Friday reload is all set. 30% up to $300, x20 wagering, first one lands this Friday, 20 Nov. If anything looks off when it arrives, just message me here 🙂",
+    "score_total": 16
+  }
+}

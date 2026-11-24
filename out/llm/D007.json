@@ -1,0 +1,51 @@
+{
+  "dialog_id": "D007",
+  "player_id": "P1007",
+  "manager": "Tom",
+  "input_key": "c71deac6114b0e07",
+  "usage": {
+    "model": "claude-opus-5-5",
+    "input_tokens": 755,
+    "output_tokens": 1024,
+    "cache_read_input_tokens": 7312,
+    "cache_creation_input_tokens": 0
+  },
+  "analysis": {
+    "player_intent": "withdrawal_issue",
+    "intent_summary": "Игрок спросил, почему вывод 1 500 USD висит с понедельника.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "GOOD_PRACTICE",
+        "evidence": "Your withdrawal is waiting for one document — proof of address. Payments sent the request to your email on Tuesday, it may be in spam.",
+        "explanation": "За 10 минут менеджер нашёл точную причину задержки, подсказал, где искать письмо, и назвал срок выплаты.",
+        "severity": "info"
+      },
+      {
+        "code": "GOOD_PRACTICE",
+        "evidence": "I'll message you as soon as it's approved.",
+        "explanation": "Обещание выполнено: на следующее утро менеджер сам сообщил об одобрении («Approved and sent ✅ Should land today»).",
+        "severity": "info"
+      }
+    ],
+    "scores": {
+      "responsiveness": 3,
+      "problem_solving": 3,
+      "accuracy": 3,
+      "personalization": 3,
+      "tone": 3,
+      "responsible_gambling": 2
+    },
+    "overall": "excellent",
+    "summary": "Вывод 1 500 USD задерживался из-за непредоставленного подтверждения адреса. Tom за 10 минут нашёл причину, передал вывод в payments как приоритетный и на следующий день сам сообщил о выплате; pending_withdrawal сейчас 0. Последнее сообщение игрока («Thanks Tom») — вежливое завершение, отвечать не нужно.",
+    "manager_feedback": "Образцовая работа: быстрая диагностика, конкретная причина и срок, эскалация в payments, выполненное обещание и обращение по имени. Ни промо, ни уговоров оставить деньги на балансе. На будущее: если payments запрашивают документы у VIP, стоит предупреждать игрока проактивно, не дожидаясь его вопроса, — так задержки с понедельника можно было избежать.",
+    "next_action": {
+      "owner": "teamlead",
+      "action": "Использовать диалог как пример хорошей практики при обработке задержек вывода; отвечать игроку не нужно.",
+      "deadline": "none"
+    },
+    "draft_message": "",
+    "score_total": 17
+  }
+}

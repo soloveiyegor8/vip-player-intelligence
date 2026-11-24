@@ -1,0 +1,45 @@
+{
+  "dialog_id": "D025",
+  "player_id": "P1025",
+  "manager": "Tom",
+  "input_key": "310d71d0038bea1a",
+  "usage": {
+    "model": "claude-opus-5-5",
+    "input_tokens": 561,
+    "output_tokens": 855,
+    "cache_read_input_tokens": 7312,
+    "cache_creation_input_tokens": 0
+  },
+  "analysis": {
+    "player_intent": "manager_care_checkin",
+    "intent_summary": "Менеджер проактивно уточнил у игрока, прошёл ли пополнение после ночного неудачного депозита; игрок сам пополнил другой картой.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "GOOD_PRACTICE",
+        "evidence": "Hi Ryan, I saw a failed deposit last night — did you manage to top up in the end?",
+        "explanation": "Менеджер сам отследил неудачный депозит и написал игроку по имени, сервисно и без промо и давления.",
+        "severity": "info"
+      }
+    ],
+    "scores": {
+      "responsiveness": 3,
+      "problem_solving": 3,
+      "accuracy": 2,
+      "personalization": 3,
+      "tone": 3,
+      "responsible_gambling": 2
+    },
+    "overall": "good",
+    "summary": "Tom проактивно написал Ryan после неудачного депозита. Игрок уже пополнил другой картой, менеджер ответил через 5 минут и корректно закрыл диалог, без промо и давления.",
+    "manager_feedback": "Хорошо: проактивный сервисный контакт по реальному событию, обращение по имени, без промо, быстрый ответ. Улучшить: можно было уточнить, на какой карте был сбой, и предложить помочь разобраться с причиной, чтобы ошибка не повторилась при следующем пополнении.",
+    "next_action": {
+      "owner": "manager",
+      "action": "Действие не требуется; при повторном сбое депозита по первой карте проверить причину вместе с payments.",
+      "deadline": "none"
+    },
+    "draft_message": "",
+    "score_total": 16
+  }
+}

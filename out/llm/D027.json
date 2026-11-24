@@ -1,0 +1,45 @@
+{
+  "dialog_id": "D027",
+  "player_id": "P1027",
+  "manager": "Emily",
+  "input_key": "7157f088695808b9",
+  "usage": {
+    "model": "claude-opus-5-5",
+    "input_tokens": 599,
+    "output_tokens": 882,
+    "cache_read_input_tokens": 7312,
+    "cache_creation_input_tokens": 0
+  },
+  "analysis": {
+    "player_intent": "cashback_question",
+    "intent_summary": "Игрок уточнил, придёт ли сегодня его еженедельный кешбэк.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "GOOD_PRACTICE",
+        "evidence": "Hi Grace! Yes — your 10% weekly cashback ($120) will be credited at 12:00 AEST today, no wagering as usual.",
+        "explanation": "Менеджер одним сообщением дал точный ответ: процент, сумму, время зачисления с часовым поясом и условие по вейджеру.",
+        "severity": "info"
+      }
+    ],
+    "scores": {
+      "responsiveness": 3,
+      "problem_solving": 3,
+      "accuracy": 3,
+      "personalization": 3,
+      "tone": 3,
+      "responsible_gambling": 2
+    },
+    "overall": "good",
+    "summary": "Игрок спросил о еженедельном кешбэке, и Emily через 45 минут ответила конкретно: $120, в 12:00 AEST, без вейджера. Последнее «Got it, thanks» — вежливое завершение диалога, ответ не требуется. Сигнал PLAYER_LAST_WORD здесь не является проблемой.",
+    "manager_feedback": "Хороший короткий ответ: ты назвала игрока по имени и указала сумму, время с часовым поясом и условия. Игроку не нужно ничего переспрашивать. Так и продолжай. Можно иногда добавлять небольшой персональный штрих, например упоминание любимой игры Wolf Gold, но без навязывания промо.",
+    "next_action": {
+      "owner": "manager",
+      "action": "Действие не требуется; при желании убедиться, что кешбэк $120 зачислен 16.11 по обещанию.",
+      "deadline": "none"
+    },
+    "draft_message": "",
+    "score_total": 17
+  }
+}

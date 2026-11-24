@@ -1,0 +1,51 @@
+{
+  "dialog_id": "D032",
+  "player_id": "P1032",
+  "manager": "Emily",
+  "input_key": "3de21583ddcce2b6",
+  "usage": {
+    "model": "claude-opus-5-5",
+    "input_tokens": 653,
+    "output_tokens": 1534,
+    "cache_read_input_tokens": 7312,
+    "cache_creation_input_tokens": 0
+  },
+  "analysis": {
+    "player_intent": "account_change",
+    "intent_summary": "Игрок предупреждает, что в следующем месяце переезжает из Манитобы в Торонто (Онтарио) и планирует продолжать играть оттуда.",
+    "resolved": "no",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "JURISDICTION_CHANGE",
+        "evidence": "I'm moving from Manitoba to Toronto next month, will keep playing from there.",
+        "explanation": "Переезд в Онтарио означает смену регулятора (Онтарио регулируется отдельно от остальной Канады), и это требует проверки комплаенса до переезда.",
+        "severity": "high"
+      },
+      {
+        "code": "MISLEADING_INFO",
+        "evidence": "Nothing changes for you, your account and bonuses stay the same 🙂",
+        "explanation": "Менеджер без проверки заверил, что ничего не меняется, хотя в Онтарио могут действовать другие правила для аккаунта, бонусов и доступности бренда.",
+        "severity": "high"
+      }
+    ],
+    "scores": {
+      "responsiveness": 2,
+      "problem_solving": 0,
+      "accuracy": 0,
+      "personalization": 2,
+      "tone": 3,
+      "responsible_gambling": 1
+    },
+    "overall": "critical",
+    "summary": "Игрок сообщил о переезде из Манитобы в Торонто, а Emily без проверки ответила, что для аккаунта и бонусов ничего не меняется. Онтарио регулируется отдельно, поэтому игрок получил потенциально неверную информацию, а комплаенс не уведомлён.",
+    "manager_feedback": "Хорошо: ответ тёплый, по имени, с поздравлением; 2 часа для email приемлемо. Исправить: любая смена провинции или страны — это триггер для комплаенса. Нельзя обещать «ничего не меняется», нужно ответить: «спасибо, что предупредили, уточню у команды, как это повлияет на аккаунт, и вернусь с ответом», затем передать кейс в compliance. Сейчас нужно отправить игроку письмо с исправлением и не упоминать бонусы до получения ответа комплаенса.",
+    "next_action": {
+      "owner": "compliance",
+      "action": "Проверить, может ли бренд MAPLE обслуживать игрока из Онтарио и что меняется для аккаунта и бонусов (миграция, ограничения, повторная верификация адреса). После этого менеджер отправляет игроку исправленное сообщение.",
+      "deadline": "today"
+    },
+    "draft_message": "Hi Ethan,\n\nThanks again for letting me know about your move to Toronto, and congratulations once more!\n\nI need to correct my earlier reply: I told you nothing would change, but Ontario has its own gaming regulations that differ from Manitoba's, so I spoke too soon. I've passed your details to our compliance team to confirm exactly how the move affects your account, including availability, any required address verification and bonus terms.\n\nI'll get back to you with a clear answer before your move date. In the meantime, please don't update your address or play from Ontario until we've confirmed everything.\n\nSorry for the confusion, and thanks for your patience.\n\nBest regards,\nEmily\nVIP Manager, MAPLE",
+    "score_total": 8
+  }
+}

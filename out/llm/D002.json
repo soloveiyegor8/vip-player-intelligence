@@ -1,0 +1,51 @@
+{
+  "dialog_id": "D002",
+  "player_id": "P1002",
+  "manager": "Tom",
+  "input_key": "b809eba1585e16f1",
+  "usage": {
+    "model": "claude-opus-5-5",
+    "input_tokens": 767,
+    "output_tokens": 1113,
+    "cache_read_input_tokens": 7312,
+    "cache_creation_input_tokens": 0
+  },
+  "analysis": {
+    "player_intent": "deposit_issue",
+    "intent_summary": "Депозит игрока через Interac трижды отклонён, игрок просит помочь.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "GOOD_PRACTICE",
+        "evidence": "Can you try Interac with the e-mail option instead of online banking? If it still fails, I'll pass it to payments right away.",
+        "explanation": "Менеджер за 6 минут подтвердил проблему по данным, дал рабочую альтернативу и чёткий план эскалации, после чего депозит прошёл.",
+        "severity": "info"
+      },
+      {
+        "code": "GOOD_PRACTICE",
+        "evidence": "I've added 20 free spins on Book of Gold as a sorry for the trouble.",
+        "explanation": "Персональная компенсация на любимую игру игрока без признаков риска: это сервис, а не давление.",
+        "severity": "info"
+      }
+    ],
+    "scores": {
+      "responsiveness": 3,
+      "problem_solving": 3,
+      "accuracy": 3,
+      "personalization": 3,
+      "tone": 3,
+      "responsible_gambling": 2
+    },
+    "overall": "excellent",
+    "summary": "У игрока трижды не прошёл депозит через Interac. Tom ответил за 6 минут, предложил вариант Interac e-mail, который сработал, и начислил 20 фриспинов на любимую игру в качестве извинения. Игрок завершил диалог благодарностью, отвечать не нужно.",
+    "manager_feedback": "Образцовый контакт: быстрый ответ, обращение по имени, сверка с данными («I can see 3 declined attempts»), рабочая альтернатива и понятный план на случай, если она не сработает. Компенсация персональная и уместная. Что можно улучшить: при начислении фриспинов коротко указывать условия (вейджер, срок действия). Ещё стоит сообщить в payments о сбоях Interac online banking: так проблема всплывёт, если она массовая. Признаков риска у игрока нет: депозиты стабильны (4800 против 5200 USD), есть регулярные выводы.",
+    "next_action": {
+      "owner": "manager",
+      "action": "Действий с игроком не требуется. По желанию сообщить в payments о трёх отказах Interac online banking, чтобы проверить, нет ли массового сбоя.",
+      "deadline": "none"
+    },
+    "draft_message": "",
+    "score_total": 17
+  }
+}

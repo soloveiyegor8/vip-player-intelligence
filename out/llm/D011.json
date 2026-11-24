@@ -1,0 +1,51 @@
+{
+  "dialog_id": "D011",
+  "player_id": "P1011",
+  "manager": "Emily",
+  "input_key": "c03f5796c37c20d4",
+  "usage": {
+    "model": "claude-opus-5-5",
+    "input_tokens": 825,
+    "output_tokens": 1330,
+    "cache_read_input_tokens": 7312,
+    "cache_creation_input_tokens": 0
+  },
+  "analysis": {
+    "player_intent": "limit_or_exclusion_request",
+    "intent_summary": "Игрок попросил закрыть аккаунт, чтобы сделать перерыв в игре, и выбрал самоисключение на 1 год.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "GOOD_PRACTICE",
+        "evidence": "Of course, Daniel. Thank you for telling me. I can start a self-exclusion right now — you can choose 6 months, 1 year or permanent.",
+        "explanation": "Менеджер сразу поддержала решение игрока, не отговаривала и не торговалась, а предложила понятные варианты срока.",
+        "severity": "info"
+      },
+      {
+        "code": "GOOD_PRACTICE",
+        "evidence": "Done. Your account is self-excluded for 1 year from today, and you won't receive any offers from us. If you'd like to talk to someone, Gambling Help Online (gamblinghelponline.org.au) is free and available 24/7.",
+        "explanation": "Самоисключение оформлено самостоятельно за 3 минуты, без перенаправления в саппорт. Игрок получил подтверждение срока, гарантию отсутствия офферов и контакт профильной помощи.",
+        "severity": "info"
+      }
+    ],
+    "scores": {
+      "responsiveness": 3,
+      "problem_solving": 3,
+      "accuracy": 3,
+      "personalization": 3,
+      "tone": 3,
+      "responsible_gambling": 3
+    },
+    "overall": "excellent",
+    "summary": "Игрок с растущим паттерном депозитов (19 против 10, средний чек ниже) попросил закрыть аккаунт. Emily за 3 минуты оформила самоисключение на 1 год, подтвердила отсутствие офферов и дала контакт Gambling Help Online — образцовый кейс для команды. Последнее «Thanks» игрока — вежливое завершение, ответ не нужен.",
+    "manager_feedback": "Отличная работа, кейс стоит показать команде как эталон. Ты не отговаривала, не предлагала бонусы и паузу «вместо», оформила всё сама и быстро. Назвала конкретный срок и дала контакт помощи, тон тёплый и уважительный. Больше игроку не пиши: он самоисключён, разговор закрыт корректно. На будущее: у игрока ещё до этого диалога был рост числа депозитов при падении среднего чека, а бонусы продолжали начисляться (4 за 30 дней). При таком паттерне стоит самой начинать care-контакт и предлагать лимиты, не дожидаясь просьбы игрока.",
+    "next_action": {
+      "owner": "compliance",
+      "action": "Проверить, что самоисключение на 1 год применено во всех системах и игрок исключён из всех маркетинговых рассылок и VIP-кампаний бренда KOALA.",
+      "deadline": "this_week"
+    },
+    "draft_message": "",
+    "score_total": 18
+  }
+}

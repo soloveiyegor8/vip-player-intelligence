@@ -1,0 +1,51 @@
+{
+  "dialog_id": "D035",
+  "player_id": "P1035",
+  "manager": "Tom",
+  "input_key": "8f392f9650a36b91",
+  "usage": {
+    "model": "claude-opus-5-5",
+    "input_tokens": 577,
+    "output_tokens": 1498,
+    "cache_read_input_tokens": 7312,
+    "cache_creation_input_tokens": 0
+  },
+  "analysis": {
+    "player_intent": "other",
+    "intent_summary": "VIP-игрок попросил созвониться, потому что так проще объяснить вопрос, но получил отказ и ушёл, не изложив суть.",
+    "resolved": "no",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "VAGUE_ANSWER",
+        "evidence": "Never mind, I'll write later",
+        "explanation": "Игрок не стал излагать вопрос текстом, суть обращения осталась неизвестной, а за 6,4 дня менеджер так и не вернулся к игроку.",
+        "severity": "medium"
+      },
+      {
+        "code": "FEEDBACK_NOT_ESCALATED",
+        "evidence": "unfortunately I can only help by text at the moment",
+        "explanation": "Менеджер отказал VIP-игроку в звонке и не предложил альтернативу: не назначил время, не передал запрос коллеге или тимлиду.",
+        "severity": "low"
+      }
+    ],
+    "scores": {
+      "responsiveness": 2,
+      "problem_solving": 1,
+      "accuracy": 2,
+      "personalization": 1,
+      "tone": 2,
+      "responsible_gambling": 2
+    },
+    "overall": "poor",
+    "summary": "Игрок (VIP, Live Baccarat, стабильные депозиты около $2.5k в месяц) попросил звонок. Tom ответил за 30 минут, но отказал без альтернативы. Игрок ушёл со словами «Never mind», суть вопроса неизвестна, повторного контакта не было 6,4 дня.",
+    "manager_feedback": "Плюс: ответил быстро (30 мин), обратился по имени, вежливо. Что исправить: VIP просит звонок — значит, вопрос для него важный или деликатный. Нельзя просто отказывать. Предложи конкретное время звонка, голосовое сообщение или звонок от коллеги/тимлида. Если звонки недоступны, эскалируй запрос. Если игрок пишет «I'll write later», вернись к нему сам в течение 1–2 дней, не жди неделю: за непонятной просьбой может стоять проблема с деньгами, недовольство или признаки риска.",
+    "next_action": {
+      "owner": "manager",
+      "action": "Написать игроку, предложить созвон в удобное ему время (или голосовое сообщение) и выяснить, какой вопрос он хотел обсудить; при невозможности звонка со стороны Tom — согласовать звонок с тимлидом.",
+      "deadline": "today"
+    },
+    "draft_message": "Hi William, sorry I couldn't jump on a call last week. I'd like to make that right. If you still want to talk, just tell me a time that suits you and I'll arrange a call. Or send me a voice note and I'll get back to you right away. What did you want to discuss?",
+    "score_total": 10
+  }
+}

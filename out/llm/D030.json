@@ -1,0 +1,45 @@
+{
+  "dialog_id": "D030",
+  "player_id": "P1030",
+  "manager": "Tom",
+  "input_key": "2e2ccf86319d20ed",
+  "usage": {
+    "model": "claude-opus-5-5",
+    "input_tokens": 590,
+    "output_tokens": 1055,
+    "cache_read_input_tokens": 7312,
+    "cache_creation_input_tokens": 0
+  },
+  "analysis": {
+    "player_intent": "bonus_request",
+    "intent_summary": "Бонус игрока сгорел, пока он путешествовал, и он хотел его вернуть.",
+    "resolved": "yes",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "GOOD_PRACTICE",
+        "evidence": "Sorry about that, Noah. I've reactivated it for another 7 days — same terms. Safe travels!",
+        "explanation": "Менеджер за 25 минут сам реактивировал бонус на понятный срок, извинился, обратился по имени и учёл контекст поездки; игрок подтвердил, что решение справедливое.",
+        "severity": "info"
+      }
+    ],
+    "scores": {
+      "responsiveness": 3,
+      "problem_solving": 3,
+      "accuracy": 2,
+      "personalization": 3,
+      "tone": 3,
+      "responsible_gambling": 2
+    },
+    "overall": "excellent",
+    "summary": "Игрок пожаловался, что бонус сгорел во время поездки. Tom за 25 минут реактивировал его на 7 дней на тех же условиях, игрок поблагодарил («that's fair»). Сигнал PLAYER_LAST_WORD — вежливое завершение диалога, отвечать не нужно; признаков риска нет (депозиты стабильны: 2100 против 2300 USD).",
+    "manager_feedback": "Отличная работа: быстро, без лишних вопросов и пересылок в саппорт, тепло и с учётом ситуации игрока. Улучшить можно одну мелочь: вместо «same terms» коротко напомнить условия (вейджер, новую дату истечения). Тогда игрок не столкнётся с той же проблемой повторно.",
+    "next_action": {
+      "owner": "teamlead",
+      "action": "Использовать диалог как пример быстрого решения по сгоревшему бонусу на разборе с командой; отдельных действий с игроком не требуется.",
+      "deadline": "this_week"
+    },
+    "draft_message": "",
+    "score_total": 16
+  }
+}

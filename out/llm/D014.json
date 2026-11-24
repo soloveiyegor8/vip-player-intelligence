@@ -1,0 +1,45 @@
+{
+  "dialog_id": "D014",
+  "player_id": "P1014",
+  "manager": "Tom",
+  "input_key": "33998be03ee213bc",
+  "usage": {
+    "model": "claude-opus-5-5",
+    "input_tokens": 645,
+    "output_tokens": 1094,
+    "cache_read_input_tokens": 7312,
+    "cache_creation_input_tokens": 0
+  },
+  "analysis": {
+    "player_intent": "manager_promo",
+    "intent_summary": "Менеджер обратился к игроку, который ушёл в отток, с персональным анонсом нового high-limit стола в Live Blackjack; игрок ответил, что заглянет на выходных.",
+    "resolved": "not_applicable",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "GOOD_PRACTICE",
+        "evidence": "I remember you like the live blackjack tables in the evening — we've just opened a new high-limit table from 8pm ET. No pressure, just thought you'd want to know.",
+        "explanation": "Реактивация через сервис: персональный повод по любимой игре и привычному времени игрока, конкретика (8pm ET), без бонусного давления и вопросов о депозите.",
+        "severity": "info"
+      }
+    ],
+    "scores": {
+      "responsiveness": 3,
+      "problem_solving": 2,
+      "accuracy": 3,
+      "personalization": 3,
+      "tone": 3,
+      "responsible_gambling": 2
+    },
+    "overall": "excellent",
+    "summary": "Tom вышел на игрока в оттоке (0 депозитов за 30 дней против $6 400, не заходил 14 дней) с персональным анонсом стола под его любимую игру. Давления не было, на ответ игрока менеджер отреагировал за 5 минут и предложил резерв места; признаков риска нет, вывод $2 500 игрок сделал без помех.",
+    "manager_feedback": "Образцовая реактивация: имя, любимая игра, привычное время игры, конкретный повод, «No pressure» и без бонусов ради депозита. Вежливое предложение зарезервировать место — сервис, а не давление. Дальше не стоит напоминать о столе повторно, если игрок не придёт на выходных. Учти, что 12 декабря у игрока день рождения: подготовь поздравление заранее, чтобы оно не вышло с опозданием.",
+    "next_action": {
+      "owner": "manager",
+      "action": "После выходных проверить, заходил ли игрок; без повторного промо. Запланировать персональное поздравление с днём рождения на 12 декабря.",
+      "deadline": "this_week"
+    },
+    "draft_message": "",
+    "score_total": 16
+  }
+}

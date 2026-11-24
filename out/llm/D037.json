@@ -1,0 +1,45 @@
+{
+  "dialog_id": "D037",
+  "player_id": "P1037",
+  "manager": "Emily",
+  "input_key": "875645b0f15b379b",
+  "usage": {
+    "model": "claude-opus-5-5",
+    "input_tokens": 599,
+    "output_tokens": 909,
+    "cache_read_input_tokens": 7312,
+    "cache_creation_input_tokens": 0
+  },
+  "analysis": {
+    "player_intent": "manager_greeting",
+    "intent_summary": "Менеджер в день рождения поздравила игрока и начислила 50 фриспинов без вейджера на его любимую игру; игрок поблагодарил.",
+    "resolved": "not_applicable",
+    "needs_reply": false,
+    "flags": [
+      {
+        "code": "GOOD_PRACTICE",
+        "evidence": "Happy birthday, Hannah! 🎂 We've added 50 free spins on Big Bass Bonanza — no wagering, just for fun.",
+        "explanation": "Поздравление отправлено вовремя (утром в день рождения), подарок привязан к любимой игре игрока, условия названы конкретно и без давления на депозит.",
+        "severity": "info"
+      }
+    ],
+    "scores": {
+      "responsiveness": 3,
+      "problem_solving": 2,
+      "accuracy": 3,
+      "personalization": 3,
+      "tone": 3,
+      "responsible_gambling": 2
+    },
+    "overall": "excellent",
+    "summary": "Emily поздравила игрока с днём рождения в сам день (18.11, 09:00) и подарила 50 фриспинов без вейджера на Big Bass Bonanza. Игрок ответил «thank you», признаков риска нет (депозиты стабильны: $3100 против $3000), сигнал «без ответа 14 ч» — это вежливое завершение, отвечать не нужно.",
+    "manager_feedback": "Образцовое поздравление: вовремя, по имени, подарок под любимую игру, прозрачные условия («no wagering»), без призыва внести депозит. Отвечать на «Aww thank you» не обязательно. Можно использовать как пример для команды; на будущее — для email-канала допустимо добавить короткую подпись и упоминание, где найти спины в аккаунте.",
+    "next_action": {
+      "owner": "manager",
+      "action": "Действий не требуется; убедиться, что 50 фриспинов фактически начислены на аккаунт.",
+      "deadline": "none"
+    },
+    "draft_message": "",
+    "score_total": 16
+  }
+}

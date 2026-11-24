@@ -346,6 +346,10 @@ def assemble(records: list[dict], provider: str | None = None) -> list[dict]:
         vpath = vdir / f"{r['dialog_id']}.json" if vdir else None
         if vpath and vpath.exists():
             verify.merge(r["analysis"], json.loads(vpath.read_text(encoding="utf-8")))
+        # Серьёзность всегда берётся из текущего FLAG_SEVERITY, а не из кэша: правка словаря подхватывается пересборкой.
+        for f in r["analysis"]["flags"] + r["analysis"].get("review_flags", []):
+            f["severity"] = FLAG_SEVERITY[f["code"]]
+        r["analysis"]["flags"].sort(key=lambda f: sig.SEVERITY_ORDER[f["severity"]])
         apply_guards(r["analysis"], dialogs[r["dialog_id"]])
     return records
 

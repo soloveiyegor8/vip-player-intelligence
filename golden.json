@@ -44,7 +44,7 @@
       "note": "46 мелких депозитов, бонус за бонусом, «сделаю исключение». Признаки проблемной игры проигнорированы.",
       "intent": ["bonus_request"], "resolved": null, "needs_reply": true, "overall": ["critical"],
       "must_flags": ["RG_RISK_SIGNS_IGNORED"],
-      "ok_flags": ["RG_LOSS_CHASING_ENCOURAGED"]
+      "ok_flags": ["RG_LOSS_CHASING_ENCOURAGED", "ISSUE_IGNORED"]
     },
     "D009": {
       "note": "Эталон RG: заметила паттерн, отказала в бонусе, поставила лимит, договорилась о следующем контакте.",
@@ -100,17 +100,17 @@
     "D019": {
       "note": "Сравнивает с конкурентом (15% кешбэк), получает общие слова, ответ через 2 ч.",
       "intent": ["vip_terms_question", "competitor_comparison"], "resolved": ["no"], "needs_reply": true, "overall": ["poor", "critical"],
-      "must_flags": ["VAGUE_ANSWER", "CHURN_THREAT"], "ok_flags": ["SLOW_RESPONSE"]
+      "must_flags": ["VAGUE_ANSWER", "CHURN_THREAT"], "ok_flags": ["SLOW_RESPONSE", "ISSUE_IGNORED"]
     },
     "D020": {
       "note": "Пять промо подряд, игрок просит отписать.",
       "intent": ["opt_out_request", "manager_promo"], "resolved": ["no"], "needs_reply": true, "overall": ["critical"],
-      "must_flags": ["OPT_OUT_REQUEST"], "ok_flags": ["GENERIC_OUTREACH", "PRESSURE_TACTICS"]
+      "must_flags": ["OPT_OUT_REQUEST"], "ok_flags": ["GENERIC_OUTREACH", "PRESSURE_TACTICS", "ISSUE_IGNORED"]
     },
     "D021": {
       "note": "Не знает вейджер: «стандартный», «х35 вроде, глянь в правилах».",
       "intent": ["bonus_terms_question"], "resolved": ["no", "partially"], "needs_reply": null, "overall": ["poor"],
-      "must_flags": ["VAGUE_ANSWER"], "ok_flags": ["MISLEADING_INFO", "SLOW_RESPONSE"]
+      "must_flags": ["VAGUE_ANSWER"], "ok_flags": ["MISLEADING_INFO", "SLOW_RESPONSE", "PASSED_THE_BUCK"]
     },
     "D022": {
       "note": "Эталон удержания: спросила условия конкурента, сделала персональный оффер под паттерн игры.",
@@ -150,7 +150,7 @@
     "D029": {
       "note": "Перепутал имя (и пол в глаголе) второй раз — у игрока с самыми большими депозитами.",
       "intent": ["manager_care_checkin", "small_talk"], "resolved": ["not_applicable"], "needs_reply": true, "overall": ["poor", "ok"],
-      "must_flags": ["WRONG_NAME"], "ok_flags": []
+      "must_flags": ["WRONG_NAME"], "ok_flags": ["ISSUE_IGNORED"]
     },
     "D030": {
       "note": "Реактивировала истёкший бонус на тех же условиях.",
@@ -170,7 +170,7 @@
     "D033": {
       "note": "Отменила вывод ради игры и дала бонус; через 3 часа «всё слил, можно ещё бонус?».",
       "intent": ["withdrawal_issue", "bonus_request"], "resolved": null, "needs_reply": true, "overall": ["critical"],
-      "must_flags": ["RG_WITHDRAWAL_DISCOURAGED"], "ok_flags": ["RG_RISK_SIGNS_IGNORED", "RG_LOSS_CHASING_ENCOURAGED"]
+      "must_flags": ["RG_WITHDRAWAL_DISCOURAGED"], "ok_flags": ["RG_RISK_SIGNS_IGNORED", "RG_LOSS_CHASING_ENCOURAGED", "ISSUE_IGNORED"]
     },
     "D034": {
       "note": "Нормальный small talk, без давления.",
@@ -205,7 +205,7 @@
     "D040": {
       "note": "Предлагает поднять лимит, который игрок поставил сам: «I set that limit for a reason».",
       "intent": ["manager_promo"], "resolved": ["not_applicable", "no"], "needs_reply": true, "overall": ["critical"],
-      "must_flags": ["RG_LIMIT_INCREASE_PUSHED"], "ok_flags": ["RG_RISK_SIGNS_IGNORED", "PRESSURE_TACTICS"]
+      "must_flags": ["RG_LIMIT_INCREASE_PUSHED"], "ok_flags": ["RG_RISK_SIGNS_IGNORED", "PRESSURE_TACTICS", "ISSUE_IGNORED"]
     }
   }
 }

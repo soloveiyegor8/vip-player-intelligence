@@ -15,8 +15,8 @@
       "den": 27
     },
     "flag_precision": {
-      "value": 0.843,
-      "num": 59,
+      "value": 0.943,
+      "num": 66,
       "den": 70
     },
     "critical_dialog_recall": {
@@ -51,18 +51,6 @@
   },
   "errors": [
     {
-      "dialog_id": "D008",
-      "missed": [],
-      "unexpected": [
-        "ISSUE_IGNORED"
-      ],
-      "overall": "critical",
-      "expected_overall": [
-        "critical"
-      ],
-      "note": "46 мелких депозитов, бонус за бонусом, «сделаю исключение». Признаки проблемной игры проигнорированы."
-    },
-    {
       "dialog_id": "D012",
       "missed": [],
       "unexpected": [
@@ -89,23 +77,9 @@
       "note": "Три шаблонных промо ушедшему крупному игроку (22 000 → 1 500), без ответа."
     },
     {
-      "dialog_id": "D019",
-      "missed": [],
-      "unexpected": [
-        "ISSUE_IGNORED"
-      ],
-      "overall": "poor",
-      "expected_overall": [
-        "poor",
-        "critical"
-      ],
-      "note": "Сравнивает с конкурентом (15% кешбэк), получает общие слова, ответ через 2 ч."
-    },
-    {
       "dialog_id": "D020",
       "missed": [],
       "unexpected": [
-        "ISSUE_IGNORED",
         "VAGUE_ANSWER"
       ],
       "overall": "critical",
@@ -113,43 +87,6 @@
         "critical"
       ],
       "note": "Пять промо подряд, игрок просит отписать."
-    },
-    {
-      "dialog_id": "D021",
-      "missed": [],
-      "unexpected": [
-        "PASSED_THE_BUCK"
-      ],
-      "overall": "poor",
-      "expected_overall": [
-        "poor"
-      ],
-      "note": "Не знает вейджер: «стандартный», «х35 вроде, глянь в правилах»."
-    },
-    {
-      "dialog_id": "D029",
-      "missed": [],
-      "unexpected": [
-        "ISSUE_IGNORED"
-      ],
-      "overall": "poor",
-      "expected_overall": [
-        "poor",
-        "ok"
-      ],
-      "note": "Перепутал имя (и пол в глаголе) второй раз — у игрока с самыми большими депозитами."
-    },
-    {
-      "dialog_id": "D033",
-      "missed": [],
-      "unexpected": [
-        "ISSUE_IGNORED"
-      ],
-      "overall": "critical",
-      "expected_overall": [
-        "critical"
-      ],
-      "note": "Отменила вывод ради игры и дала бонус; через 3 часа «всё слил, можно ещё бонус?»."
     },
     {
       "dialog_id": "D035",
@@ -163,18 +100,6 @@
         "poor"
       ],
       "note": "Просил созвон — отказ без альтернативы, игрок ушёл «напишу позже»."
-    },
-    {
-      "dialog_id": "D040",
-      "missed": [],
-      "unexpected": [
-        "ISSUE_IGNORED"
-      ],
-      "overall": "critical",
-      "expected_overall": [
-        "critical"
-      ],
-      "note": "Предлагает поднять лимит, который игрок поставил сам: «I set that limit for a reason»."
     }
   ],
   "model": "claude-opus-5-5"

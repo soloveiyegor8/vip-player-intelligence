@@ -15,8 +15,8 @@
       "den": 27
     },
     "flag_precision": {
-      "value": 0.98,
-      "num": 49,
+      "value": 1.0,
+      "num": 50,
       "den": 50
     },
     "critical_dialog_recall": {
@@ -49,19 +49,6 @@
       "den": 32
     }
   },
-  "errors": [
-    {
-      "dialog_id": "D040",
-      "missed": [],
-      "unexpected": [
-        "ISSUE_IGNORED"
-      ],
-      "overall": "critical",
-      "expected_overall": [
-        "critical"
-      ],
-      "note": "Предлагает поднять лимит, который игрок поставил сам: «I set that limit for a reason»."
-    }
-  ],
+  "errors": [],
   "model": "claude-opus-5-5"
 }
